@@ -1,0 +1,38 @@
+#!/bin/bash -x
+#SBATCH --job-name="m167"
+#SBATCH --time=00:04:59
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --ntasks-per-socket=1
+#SBATCH --gpus-per-task=1
+#SBATCH --account=m3986_g
+#SBATCH --constraint=gpu
+#SBATCH --qos=debug
+#SBATCH --exclusive
+
+module load python/3.9-anaconda-2021.11
+
+ypy="/global/homes/s/slaricch/software/yambo-devel/yambopy/scripts/yambopy"
+
+python3.9 $ypy mergeqp set-1_698-707/ndb.QP set-2_708-717/ndb.QP set-3_718-727/ndb.QP \
+                       set-4_728-737/ndb.QP set-5_738-747/ndb.QP set-6_748-757/ndb.QP \
+                       set-7_758-767/ndb.QP set-8_768-777/ndb.QP set-9_778-787/ndb.QP \
+                       set-10_788-797/ndb.QP set-11_798-807/ndb.QP set-12_808-817/ndb.QP \
+                       set-13_818-827/ndb.QP set-14_828-837/ndb.QP set-15_838-847/ndb.QP \
+                       set-16_848-857/ndb.QP set-17_858-867/ndb.QP set-18_868-877/ndb.QP \
+                       set-19_878-887/ndb.QP set-20_888-897/ndb.QP set-21_898-907/ndb.QP \
+                       set-22_908-917/ndb.QP set-23_918-927/ndb.QP set-24_928-937/ndb.QP \
+                       set-25_938-947/ndb.QP set-26_948-957/ndb.QP set-27_958-967/ndb.QP \
+                       set-28_968-977/ndb.QP set-29_978-987/ndb.QP set-30_988-997/ndb.QP \
+                       set-31_998-1007/ndb.QP set-32_1008-1017/ndb.QP set-33_1018-1027/ndb.QP \
+                       set-34_1028-1037/ndb.QP set-35_1038-1047/ndb.QP -o ndb.QP > tmp.out
+
+rm -f tmp.out
+
+if [[ -e ndb.QP ]] ; then
+  if [[ ! -d merged_ndb.QP ]] ; then
+    mkdir merged_ndb.QP
+  fi
+  mv ndb.QP merged_ndb.QP/ndb.QP_merged_1_gw_ppa
+fi
+

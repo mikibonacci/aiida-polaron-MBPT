@@ -1,0 +1,57 @@
+#!/bin/bash -x
+#SBATCH --job-name="s148"
+#SBATCH --time=00:59:59
+#SBATCH --nodes=20
+#SBATCH --ntasks-per-node=4
+#SBATCH --gpus-per-task=1
+#SBATCH --ntasks-per-socket=2
+#SBATCH --cpus-per-task=32
+##SBATCH --account=m3995_g
+#SBATCH --account=m3986_g
+#SBATCH --constraint=gpu
+#SBATCH --qos=regular
+#SBATCH --exclusive
+#SBATCH --gres=gpu:4
+#SBATCH --gpu-bind=map_gpu:0,1,2,3
+
+nodes=$SLURM_JOB_NUM_NODES
+ntasks=$SLURM_NTASKS
+nthreads=$SLURM_CPUS_PER_TASK
+
+qe_nersc=1
+
+if [[ $qe_nersc -eq 1 ]] ; then
+  module load espresso/7.0-libxc-5.2.2-gpu
+else	
+  module load cudatoolkit/21.9_11.0
+  module load cray-hdf5-parallel/1.12.0.7
+  module load mkl/2021.2.0
+  module load cray-fftw/3.3.8.12
+  module load systemlayer
+  module load netlib-scalapack/2.1.0-mpi
+  
+  p="/global/homes/s/slaricch/software/qespresso-7.0/bin"
+  export PATH="${p}:$PATH"
+fi
+
+npool=4
+ndiag=1
+
+mp="srun"
+flags="-npool $npool -ndiag $ndiag"
+
+export OMP_NUM_THREADS=1
+
+$mp pw.x $flags -input scf.in >& out.scf
+
+rm -f *_r*
+
+if [[ -e out.scf ]] ; then
+  scf_done=$(grep "JOB DONE" out.scf | wc -l)
+fi
+
+if [[ $scf_done -ne 0 ]] ; then
+  $mp pw.x $flags -input nscf.in >& out.nscf
+  
+  rm -f *_r*
+fi

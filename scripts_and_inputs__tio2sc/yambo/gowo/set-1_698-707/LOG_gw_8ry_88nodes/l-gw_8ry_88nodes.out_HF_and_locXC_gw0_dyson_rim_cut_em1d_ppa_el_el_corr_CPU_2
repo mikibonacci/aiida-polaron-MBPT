@@ -1,0 +1,350 @@
+
+
+ __    __ ______           ____     _____
+/\ \  /\ \\  _  \  /"\_/`\/\  _`\ /\  __`\
+\ `\`\\/"/ \ \L\ \/\      \ \ \L\ \ \ \/\ \
+ `\ `\ /" \ \  __ \ \ \__\ \ \  _ <" \ \ \ \
+   `\ \ \  \ \ \/\ \ \ \_/\ \ \ \L\ \ \ \_\ \
+     \ \_\  \ \_\ \_\ \_\\ \_\ \____/\ \_____\
+      \/_/   \/_/\/_/\/_/ \/_/\/___/  \/_____/
+
+
+ <---> P2: [01] MPI/OPENMP structure, Files & I/O Directories
+ <---> P2-nid001065: MPI Cores-Threads   : 352(CPU)-1(threads)-1(threads@X)-1(threads@DIP)-1(threads@SE)-1(threads@RT)-1(threads@K)-1(threads@NL)
+ <---> P2-nid001065: MPI Cores-Threads   : DIP(environment)-1 44 8(CPUs)-k c v(ROLEs)
+ <---> P2-nid001065: MPI Cores-Threads   : X_and_IO(environment)-1 1 1 44 8(CPUs)-q g k c v(ROLEs)
+ <---> P2-nid001065: MPI Cores-Threads   : SE(environment)-1 1 1 352(CPUs)-q g qp b(ROLEs)
+ <---> P2-nid001065: MPI assigned to GPU : 0
+ <---> P2-nid001065: [02] CORE Variables Setup
+ <---> P2-nid001065: [02.01] Unit cells
+ <02s> P2-nid001065: [02.02] Symmetries
+ <02s> P2-nid001065: [02.03] Reciprocal space
+ <02s> P2-nid001065: [02.04] K-grid lattice
+ <02s> P2-nid001065: Grid dimensions      :  2  2
+ <02s> P2-nid001065: [02.05] Energies & Occupations
+ <03s> P2-nid001065: [03] Transferred momenta grid and indexing
+ <04s> P2-nid001065: [04] Coloumb potential Random Integration (RIM)
+ <04s> P2-nid001065: [04.01] RIM initialization
+ <04s> P2-nid001065: Random points |                                        | [000%] --(E) --(X)
+ <06s> P2-nid001065: Random points |########################################| [100%] 02s(E) 02s(X)
+ <06s> P2-nid001065: [04.02] RIM integrals
+ <06s> P2-nid001065: Momenta loop |                                        | [000%] --(E) --(X)
+ <12s> P2-nid001065: Momenta loop |########################################| [100%] 06s(E) 06s(X)
+ <12s> P2-nid001065: [05] Coloumb potential CutOffslab
+ <13s> P2-nid001065: [06] Dipoles
+ <13s> P2-nid001065: [PARALLEL DIPOLES for K(ibz) on 1 CPU] Loaded/Total (Percentual):4/4(100%)
+ <13s> P2-nid001065: [PARALLEL DIPOLES for CON bands on 44 CPU] Loaded/Total (Percentual):96/4223(2%)
+ <13s> P2-nid001065: [PARALLEL DIPOLES for VAL bands on 8 CPU] Loaded/Total (Percentual):97/777(12%)
+ <14s> P2-nid001065: [DIP] Database not correct or missing. To be computed
+ <21s> P2-nid001065: [x,Vnl] computed using 2212 projectors
+ <21s> P2-nid001065: [WARNING] [x,Vnl] slows the Dipoles computation. To neglect it rename the ns.kb_pp file
+ <34s> P2-nid001065: Dipoles: P, V and iR (T) |                                        | [000%] --(E) --(X)
+ <34s> P2-nid001065: [PARALLEL distribution for Wave-Function states] Loaded/Total(Percentual):193/5000(4%)
+ <38s> P2-nid001065: [WF] Copying WF data from GPU device
+ <04m-33s> P2-nid001065: Dipoles: P, V and iR (T) |#                                       | [002%] 03m-58s(E) 02h-38m(X)
+ <08m-25s> P2-nid001065: Dipoles: P, V and iR (T) |#####                                   | [012%] 07m-51s(E) 01h-02m(X)
+ <12m-19s> P2-nid001065: Dipoles: P, V and iR (T) |##########                              | [025%] 11m-45s(E) 47m-00s(X)
+ <16m-12s> P2-nid001065: Dipoles: P, V and iR (T) |###############                         | [037%] 15m-38s(E) 41m-41s(X)
+ <16m-16s> P2-nid001065: [PARALLEL distribution for Wave-Function states] Loaded/Total(Percentual):193/5000(4%)
+ <16m-17s> P2-nid001065: [WF] Copying WF data from GPU device
+ <20m-06s> P2-nid001065: Dipoles: P, V and iR (T) |####################                    | [050%] 19m-31s(E) 39m-03s(X)
+ <23m-59s> P2-nid001065: Dipoles: P, V and iR (T) |#########################               | [062%] 23m-24s(E) 37m-27s(X)
+ <27m-52s> P2-nid001065: Dipoles: P, V and iR (T) |##############################          | [075%] 27m-18s(E) 36m-24s(X)
+ <31m-46s> P2-nid001065: Dipoles: P, V and iR (T) |###################################     | [087%] 31m-11s(E) 35m-38s(X)
+ <31m-49s> P2-nid001065: Dipoles: P, V and iR (T) |########################################| [100%] 31m-14s(E) 31m-14s(X)
+ <37m-01s> P2-nid001065: [07] Dynamic Dielectric Matrix (PPA)
+ <37m-02s> P2-nid001065: [PARALLEL Response_G_space_and_IO for K(bz) on 1 CPU] Loaded/Total (Percentual):4/4(100%)
+ <37m-02s> P2-nid001065: [PARALLEL Response_G_space_and_IO for Q(ibz) on 1 CPU] Loaded/Total (Percentual):4/4(100%)
+ <37m-02s> P2-nid001065: [PARALLEL Response_G_space_and_IO for G-vectors on 1 CPU]
+ <37m-02s> P2-nid001065: [PARALLEL Response_G_space_and_IO for K-q(ibz) on 1 CPU] Loaded/Total (Percentual):4/4(100%)
+ <37m-02s> P2-nid001065: [LA] SERIAL linear algebra
+ <37m-02s> P2-nid001065: [PARALLEL Response_G_space_and_IO for K(ibz) on 1 CPU] Loaded/Total (Percentual):4/4(100%)
+ <37m-02s> P2-nid001065: [PARALLEL Response_G_space_and_IO for CON bands on 44 CPU] Loaded/Total (Percentual):96/4223(2%)
+ <37m-02s> P2-nid001065: [PARALLEL Response_G_space_and_IO for VAL bands on 8 CPU] Loaded/Total (Percentual):97/777(12%)
+ <37m-02s> P2-nid001065: [MEMORY] Alloc X_mat( 2.178945 [Gb]) (HOST) TOTAL:  2.385321 [Gb] (traced)
+ <37m-04s> P2-nid001065: [MEMORY] Alloc X_par%blc( 2.178945 [Gb]) (HOST) TOTAL:  4.564422 [Gb] (traced)
+ <37m-05s> P2-nid001065: [MEMORY] Alloc X_par%blc_d( 2.178945 [Gb]) (DEV) TOTAL:  2.297576 [Gb] (traced)
+ <37m-05s> P2-nid001065: [PARALLEL distribution for RL vectors(X) on 1 CPU] Loaded/Total (Percentual):******/******(100%)
+ <37m-09s> P2-nid001065: [MEMORY] Alloc WF%c( 10.95906 [Gb]) (HOST) TOTAL:  17.43717 [Gb] (traced)
+ <37m-09s> P2-nid001065: [MEMORY] Alloc WF%c_d( 10.95906 [Gb]) (DEV) TOTAL:  13.36647 [Gb] (traced)
+ <37m-09s> P2-nid001065: [PARALLEL distribution for Wave-Function states] Loaded/Total(Percentual):1544/40000(4%)
+ <37m-13s> P2-nid001065: [FFT-X] Mesh size:   69   77  171
+ <37m-15s> P2-nid001065: [WF] Copying WF data from GPU device
+ <37m-16s> P2-nid001065: [X-CG] R(p) Tot o/o(of R):    4726   74496     100
+ <37m-16s> P2-nid001065: Xo@q[1] |                                        | [000%] --(E) --(X)
+ <37m-21s> P2-nid001065: Xo@q[1] |##                                      | [005%] 05s(E) 01m-28s(X)
+ <37m-26s> P2-nid001065: Xo@q[1] |####                                    | [010%] 10s(E) 01m-37s(X)
+ <37m-31s> P2-nid001065: Xo@q[1] |#####                                   | [014%] 15s(E) 01m-44s(X)
+ <37m-36s> P2-nid001065: Xo@q[1] |#######                                 | [017%] 20s(E) 01m-51s(X)
+ <37m-41s> P2-nid001065: Xo@q[1] |########                                | [021%] 25s(E) 01m-57s(X)
+ <37m-46s> P2-nid001065: Xo@q[1] |#########                               | [024%] 30s(E) 02m-04s(X)
+ <37m-51s> P2-nid001065: Xo@q[1] |##########                              | [027%] 35s(E) 02m-09s(X)
+ <37m-56s> P2-nid001065: Xo@q[1] |###########                             | [029%] 40s(E) 02m-14s(X)
+ <38m-01s> P2-nid001065: Xo@q[1] |#############                           | [032%] 45s(E) 02m-18s(X)
+ <38m-06s> P2-nid001065: Xo@q[1] |##############                          | [035%] 50s(E) 02m-21s(X)
+ <38m-11s> P2-nid001065: Xo@q[1] |###############                         | [038%] 55s(E) 02m-24s(X)
+ <38m-16s> P2-nid001065: Xo@q[1] |################                        | [040%] 01m-00s(E) 02m-27s(X)
+ <38m-21s> P2-nid001065: Xo@q[1] |#################                       | [043%] 01m-05s(E) 02m-29s(X)
+ <38m-26s> P2-nid001065: Xo@q[1] |##################                      | [046%] 01m-10s(E) 02m-32s(X)
+ <38m-31s> P2-nid001065: Xo@q[1] |###################                     | [048%] 01m-15s(E) 02m-34s(X)
+ <38m-36s> P2-nid001065: Xo@q[1] |####################                    | [051%] 01m-20s(E) 02m-36s(X)
+ <38m-41s> P2-nid001065: Xo@q[1] |#####################                   | [053%] 01m-25s(E) 02m-38s(X)
+ <38m-46s> P2-nid001065: Xo@q[1] |######################                  | [056%] 01m-30s(E) 02m-40s(X)
+ <38m-51s> P2-nid001065: Xo@q[1] |#######################                 | [058%] 01m-35s(E) 02m-42s(X)
+ <38m-56s> P2-nid001065: Xo@q[1] |########################                | [060%] 01m-40s(E) 02m-45s(X)
+ <39m-01s> P2-nid001065: Xo@q[1] |#########################               | [063%] 01m-45s(E) 02m-47s(X)
+ <39m-06s> P2-nid001065: Xo@q[1] |##########################              | [065%] 01m-50s(E) 02m-49s(X)
+ <39m-12s> P2-nid001065: Xo@q[1] |###########################             | [067%] 01m-55s(E) 02m-51s(X)
+ <39m-17s> P2-nid001065: Xo@q[1] |############################            | [070%] 02m-01s(E) 02m-53s(X)
+ <39m-23s> P2-nid001065: Xo@q[1] |#############################           | [072%] 02m-07s(E) 02m-55s(X)
+ <39m-29s> P2-nid001065: Xo@q[1] |##############################          | [075%] 02m-12s(E) 02m-57s(X)
+ <39m-35s> P2-nid001065: Xo@q[1] |###############################         | [077%] 02m-18s(E) 02m-59s(X)
+ <39m-41s> P2-nid001065: Xo@q[1] |################################        | [080%] 02m-24s(E) 03m-00s(X)
+ <39m-46s> P2-nid001065: Xo@q[1] |#################################       | [082%] 02m-30s(E) 03m-02s(X)
+ <39m-51s> P2-nid001065: Xo@q[1] |##################################      | [085%] 02m-35s(E) 03m-02s(X)
+ <39m-56s> P2-nid001065: Xo@q[1] |###################################     | [087%] 02m-40s(E) 03m-02s(X)
+ <40m-01s> P2-nid001065: Xo@q[1] |####################################    | [090%] 02m-45s(E) 03m-02s(X)
+ <40m-06s> P2-nid001065: Xo@q[1] |#####################################   | [093%] 02m-50s(E) 03m-01s(X)
+ <40m-11s> P2-nid001065: Xo@q[1] |####################################### | [098%] 02m-55s(E) 02m-58s(X)
+ <40m-13s> P2-nid001065: Xo@q[1] |########################################| [100%] 02m-56s(E) 02m-56s(X)
+ <40m-13s> P2-nid001065: [MEMORY]  Free X_par%blc_d( 2.178945 [Gb]) (DEV) TOTAL:  11.18753 [Gb] (traced)
+ <45m-15s> P2-nid001065: [LA] X compute_on_gpu : yes
+ <45m-15s> P2-nid001065: [PARALLEL distribution for X Frequencies on 352 CPU] Loaded/Total (Percentual):1/2(50%)
+ <45m-15s> P2-nid001065: X@q[1] |                                        | [000%] --(E) --(X)
+ <45m-25s> P2-nid001065: X@q[1] |########################################| [100%] 10s(E) 10s(X)
+ <45m-44s> P2-nid001065: [MEMORY]  Free M_par%blc( 2.178945 [Gb]) (HOST) TOTAL:  13.41267 [Gb] (traced)  1.983620 [Gb] (memstat)
+ <45m-45s> P2-nid001065: [MEMORY] Alloc X_par%blc( 2.178945 [Gb]) (HOST) TOTAL:  15.59161 [Gb] (traced)  1.983620 [Gb] (memstat)
+ <45m-46s> P2-nid001065: [MEMORY] Alloc X_par%blc_d( 2.178945 [Gb]) (DEV) TOTAL:  13.36647 [Gb] (traced)
+ <45m-46s> P2-nid001065: [PARALLEL distribution for RL vectors(X) on 1 CPU] Loaded/Total (Percentual):******/******(100%)
+ <45m-46s> P2-nid001065: [X-CG] R(p) Tot o/o(of R):    4744   74496     100
+ <45m-46s> P2-nid001065: Xo@q[2] |                                        | [000%] --(E) --(X)
+ <45m-51s> P2-nid001065: Xo@q[2] |##                                      | [005%] 05s(E) 01m-27s(X)
+ <45m-56s> P2-nid001065: Xo@q[2] |####                                    | [010%] 10s(E) 01m-35s(X)
+ <46m-01s> P2-nid001065: Xo@q[2] |#####                                   | [014%] 15s(E) 01m-42s(X)
+ <46m-06s> P2-nid001065: Xo@q[2] |#######                                 | [018%] 20s(E) 01m-49s(X)
+ <46m-11s> P2-nid001065: Xo@q[2] |########                                | [021%] 25s(E) 01m-55s(X)
+ <46m-16s> P2-nid001065: Xo@q[2] |#########                               | [024%] 30s(E) 02m-01s(X)
+ <46m-21s> P2-nid001065: Xo@q[2] |###########                             | [027%] 35s(E) 02m-06s(X)
+ <46m-26s> P2-nid001065: Xo@q[2] |############                            | [030%] 40s(E) 02m-11s(X)
+ <46m-31s> P2-nid001065: Xo@q[2] |#############                           | [033%] 45s(E) 02m-15s(X)
+ <46m-36s> P2-nid001065: Xo@q[2] |##############                          | [036%] 50s(E) 02m-18s(X)
+ <46m-41s> P2-nid001065: Xo@q[2] |###############                         | [039%] 55s(E) 02m-21s(X)
+ <46m-46s> P2-nid001065: Xo@q[2] |################                        | [041%] 01m-00s(E) 02m-23s(X)
+ <46m-51s> P2-nid001065: Xo@q[2] |#################                       | [044%] 01m-05s(E) 02m-26s(X)
+ <46m-56s> P2-nid001065: Xo@q[2] |##################                      | [047%] 01m-10s(E) 02m-28s(X)
+ <47m-01s> P2-nid001065: Xo@q[2] |###################                     | [049%] 01m-15s(E) 02m-30s(X)
+ <47m-06s> P2-nid001065: Xo@q[2] |#####################                   | [052%] 01m-20s(E) 02m-32s(X)
+ <47m-11s> P2-nid001065: Xo@q[2] |######################                  | [055%] 01m-25s(E) 02m-34s(X)
+ <47m-16s> P2-nid001065: Xo@q[2] |#######################                 | [057%] 01m-30s(E) 02m-36s(X)
+ <47m-21s> P2-nid001065: Xo@q[2] |########################                | [060%] 01m-35s(E) 02m-39s(X)
+ <47m-27s> P2-nid001065: Xo@q[2] |#########################               | [062%] 01m-40s(E) 02m-41s(X)
+ <47m-33s> P2-nid001065: Xo@q[2] |##########################              | [065%] 01m-46s(E) 02m-43s(X)
+ <47m-38s> P2-nid001065: Xo@q[2] |###########################             | [067%] 01m-52s(E) 02m-46s(X)
+ <47m-44s> P2-nid001065: Xo@q[2] |############################            | [070%] 01m-57s(E) 02m-47s(X)
+ <47m-49s> P2-nid001065: Xo@q[2] |#############################           | [072%] 02m-02s(E) 02m-49s(X)
+ <47m-54s> P2-nid001065: Xo@q[2] |##############################          | [075%] 02m-08s(E) 02m-51s(X)
+ <48m-00s> P2-nid001065: Xo@q[2] |###############################         | [077%] 02m-14s(E) 02m-53s(X)
+ <48m-06s> P2-nid001065: Xo@q[2] |################################        | [080%] 02m-19s(E) 02m-54s(X)
+ <48m-11s> P2-nid001065: Xo@q[2] |#################################       | [082%] 02m-25s(E) 02m-56s(X)
+ <48m-16s> P2-nid001065: Xo@q[2] |##################################      | [085%] 02m-30s(E) 02m-56s(X)
+ <48m-21s> P2-nid001065: Xo@q[2] |###################################     | [087%] 02m-35s(E) 02m-56s(X)
+ <48m-26s> P2-nid001065: Xo@q[2] |####################################    | [090%] 02m-40s(E) 02m-56s(X)
+ <48m-31s> P2-nid001065: Xo@q[2] |#####################################   | [094%] 02m-45s(E) 02m-55s(X)
+ <48m-36s> P2-nid001065: Xo@q[2] |####################################### | [099%] 02m-50s(E) 02m-51s(X)
+ <48m-37s> P2-nid001065: Xo@q[2] |########################################| [100%] 02m-50s(E) 02m-50s(X)
+ <48m-37s> P2-nid001065: [MEMORY]  Free X_par%blc_d( 2.178945 [Gb]) (DEV) TOTAL:  11.22940 [Gb] (traced)
+ <53m-43s> P2-nid001065: [LA] X compute_on_gpu : yes
+ <53m-43s> P2-nid001065: [PARALLEL distribution for X Frequencies on 352 CPU] Loaded/Total (Percentual):1/2(50%)
+ <53m-43s> P2-nid001065: X@q[2] |                                        | [000%] --(E) --(X)
+ <53m-54s> P2-nid001065: X@q[2] |########################################| [100%] 10s(E) 10s(X)
+ <54m-13s> P2-nid001065: [MEMORY]  Free M_par%blc( 2.178945 [Gb]) (HOST) TOTAL:  13.41267 [Gb] (traced)  2.012924 [Gb] (memstat)
+ <54m-14s> P2-nid001065: [MEMORY] Alloc X_par%blc( 2.178945 [Gb]) (HOST) TOTAL:  15.59162 [Gb] (traced)  2.012924 [Gb] (memstat)
+ <54m-14s> P2-nid001065: [MEMORY] Alloc X_par%blc_d( 2.178945 [Gb]) (DEV) TOTAL:  13.40834 [Gb] (traced)
+ <54m-14s> P2-nid001065: [PARALLEL distribution for RL vectors(X) on 1 CPU] Loaded/Total (Percentual):******/******(100%)
+ <54m-14s> P2-nid001065: [X-CG] R(p) Tot o/o(of R):    4738   74496     100
+ <54m-14s> P2-nid001065: Xo@q[3] |                                        | [000%] --(E) --(X)
+ <54m-19s> P2-nid001065: Xo@q[3] |##                                      | [005%] 05s(E) 01m-27s(X)
+ <54m-24s> P2-nid001065: Xo@q[3] |####                                    | [010%] 10s(E) 01m-35s(X)
+ <54m-29s> P2-nid001065: Xo@q[3] |#####                                   | [014%] 15s(E) 01m-42s(X)
+ <54m-34s> P2-nid001065: Xo@q[3] |#######                                 | [018%] 20s(E) 01m-49s(X)
+ <54m-39s> P2-nid001065: Xo@q[3] |########                                | [021%] 25s(E) 01m-55s(X)
+ <54m-44s> P2-nid001065: Xo@q[3] |#########                               | [024%] 30s(E) 02m-01s(X)
+ <54m-49s> P2-nid001065: Xo@q[3] |###########                             | [027%] 35s(E) 02m-06s(X)
+ <54m-55s> P2-nid001065: Xo@q[3] |############                            | [030%] 40s(E) 02m-11s(X)
+ <55m-00s> P2-nid001065: Xo@q[3] |#############                           | [033%] 45s(E) 02m-14s(X)
+ <55m-05s> P2-nid001065: Xo@q[3] |##############                          | [036%] 50s(E) 02m-18s(X)
+ <55m-10s> P2-nid001065: Xo@q[3] |###############                         | [039%] 55s(E) 02m-20s(X)
+ <55m-15s> P2-nid001065: Xo@q[3] |################                        | [041%] 01m-00s(E) 02m-23s(X)
+ <55m-20s> P2-nid001065: Xo@q[3] |#################                       | [044%] 01m-05s(E) 02m-26s(X)
+ <55m-25s> P2-nid001065: Xo@q[3] |##################                      | [047%] 01m-10s(E) 02m-28s(X)
+ <55m-30s> P2-nid001065: Xo@q[3] |####################                    | [050%] 01m-15s(E) 02m-30s(X)
+ <55m-35s> P2-nid001065: Xo@q[3] |#####################                   | [052%] 01m-20s(E) 02m-32s(X)
+ <55m-40s> P2-nid001065: Xo@q[3] |######################                  | [055%] 01m-25s(E) 02m-34s(X)
+ <55m-45s> P2-nid001065: Xo@q[3] |#######################                 | [057%] 01m-30s(E) 02m-36s(X)
+ <55m-50s> P2-nid001065: Xo@q[3] |########################                | [060%] 01m-35s(E) 02m-38s(X)
+ <55m-55s> P2-nid001065: Xo@q[3] |#########################               | [062%] 01m-40s(E) 02m-41s(X)
+ <56m-01s> P2-nid001065: Xo@q[3] |##########################              | [065%] 01m-46s(E) 02m-43s(X)
+ <56m-06s> P2-nid001065: Xo@q[3] |###########################             | [067%] 01m-51s(E) 02m-45s(X)
+ <56m-12s> P2-nid001065: Xo@q[3] |############################            | [070%] 01m-57s(E) 02m-47s(X)
+ <56m-17s> P2-nid001065: Xo@q[3] |#############################           | [072%] 02m-02s(E) 02m-49s(X)
+ <56m-23s> P2-nid001065: Xo@q[3] |##############################          | [075%] 02m-08s(E) 02m-50s(X)
+ <56m-28s> P2-nid001065: Xo@q[3] |###############################         | [077%] 02m-14s(E) 02m-52s(X)
+ <56m-34s> P2-nid001065: Xo@q[3] |################################        | [080%] 02m-19s(E) 02m-54s(X)
+ <56m-39s> P2-nid001065: Xo@q[3] |#################################       | [082%] 02m-24s(E) 02m-55s(X)
+ <56m-44s> P2-nid001065: Xo@q[3] |##################################      | [085%] 02m-29s(E) 02m-56s(X)
+ <56m-49s> P2-nid001065: Xo@q[3] |###################################     | [087%] 02m-35s(E) 02m-56s(X)
+ <56m-54s> P2-nid001065: Xo@q[3] |####################################    | [090%] 02m-40s(E) 02m-56s(X)
+ <56m-59s> P2-nid001065: Xo@q[3] |#####################################   | [094%] 02m-45s(E) 02m-54s(X)
+ <57m-04s> P2-nid001065: Xo@q[3] |####################################### | [099%] 02m-50s(E) 02m-51s(X)
+ <57m-05s> P2-nid001065: Xo@q[3] |########################################| [100%] 02m-50s(E) 02m-50s(X)
+ <57m-05s> P2-nid001065: [MEMORY]  Free X_par%blc_d( 2.178945 [Gb]) (DEV) TOTAL:  11.27127 [Gb] (traced)
+ <01h-02m> P2-nid001065: [LA] X compute_on_gpu : yes
+ <01h-02m> P2-nid001065: [PARALLEL distribution for X Frequencies on 352 CPU] Loaded/Total (Percentual):1/2(50%)
+ <01h-02m> P2-nid001065: X@q[3] |                                        | [000%] --(E) --(X)
+ <01h-02m> P2-nid001065: X@q[3] |########################################| [100%] 09s(E) 09s(X)
+ <01h-02m> P2-nid001065: [MEMORY]  Free M_par%blc( 2.178945 [Gb]) (HOST) TOTAL:  13.41267 [Gb] (traced)  2.012924 [Gb] (memstat)
+ <01h-02m> P2-nid001065: [MEMORY] Alloc X_par%blc( 2.178945 [Gb]) (HOST) TOTAL:  15.59162 [Gb] (traced)  2.012924 [Gb] (memstat)
+ <01h-02m> P2-nid001065: [MEMORY] Alloc X_par%blc_d( 2.178945 [Gb]) (DEV) TOTAL:  13.45021 [Gb] (traced)
+ <01h-02m> P2-nid001065: [PARALLEL distribution for RL vectors(X) on 1 CPU] Loaded/Total (Percentual):******/******(100%)
+ <01h-02m> P2-nid001065: [X-CG] R(p) Tot o/o(of R):    4757   74496     100
+ <01h-02m> P2-nid001065: Xo@q[4] |                                        | [000%] --(E) --(X)
+ <01h-02m> P2-nid001065: Xo@q[4] |##                                      | [005%] 05s(E) 01m-27s(X)
+ <01h-02m> P2-nid001065: Xo@q[4] |####                                    | [010%] 10s(E) 01m-35s(X)
+ <01h-02m> P2-nid001065: Xo@q[4] |#####                                   | [014%] 15s(E) 01m-42s(X)
+ <01h-03m> P2-nid001065: Xo@q[4] |#######                                 | [018%] 20s(E) 01m-49s(X)
+ <01h-03m> P2-nid001065: Xo@q[4] |########                                | [021%] 25s(E) 01m-55s(X)
+ <01h-03m> P2-nid001065: Xo@q[4] |#########                               | [024%] 30s(E) 02m-01s(X)
+ <01h-03m> P2-nid001065: Xo@q[4] |###########                             | [027%] 35s(E) 02m-06s(X)
+ <01h-03m> P2-nid001065: Xo@q[4] |############                            | [030%] 40s(E) 02m-11s(X)
+ <01h-03m> P2-nid001065: Xo@q[4] |#############                           | [033%] 45s(E) 02m-15s(X)
+ <01h-03m> P2-nid001065: Xo@q[4] |##############                          | [036%] 50s(E) 02m-18s(X)
+ <01h-03m> P2-nid001065: Xo@q[4] |###############                         | [039%] 55s(E) 02m-20s(X)
+ <01h-03m> P2-nid001065: Xo@q[4] |################                        | [041%] 01m-00s(E) 02m-23s(X)
+ <01h-03m> P2-nid001065: Xo@q[4] |#################                       | [044%] 01m-05s(E) 02m-26s(X)
+ <01h-03m> P2-nid001065: Xo@q[4] |##################                      | [047%] 01m-10s(E) 02m-28s(X)
+ <01h-03m> P2-nid001065: Xo@q[4] |###################                     | [049%] 01m-15s(E) 02m-30s(X)
+ <01h-04m> P2-nid001065: Xo@q[4] |#####################                   | [052%] 01m-20s(E) 02m-32s(X)
+ <01h-04m> P2-nid001065: Xo@q[4] |######################                  | [055%] 01m-25s(E) 02m-34s(X)
+ <01h-04m> P2-nid001065: Xo@q[4] |#######################                 | [057%] 01m-30s(E) 02m-36s(X)
+ <01h-04m> P2-nid001065: Xo@q[4] |########################                | [060%] 01m-35s(E) 02m-39s(X)
+ <01h-04m> P2-nid001065: Xo@q[4] |#########################               | [062%] 01m-40s(E) 02m-41s(X)
+ <01h-04m> P2-nid001065: Xo@q[4] |##########################              | [065%] 01m-46s(E) 02m-43s(X)
+ <01h-04m> P2-nid001065: Xo@q[4] |###########################             | [067%] 01m-52s(E) 02m-45s(X)
+ <01h-04m> P2-nid001065: Xo@q[4] |############################            | [070%] 01m-57s(E) 02m-47s(X)
+ <01h-04m> P2-nid001065: Xo@q[4] |#############################           | [072%] 02m-02s(E) 02m-49s(X)
+ <01h-04m> P2-nid001065: Xo@q[4] |##############################          | [075%] 02m-08s(E) 02m-51s(X)
+ <01h-04m> P2-nid001065: Xo@q[4] |###############################         | [077%] 02m-14s(E) 02m-53s(X)
+ <01h-05m> P2-nid001065: Xo@q[4] |################################        | [080%] 02m-19s(E) 02m-54s(X)
+ <01h-05m> P2-nid001065: Xo@q[4] |#################################       | [082%] 02m-25s(E) 02m-56s(X)
+ <01h-05m> P2-nid001065: Xo@q[4] |##################################      | [085%] 02m-30s(E) 02m-56s(X)
+ <01h-05m> P2-nid001065: Xo@q[4] |###################################     | [087%] 02m-35s(E) 02m-56s(X)
+ <01h-05m> P2-nid001065: Xo@q[4] |####################################    | [090%] 02m-40s(E) 02m-56s(X)
+ <01h-05m> P2-nid001065: Xo@q[4] |#####################################   | [094%] 02m-45s(E) 02m-55s(X)
+ <01h-05m> P2-nid001065: Xo@q[4] |####################################### | [099%] 02m-50s(E) 02m-52s(X)
+ <01h-05m> P2-nid001065: Xo@q[4] |########################################| [100%] 02m-51s(E) 02m-51s(X)
+ <01h-05m> P2-nid001065: [MEMORY]  Free X_par%blc_d( 2.178945 [Gb]) (DEV) TOTAL:  11.31313 [Gb] (traced)
+ <01h-10m> P2-nid001065: [LA] X compute_on_gpu : yes
+ <01h-10m> P2-nid001065: [PARALLEL distribution for X Frequencies on 352 CPU] Loaded/Total (Percentual):1/2(50%)
+ <01h-10m> P2-nid001065: X@q[4] |                                        | [000%] --(E) --(X)
+ <01h-10m> P2-nid001065: X@q[4] |########################################| [100%] 10s(E) 10s(X)
+ <01h-11m> P2-nid001065: [MEMORY]  Free M_par%blc( 2.178945 [Gb]) (HOST) TOTAL:  13.41268 [Gb] (traced)  2.012924 [Gb] (memstat)
+ <01h-11m> P2-nid001065: [MEMORY]  Free X_mat( 2.178945 [Gb]) (HOST) TOTAL:  11.23373 [Gb] (traced)  2.012924 [Gb] (memstat)
+ <01h-11m> P2-nid001065: [MEMORY]  Free WF%c( 10.95906 [Gb]) (HOST) TOTAL:  274.6740 [Mb] (traced)
+ <01h-11m> P2-nid001065: [MEMORY]  Free WF%c_d( 10.95906 [Gb]) (DEV) TOTAL:  354.0760 [Mb] (traced)
+ <01h-11m> P2-nid001065: [08] Local Exchange-Correlation + Non-Local Fock
+ <01h-11m> P2-nid001065: [PARALLEL Self_Energy for QPs on 1 CPU] Loaded/Total (Percentual):80/80(100%)
+ <01h-11m> P2-nid001065: [PARALLEL Self_Energy for Q(ibz) on 1 CPU] Loaded/Total (Percentual):4/4(100%)
+ <01h-11m> P2-nid001065: [PARALLEL Self_Energy for G bands on 352 CPU] Loaded/Total (Percentual):3/777(0%)
+ <01h-11m> P2-nid001065: [MEMORY] Alloc WF%c( 5.845749 [Gb]) (HOST) TOTAL:  6.569186 [Gb] (traced)
+ <01h-11m> P2-nid001065: [MEMORY] Alloc WF%c_d( 5.845749 [Gb]) (DEV) TOTAL:  6.758662 [Gb] (traced)
+ <01h-11m> P2-nid001065: [PARALLEL distribution for Wave-Function states] Loaded/Total(Percentual):104/6216(2%)
+ <01h-11m> P2-nid001065: [FFT-HF/Rho] Mesh size:   138   152   343
+ <01h-11m> P2-nid001065: [WF] Copying WF data from GPU device
+ <01h-11m> P2-nid001065: EXS |                                        | [000%] --(E) --(X)
+ <01h-11m> P2-nid001065: EXS |########################################| [100%] 04s(E) 04s(X)
+ <01h-11m> P2-nid001065: [xc] Functional : Perdew, Burke & Ernzerhof(X)+Perdew, Burke & Ernzerhof(C)
+ <01h-11m> P2-nid001065: [xc] LIBXC used to calculate xc functional
+ <01h-11m> P2-nid001065: [MEMORY]  Free WF%c( 5.845749 [Gb]) (HOST) TOTAL:  779.6700 [Mb] (traced)
+ <01h-11m> P2-nid001065: [MEMORY]  Free WF%c_d( 5.845749 [Gb]) (DEV) TOTAL:  913.0780 [Mb] (traced)
+ <01h-11m> P2-nid001065: [08.01] Hartree-Fock occupations report
+ <01h-11m> P2-nid001065: [09] Dyson equation: Newton solver
+ <01h-11m> P2-nid001065: [09.01] RIM-W interpolation
+ <01h-11m> P2-nid001065: [WARNING] RIM-W works only for 2D semiconductors with slab cutoff
+ <01h-11m> P2-nid001065: [09.02] RIM-W integrals
+ <01h-11m> P2-nid001065: Random points |                                        | [000%] --(E) --(X)
+ <01h-11m> P2-nid001065: Random points |########################################| [100%] 02s(E) 02s(X)
+ <01h-11m> P2-nid001065: [09.03] RIM integrals
+ <01h-11m> P2-nid001065: Momenta loop |                                        | [000%] --(E) --(X)
+ <01h-12m> P2-nid001065: Momenta loop |########################################| [100%] 29s(E) 29s(X)
+ <01h-12m> P2-nid001065: [10] G0W0 (W PPA)
+ <01h-12m> P2-nid001065: [PARALLEL Self_Energy for QPs on 1 CPU] Loaded/Total (Percentual):80/80(100%)
+ <01h-12m> P2-nid001065: [PARALLEL Self_Energy for Q(ibz) on 1 CPU] Loaded/Total (Percentual):4/4(100%)
+ <01h-12m> P2-nid001065: [PARALLEL Self_Energy for G bands on 352 CPU] Loaded/Total (Percentual):15/5000(0%)
+ <01h-12m> P2-nid001065: [MEMORY] Alloc WF%c( 1.419567 [Gb]) (HOST) TOTAL:  1.750541 [Gb] (traced)
+ <01h-12m> P2-nid001065: [MEMORY] Alloc WF%c_d( 1.419567 [Gb]) (DEV) TOTAL:  2.442530 [Gb] (traced)
+ <01h-12m> P2-nid001065: [PARALLEL distribution for Wave-Function states] Loaded/Total(Percentual):200/40000(1%)
+ <01h-12m> P2-nid001065: [FFT-GW] Mesh size:   69   77  171
+ <01h-12m> P2-nid001065: [WF] Copying WF data from GPU device
+ <01h-12m> P2-nid001065: [MEMORY] Alloc X_mat( 2.178945 [Gb]) (HOST) TOTAL:  5.076076 [Gb] (traced)  1.982356 [Gb] (memstat)
+ <01h-12m> P2-nid001065: G0W0 (W PPA) |                                        | [000%] --(E) --(X)
+ <01h-12m> P2-nid001065: G0W0 (W PPA) |#                                       | [002%] 10s(E) 07m-10s(X)
+ <01h-12m> P2-nid001065: G0W0 (W PPA) |####                                    | [010%] 15s(E) 02m-24s(X)
+ <01h-12m> P2-nid001065: G0W0 (W PPA) |#######                                 | [019%] 20s(E) 01m-47s(X)
+ <01h-13m> P2-nid001065: G0W0 (W PPA) |##########                              | [025%] 32s(E) 02m-09s(X)
+ <01h-13m> P2-nid001065: G0W0 (W PPA) |#############                           | [033%] 37s(E) 01m-51s(X)
+ <01h-13m> P2-nid001065: G0W0 (W PPA) |################                        | [041%] 42s(E) 01m-41s(X)
+ <01h-13m> P2-nid001065: G0W0 (W PPA) |####################                    | [050%] 54s(E) 01m-49s(X)
+ <01h-13m> P2-nid001065: G0W0 (W PPA) |#######################                 | [058%] 59s(E) 01m-42s(X)
+ <01h-13m> P2-nid001065: G0W0 (W PPA) |##########################              | [066%] 01m-04s(E) 01m-36s(X)
+ <01h-13m> P2-nid001065: G0W0 (W PPA) |##############################          | [075%] 01m-16s(E) 01m-42s(X)
+ <01h-13m> P2-nid001065: G0W0 (W PPA) |#################################       | [083%] 01m-21s(E) 01m-38s(X)
+ <01h-14m> P2-nid001065: G0W0 (W PPA) |####################################    | [091%] 01m-26s(E) 01m-34s(X)
+ <01h-14m> P2-nid001065: G0W0 (W PPA) |########################################| [100%] 01m-31s(E) 01m-31s(X)
+ <01h-14m> P2-nid001065: [MEMORY]  Free X_mat( 2.178945 [Gb]) (HOST) TOTAL:  2.897135 [Gb] (traced)  1.982356 [Gb] (memstat)
+ <01h-14m> P2-nid001065: [MEMORY]  Free WF%c( 1.419567 [Gb]) (HOST) TOTAL:  1.477568 [Gb] (traced)
+ <01h-14m> P2-nid001065: [MEMORY]  Free WF%c_d( 1.419567 [Gb]) (DEV) TOTAL:  2.169397 [Gb] (traced)
+ <01h-14m> P2-nid001065: [11] QP properties and I/O
+ <01h-14m> P2-nid001065: [12] Timing Overview
+ <01h-14m> P2-nid001065: [TIMING]                               io_ATMPROJ_pwscf :      0.0001s CPU
+ <01h-14m> P2-nid001065: [TIMING]                                   io_KB_abinit :      0.0001s CPU
+ <01h-14m> P2-nid001065: [TIMING]                                          io_BS :      0.0006s CPU (  4 calls,   0.160 msec avg)
+ <01h-14m> P2-nid001065: [TIMING]                        IO_and_Messaging_switch :      0.0009s CPU ( 42 calls,   0.021 msec avg)
+ <01h-14m> P2-nid001065: [TIMING]                                   PP_uspp_init :      0.0012s CPU ( 11 calls,   0.106 msec avg)
+ <01h-14m> P2-nid001065: [TIMING]                                 io_Double_Grid :      0.0027s CPU
+ <01h-14m> P2-nid001065: [TIMING]                               scatter_Gamp_gpu :      0.0047s CPU (324 calls,   0.015 msec avg)
+ <01h-14m> P2-nid001065: [TIMING]                                       io_QINDX :      0.0059s CPU (  2 calls,   2.964 msec avg)
+ <01h-14m> P2-nid001065: [TIMING]                                          io_HF :      0.0086s CPU (  3 calls,   2.870 msec avg)
+ <01h-14m> P2-nid001065: [TIMING]                                     io_COL_CUT :      0.0097s CPU (  4 calls,   2.427 msec avg)
+ <01h-14m> P2-nid001065: [TIMING]                                        io_GROT :      0.0601s CPU (  2 calls,  30.059 msec avg)
+ <01h-14m> P2-nid001065: [TIMING]                                 Coulomb Cutoff :      0.0860s CPU
+ <01h-14m> P2-nid001065: [TIMING]                                    io_fragment :      0.8194s CPU ( 57 calls,  14.375 msec avg)
+ <01h-14m> P2-nid001065: [TIMING]                                      HF(REDUX) :      0.9889s CPU
+ <01h-14m> P2-nid001065: [TIMING]                                      FFT_setup :      1.4874s CPU (  6 calls,   0.248 sec avg)
+ <01h-14m> P2-nid001065: [TIMING]                                    io_KB_pwscf :      1.5617s CPU ( 10 calls,   0.156 sec avg)
+ <01h-14m> P2-nid001065: [TIMING]                                      GW(REDUX) :      2.0352s CPU
+ <01h-14m> P2-nid001065: [TIMING]                                    RIM-W-coeff :      2.5675s CPU
+ <01h-14m> P2-nid001065: [TIMING]                                     io_DIPOLES :      3.0174s CPU ( 12 calls,   0.251 sec avg)
+ <01h-14m> P2-nid001065: [TIMING]                                             HF :      4.1049s CPU
+ <01h-14m> P2-nid001065: [TIMING]                          SERIAL_lin_system_gpu :      4.9227s CPU (  4 calls,   1.231 sec avg)
+ <01h-14m> P2-nid001065: [TIMING]                                 LINEAR ALGEBRA :      4.9228s CPU (  4 calls,   1.231 sec avg)
+ <01h-14m> P2-nid001065: [TIMING]     MATRIX transfer (X_G_finite_q_X_redux_1_1) :      7.5324s CPU (  4 calls,   1.883 sec avg)
+ <01h-14m> P2-nid001065: [TIMING]                                          io_WF :      7.6637s CPU ( 55 calls,   0.139 sec avg)
+ <01h-14m> P2-nid001065: [TIMING]     MATRIX transfer (X_G_finite_q_X_redux_2_1) :      8.5035s CPU (  4 calls,   2.126 sec avg)
+ <01h-14m> P2-nid001065: [TIMING]                                            RIM :      8.8149s CPU
+ <01h-14m> P2-nid001065: [TIMING]                                           io_X :      9.7636s CPU ( 20 calls,   0.488 sec avg)
+ <01h-14m> P2-nid001065: [TIMING]     MATRIX transfer (X_G_finite_q_X_redux_2_2) :     10.1112s CPU (  4 calls,   2.528 sec avg)
+ <01h-14m> P2-nid001065: [TIMING]     MATRIX transfer (X_G_finite_q_X_redux_1_2) :     10.4321s CPU (  4 calls,   2.608 sec avg)
+ <01h-14m> P2-nid001065: [TIMING]                                    WF_load_FFT :     15.9900s CPU ( 11 calls,   1.454 sec avg)
+ <01h-14m> P2-nid001065: [TIMING]                                          RIM-W :     32.3951s CPU
+ <01h-14m> P2-nid001065: [TIMING]                            XC_potential_driver :     34.9270s CPU (  2 calls,  17.463 sec avg)
+ <01h-14m> P2-nid001065: [TIMING]                                      XCo_local :     36.4481s CPU
+ <01h-14m> P2-nid001065: [TIMING]                                      X (REDUX) :     36.6761s CPU (  4 calls,   9.169 sec avg)
+ <01h-14m> P2-nid001065: [TIMING]                                  X (procedure) :     42.7330s CPU (  4 calls,  10.683 sec avg)
+ <01h-14m> P2-nid001065: [TIMING]                                        GW(ppa) :     95.1439s CPU
+ <01h-14m> P2-nid001065: [TIMING]                                 Xo (procedure) :      11m-30s CPU (  4 calls, 172.690 sec avg)
+ <01h-14m> P2-nid001065: [TIMING]                                     Xo (REDUX) :      20m-10s CPU (  4 calls, 302.742 sec avg)
+ <01h-14m> P2-nid001065: [TIMING]                              DIPOLE_transverse :      31m-27s CPU
+ <01h-14m> P2-nid001065: [TIMING]                                        Dipoles :      36m-48s CPU
+ <01h-14m> P2-nid001065: [13] Memory Overview
+ <01h-14m> P2-nid001065: [14] Game Over & Game summary
+ <01h-14m> P2-nid001065: [TIMING]            [Time-Profile]: 01h-14m

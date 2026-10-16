@@ -1,0 +1,60 @@
+#                                                          
+#  __  __   ________   ___ __ __    _______   ______       
+# /_/\/_/\ /_______/\ /__//_//_/\ /_______/\ /_____/\      
+# \ \ \ \ \\::: _  \ \\::\| \| \ \\::: _  \ \\:::_ \ \     
+#  \:\_\ \ \\::(_)  \ \\:.      \ \\::(_)  \/_\:\ \ \ \    
+#   \::::_\/ \:: __  \ \\:.\-/\  \ \\::  _  \ \\:\ \ \ \   
+#     \::\ \  \:.\ \  \ \\. \  \  \ \\::(_)  \ \\:\_\ \ \  
+#      \__\/   \__\/\__\/ \__\/ \__\/ \_______\/ \_____\/  
+#                                                          
+#                                                          
+# Version 5.1.0 Revision 21128 Hash (prev commit) c8bb0e2bd
+#                   Branch is devel-SLK                    
+#             MPI+CUDA+SLK+HDF5_MPI_IO Build               
+#                http://www.yambo-code.org                 
+#
+optics                           # [R] Linear Response optical properties
+rim_cut                          # [R] Coulomb potential
+RIM_W
+bss                              # [R] BSE solver
+bse                              # [R][BSE] Bethe Salpeter Equation.
+dipoles                          # [R] Oscillator strenghts (or dipoles)
+NLogCPUs=0                       # [PARALLEL] Live-timing CPU`s (0 for all)
+PAR_def_mode= "balanced"         # [PARALLEL] Default distribution mode ("balanced"/"memory"/"workload")
+DIP_CPU= "4 9 4"                # [PARALLEL] CPUs for each role
+DIP_ROLEs= "k c v"               # [PARALLEL] CPUs roles (k,c,v)
+BS_CPU= "4 4 9"                 # [PARALLEL] CPUs for each role
+BS_ROLEs= "k eh t"               # [PARALLEL] CPUs roles (k,eh,t)
+BS_nCPU_LinAlg_INV=-1            # [PARALLEL] CPUs for Linear Algebra (if -1 it is automatically set)
+BS_nCPU_LinAlg_DIAGO=144          # [PARALLEL] CPUs for Linear Algebra (if -1 it is automatically set)
+RandQpts=3000000                 # [RIM] Number of random q-points in the BZ
+RandGvec= 103             RL     # [RIM] Coulomb interaction RS components
+RandGvecW= 49             RL
+CUTGeo= "slab z"                 # [CUT] Coulomb Cutoff geometry: box/cylinder/sphere/ws/slab X/Y/Z/XY..
+BSEmod= "resonant"               # [BSE] resonant/retarded/coupling
+BSKmod= "SEX"                    # [BSE] IP/Hartree/HF/ALDA/SEX/BSfxc
+BSSmod= "h"                      # [BSS] (h)aydock/(d)iagonalization/(s)lepc/(i)nversion/(t)ddft`
+BSENGexx= 11809         RL    # [BSK] Exchange components
+BSENGBlk=  2               Ry    # [BSK] Screened interaction block size [if -1 uses all the G-vectors of W(q,G,Gp)]
+KfnQPdb= "E < bse_716v-1008c_36nodes.out/ndb.QP"    # [EXTQP BSK BSS] Database action
+#WehCpl                          # [BSK] eh interaction included also in coupling
+BSEprop= "abs"                   # [BSS] Can be any among abs/jdos/kerr/magn/dich/photolum/esrt
+BSEdips= "none"                  # [BSS] Can be "trace/none" or "xy/xz/yz" to define off-diagonal rotation plane
+% BSEQptR
+ 1 | 1 |                         # [BSK] Transferred momenta range
+%
+% BSEBands
+   716 | 1008 |                   # [BSK] Bands range
+%
+% BEnRange
+  0.00000 | 8.00000 |      eV    # [BSS] Energy range
+%
+% BDmRange
+ 0.100000 | 0.100000 |     eV    # [BSS] Damping range
+%
+BEnSteps= 600                    # [BSS] Energy steps
+% BLongDir
+ 1.0000 | 0.0000 | 0.0000 |      # [BSS] [cc] Electric Field
+%
+BSHayTrs= 0.001
+WRbsWF                           # [BSS] Write to disk excitonic the WFs

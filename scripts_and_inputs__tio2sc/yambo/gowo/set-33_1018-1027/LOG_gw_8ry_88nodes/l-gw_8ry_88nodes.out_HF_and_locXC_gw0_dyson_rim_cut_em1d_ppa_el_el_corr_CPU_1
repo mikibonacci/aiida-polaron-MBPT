@@ -1,0 +1,119 @@
+
+
+
+_|      _|   _|_|   _|      _|  _|_|_|     _|_|
+  _|  _|   _|    _| _|_|  _|_| _|    _| _|    _|
+    _|     _|_|_|_| _|  _|  _| _|_|_|   _|    _|
+    _|     _|    _| _|      _| _|    _| _|    _|
+    _|     _|    _| _|      _| _|_|_|     _|_|
+
+
+
+ <---> P1: [01] MPI/OPENMP structure, Files & I/O Directories
+ <---> P1-nid001065: MPI Cores-Threads   : 352(CPU)-1(threads)-1(threads@X)-1(threads@DIP)-1(threads@SE)-1(threads@RT)-1(threads@K)-1(threads@NL)
+ <---> P1-nid001065: MPI Cores-Threads   : DIP(environment)-1 44 8(CPUs)-k c v(ROLEs)
+ <---> P1-nid001065: MPI Cores-Threads   : X_and_IO(environment)-1 1 1 44 8(CPUs)-q g k c v(ROLEs)
+ <---> P1-nid001065: MPI Cores-Threads   : SE(environment)-1 1 1 352(CPUs)-q g qp b(ROLEs)
+ <---> P1-nid001065: MPI assigned to GPU : 0
+ <---> P1-nid001065: [02] CORE Variables Setup
+ <---> P1-nid001065: [02.01] Unit cells
+ <02s> P1-nid001065: [02.02] Symmetries
+ <02s> P1-nid001065: [02.03] Reciprocal space
+ <02s> P1-nid001065: [02.04] K-grid lattice
+ <02s> P1-nid001065: Grid dimensions      :  2  2
+ <02s> P1-nid001065: [02.05] Energies & Occupations
+ <02s> P1-nid001065: [03] Transferred momenta grid and indexing
+ <03s> P1-nid001065: [04] Coloumb potential Random Integration (RIM)
+ <03s> P1-nid001065: [05] Coloumb potential CutOff slab z
+ <03s> P1-nid001065: [06] Dipoles
+ <03s> P1-nid001065: [PARALLEL DIPOLES for K(ibz) on 1 CPU] Loaded/Total (Percentual):4/4(100%)
+ <03s> P1-nid001065: [PARALLEL DIPOLES for CON bands on 44 CPU] Loaded/Total (Percentual):96/4223(2%)
+ <03s> P1-nid001065: [PARALLEL DIPOLES for VAL bands on 8 CPU] Loaded/Total (Percentual):98/777(13%)
+ <03s> P1-nid001065: [07] Dynamic Dielectric Matrix (PPA)
+ <03s> P1-nid001065: Loading the dielectric function |                                        | [000%] --(E) --(X)
+ <03s> P1-nid001065: Loading the dielectric function |########################################| [100%] --(E) --(X)
+ <03s> P1-nid001065: [08] Local Exchange-Correlation + Non-Local Fock
+ <03s> P1-nid001065: [PARALLEL Self_Energy for QPs on 1 CPU] Loaded/Total (Percentual):80/80(100%)
+ <03s> P1-nid001065: [PARALLEL Self_Energy for Q(ibz) on 1 CPU] Loaded/Total (Percentual):4/4(100%)
+ <03s> P1-nid001065: [PARALLEL Self_Energy for G bands on 352 CPU] Loaded/Total (Percentual):3/1027(0%)
+ <06s> P1-nid001065: [MEMORY] Alloc WF%c( 5.845749 [Gb]) (HOST) TOTAL:  6.569136 [Gb] (traced)
+ <06s> P1-nid001065: [MEMORY] Alloc WF%c_d( 5.845749 [Gb]) (DEV) TOTAL:  6.523217 [Gb] (traced)
+ <06s> P1-nid001065: [PARALLEL distribution for Wave-Function states] Loaded/Total(Percentual):104/8216(1%)
+ <07s> P1-nid001065: [FFT-HF/Rho] Mesh size:   138   152   343
+ <08s> P1-nid001065: [WF] Copying WF data from GPU device
+ <09s> P1-nid001065: EXS |                                        | [000%] --(E) --(X)
+ <13s> P1-nid001065: EXS |########################################| [100%] 04s(E) 04s(X)
+ <13s> P1-nid001065: [xc] Functional : Perdew, Burke & Ernzerhof(X)+Perdew, Burke & Ernzerhof(C)
+ <13s> P1-nid001065: [xc] LIBXC used to calculate xc functional
+ <45s> P1-nid001065: [MEMORY]  Free WF%c( 5.845749 [Gb]) (HOST) TOTAL:  779.6280 [Mb] (traced)
+ <45s> P1-nid001065: [MEMORY]  Free WF%c_d( 5.845749 [Gb]) (DEV) TOTAL:  677.6330 [Mb] (traced)
+ <45s> P1-nid001065: [08.01] Hartree-Fock occupations report
+ <45s> P1-nid001065: [09] Dyson equation: Newton solver
+ <45s> P1-nid001065: [09.01] RIM-W interpolation
+ <45s> P1-nid001065: [WARNING] RIM-W works only for 2D semiconductors with slab cutoff
+ <45s> P1-nid001065: [09.02] RIM-W integrals
+ <45s> P1-nid001065: Random points |                                        | [000%] --(E) --(X)
+ <47s> P1-nid001065: Random points |########################################| [100%] 02s(E) 02s(X)
+ <48s> P1-nid001065: [09.03] RIM integrals
+ <48s> P1-nid001065: Momenta loop |                                        | [000%] --(E) --(X)
+ <01m-15s> P1-nid001065: Momenta loop |########################################| [100%] 26s(E) 26s(X)
+ <01m-15s> P1-nid001065: [10] G0W0 (W PPA)
+ <01m-15s> P1-nid001065: [PARALLEL Self_Energy for QPs on 1 CPU] Loaded/Total (Percentual):80/80(100%)
+ <01m-15s> P1-nid001065: [PARALLEL Self_Energy for Q(ibz) on 1 CPU] Loaded/Total (Percentual):4/4(100%)
+ <01m-15s> P1-nid001065: [PARALLEL Self_Energy for G bands on 352 CPU] Loaded/Total (Percentual):15/5000(0%)
+ <01m-20s> P1-nid001065: [MEMORY] Alloc WF%c( 1.419567 [Gb]) (HOST) TOTAL:  1.750478 [Gb] (traced)  1.887892 [Gb] (memstat)
+ <01m-20s> P1-nid001065: [MEMORY] Alloc WF%c_d( 1.419567 [Gb]) (DEV) TOTAL:  2.207085 [Gb] (traced)
+ <01m-20s> P1-nid001065: [PARALLEL distribution for Wave-Function states] Loaded/Total(Percentual):200/40000(1%)
+ <01m-21s> P1-nid001065: [FFT-GW] Mesh size:   69   77  171
+ <01m-21s> P1-nid001065: [WF] Copying WF data from GPU device
+ <01m-21s> P1-nid001065: [MEMORY] Alloc X_mat( 2.178945 [Gb]) (HOST) TOTAL:  5.076013 [Gb] (traced)  1.019884 [Gb] (memstat)
+ <01m-24s> P1-nid001065: G0W0 (W PPA) |                                        | [000%] --(E) --(X)
+ <01m-32s> P1-nid001065: G0W0 (W PPA) |#                                       | [002%] 07s(E) 05m-19s(X)
+ <01m-37s> P1-nid001065: G0W0 (W PPA) |####                                    | [010%] 12s(E) 01m-59s(X)
+ <01m-42s> P1-nid001065: G0W0 (W PPA) |#######                                 | [019%] 17s(E) 01m-33s(X)
+ <01m-52s> P1-nid001065: G0W0 (W PPA) |##########                              | [025%] 27s(E) 01m-51s(X)
+ <01m-57s> P1-nid001065: G0W0 (W PPA) |#############                           | [033%] 32s(E) 01m-38s(X)
+ <02m-02s> P1-nid001065: G0W0 (W PPA) |################                        | [041%] 37s(E) 01m-30s(X)
+ <02m-13s> P1-nid001065: G0W0 (W PPA) |####################                    | [050%] 49s(E) 01m-38s(X)
+ <02m-18s> P1-nid001065: G0W0 (W PPA) |#######################                 | [058%] 54s(E) 01m-32s(X)
+ <02m-23s> P1-nid001065: G0W0 (W PPA) |##########################              | [066%] 59s(E) 01m-28s(X)
+ <02m-35s> P1-nid001065: G0W0 (W PPA) |##############################          | [075%] 01m-10s(E) 01m-34s(X)
+ <02m-40s> P1-nid001065: G0W0 (W PPA) |#################################       | [083%] 01m-15s(E) 01m-30s(X)
+ <02m-45s> P1-nid001065: G0W0 (W PPA) |####################################    | [091%] 01m-20s(E) 01m-27s(X)
+ <02m-50s> P1-nid001065: G0W0 (W PPA) |########################################| [100%] 01m-25s(E) 01m-25s(X)
+ <02m-50s> P1-nid001065: [MEMORY]  Free X_mat( 2.178945 [Gb]) (HOST) TOTAL:  2.897072 [Gb] (traced)  1.019884 [Gb] (memstat)
+ <02m-50s> P1-nid001065: [MEMORY]  Free WF%c( 1.419567 [Gb]) (HOST) TOTAL:  1.477505 [Gb] (traced)
+ <02m-50s> P1-nid001065: [MEMORY]  Free WF%c_d( 1.419567 [Gb]) (DEV) TOTAL:  1.933952 [Gb] (traced)
+ <02m-50s> P1-nid001065: [11] QP properties and I/O
+ <02m-51s> P1-nid001065: [12] Timing Overview
+ <02m-51s> P1-nid001065: [TIMING]            io_ATMPROJ_pwscf :      0.0000s CPU
+ <02m-51s> P1-nid001065: [TIMING]                io_KB_abinit :      0.0000s CPU
+ <02m-51s> P1-nid001065: [TIMING]     IO_and_Messaging_switch :      0.0001s CPU (  8 calls,   0.018 msec avg)
+ <02m-51s> P1-nid001065: [TIMING]                PP_uspp_init :      0.0002s CPU (  2 calls,   0.118 msec avg)
+ <02m-51s> P1-nid001065: [TIMING]                 io_KB_pwscf :      0.0021s CPU
+ <02m-51s> P1-nid001065: [TIMING]              io_Double_Grid :      0.0030s CPU
+ <02m-51s> P1-nid001065: [TIMING]            scatter_Gamp_gpu :      0.0038s CPU (324 calls,   0.012 msec avg)
+ <02m-51s> P1-nid001065: [TIMING]                       io_BS :      0.0043s CPU (  4 calls,   1.069 msec avg)
+ <02m-51s> P1-nid001065: [TIMING]                    io_QINDX :      0.0052s CPU (  2 calls,   2.605 msec avg)
+ <02m-51s> P1-nid001065: [TIMING]                  io_DIPOLES :      0.0059s CPU (  2 calls,   2.948 msec avg)
+ <02m-51s> P1-nid001065: [TIMING]                  io_COL_CUT :      0.0089s CPU (  3 calls,   2.963 msec avg)
+ <02m-51s> P1-nid001065: [TIMING]                io_QP_and_GF :      0.0120s CPU
+ <02m-51s> P1-nid001065: [TIMING]                 io_fragment :      0.0232s CPU ( 30 calls,   0.773 msec avg)
+ <02m-51s> P1-nid001065: [TIMING]                     Dipoles :      0.0245s CPU
+ <02m-51s> P1-nid001065: [TIMING]                       io_HF :      0.0251s CPU (  3 calls,   8.362 msec avg)
+ <02m-51s> P1-nid001065: [TIMING]                 RIM-W-coeff :      0.0494s CPU
+ <02m-51s> P1-nid001065: [TIMING]                     io_GROT :      0.0510s CPU (  2 calls,  25.499 msec avg)
+ <02m-51s> P1-nid001065: [TIMING]                   HF(REDUX) :      0.2834s CPU
+ <02m-51s> P1-nid001065: [TIMING]                       io_WF :      0.4725s CPU ( 21 calls,  22.498 msec avg)
+ <02m-51s> P1-nid001065: [TIMING]                   GW(REDUX) :      0.9442s CPU
+ <02m-51s> P1-nid001065: [TIMING]                   FFT_setup :      0.9511s CPU (  2 calls, 475.555 msec avg)
+ <02m-51s> P1-nid001065: [TIMING]                        io_X :      1.0997s CPU ( 19 calls,   0.058 sec avg)
+ <02m-51s> P1-nid001065: [TIMING]                 WF_load_FFT :      1.2484s CPU (  2 calls,   0.624 sec avg)
+ <02m-51s> P1-nid001065: [TIMING]                          HF :      4.1040s CPU
+ <02m-51s> P1-nid001065: [TIMING]                       RIM-W :     29.2157s CPU
+ <02m-51s> P1-nid001065: [TIMING]         XC_potential_driver :     31.3460s CPU (  2 calls,  15.673 sec avg)
+ <02m-51s> P1-nid001065: [TIMING]                   XCo_local :     32.1203s CPU
+ <02m-51s> P1-nid001065: [TIMING]                     GW(ppa) :     88.5515s CPU
+ <02m-51s> P1-nid001065: [13] Memory Overview
+ <02m-51s> P1-nid001065: [14] Game Over & Game summary
+ <02m-51s> P1-nid001065: [TIMING]            [Time-Profile]: 02m-51s

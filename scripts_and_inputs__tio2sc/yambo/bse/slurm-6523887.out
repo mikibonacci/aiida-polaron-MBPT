@@ -1,0 +1,173 @@
++ '[' -z '' ']'
++ case "$-" in
++ __lmod_vx=x
++ '[' -n x ']'
++ set +x
+Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for this output (/opt/cray/pe/lmod/lmod/init/bash)
+Shell debugging restarted
++ unset __lmod_vx
++ nodes=36
++ ntasks=144
++ nthreads=32
++ ntasks_per_node=4
++ npe=8
++ all_the_same=0
++ with_haydock=1
++ out_dir_required=0
++ yambo_504=0
++ yambo_slk=0
++ yambo_51=1
++ ntasks_manual=0
++ check_original_dip_database=1
++ take_rim_database=0
++ path_rim_database=
++ take_dip_database=0
++ path_dip_database=
++ path_db=/global/homes/s/slaricch/scratch/4x2sc_2oh/ti150_ti148_1fl/2x2x1-kmesh_90ry/pbe_on-top_pbe+u/yambo_no-nscf-smearing/production
++ module load PrgEnv-nvidia/8.3.3
++ '[' -z '' ']'
++ case "$-" in
++ __lmod_sh_dbg=x
++ '[' -n x ']'
++ set +x
+Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+
+Lmod is automatically replacing "gcc/11.2.0" with "nvidia/22.7".
+
+
+Lmod is automatically replacing "PrgEnv-gnu/8.3.3" with "PrgEnv-nvidia/8.3.3".
+
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) cray-mpich/8.1.24
+
+Shell debugging restarted
++ unset __lmod_sh_dbg
++ return 0
++ module load cudatoolkit/11.7
++ '[' -z '' ']'
++ case "$-" in
++ __lmod_sh_dbg=x
++ '[' -n x ']'
++ set +x
+Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+Shell debugging restarted
++ unset __lmod_sh_dbg
++ return 0
++ module load craype-accel-nvidia80
++ '[' -z '' ']'
++ case "$-" in
++ __lmod_sh_dbg=x
++ '[' -n x ']'
++ set +x
+Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+Shell debugging restarted
++ unset __lmod_sh_dbg
++ return 0
++ [[ 0 -eq 1 ]]
++ [[ 0 -eq 1 ]]
++ [[ 1 -eq 1 ]]
++ p=/global/homes/s/slaricch/software/yambo-devel/yambo-5.1/bin
++ export PATH=/global/homes/s/slaricch/software/yambo-devel/yambo-5.1/bin:/global/common/software/nersc/pm-2021q4/easybuild/software/Nsight-Systems/2022.2.1:/global/common/software/nersc/pm-2021q4/easybuild/software/Nsight-Systems/2022.2.1/bin:/global/common/software/nersc/pm-2021q4/easybuild/software/Nsight-Compute/2022.1.1:/opt/nvidia/hpc_sdk/Linux_x86_64/22.5/cuda/11.7/bin:/opt/nvidia/hpc_sdk/Linux_x86_64/22.5/cuda/11.7/libnvvp:/opt/nvidia/hpc_sdk/Linux_x86_64/22.5/profilers/Nsight_Compute:/opt/nvidia/hpc_sdk/Linux_x86_64/22.5/profilers/Nsight_Systems/bin:/opt/cray/pe/mpich/8.1.24/ofi/nvidia/20.7/bin:/opt/cray/pe/mpich/8.1.24/bin:/opt/cray/pe/craype/2.7.19/bin:/opt/nvidia/hpc_sdk/Linux_x86_64/22.7/compilers/extras/qd/bin:/opt/nvidia/hpc_sdk/Linux_x86_64/22.7/compilers/bin:/global/common/software/m3995/bin:/global/common/software/nersc/pm-2022q2/spack/cray-sles15-zen3/parallel-20210922-tnoqwvk/bin:/global/homes/s/slaricch/.local/bin:/global/homes/s/slaricch/bin:/global/common/software/nersc/bin:/opt/cray/pe/perftools/23.02.0/bin:/opt/cray/pe/papi/7.0.0.1/bin:/opt/cray/libfabric/1.15.2.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/lib/mit/bin:/opt/cray/pe/bin
++ PATH=/global/homes/s/slaricch/software/yambo-devel/yambo-5.1/bin:/global/common/software/nersc/pm-2021q4/easybuild/software/Nsight-Systems/2022.2.1:/global/common/software/nersc/pm-2021q4/easybuild/software/Nsight-Systems/2022.2.1/bin:/global/common/software/nersc/pm-2021q4/easybuild/software/Nsight-Compute/2022.1.1:/opt/nvidia/hpc_sdk/Linux_x86_64/22.5/cuda/11.7/bin:/opt/nvidia/hpc_sdk/Linux_x86_64/22.5/cuda/11.7/libnvvp:/opt/nvidia/hpc_sdk/Linux_x86_64/22.5/profilers/Nsight_Compute:/opt/nvidia/hpc_sdk/Linux_x86_64/22.5/profilers/Nsight_Systems/bin:/opt/cray/pe/mpich/8.1.24/ofi/nvidia/20.7/bin:/opt/cray/pe/mpich/8.1.24/bin:/opt/cray/pe/craype/2.7.19/bin:/opt/nvidia/hpc_sdk/Linux_x86_64/22.7/compilers/extras/qd/bin:/opt/nvidia/hpc_sdk/Linux_x86_64/22.7/compilers/bin:/global/common/software/m3995/bin:/global/common/software/nersc/pm-2022q2/spack/cray-sles15-zen3/parallel-20210922-tnoqwvk/bin:/global/homes/s/slaricch/.local/bin:/global/homes/s/slaricch/bin:/global/common/software/nersc/bin:/opt/cray/pe/perftools/23.02.0/bin:/opt/cray/pe/papi/7.0.0.1/bin:/opt/cray/libfabric/1.15.2.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/lib/mit/bin:/opt/cray/pe/bin
++ [[ ! -d SAVE ]]
+++ grep 'IBZ K-points' r_setup
+++ awk '{print $4}'
++ nqibz=4
++ [[ 1 -eq 1 ]]
++ [[ -e SAVE/ns.kb_pp_pwscf_renamed ]]
++ export OMP_NUM_THREADS=1
++ OMP_NUM_THREADS=1
++ [[ 0 -ne 0 ]]
++ [[ 0 -eq 1 ]]
++ mp=srun
++ nval=1
++ ncon=1
++ d_nkk=4
++ d_npv=4
++ d_npc=9
++ val[1]=716
++ con[1]=1008
++ bsengexx_new=11809
+++ grep BSENGexx= bse.in
+++ awk '{print $2}'
++ bsengexx_old=3572895
+++ grep BSENGBlk= bse.in
+++ awk '{print $2}'
++ bsengblk=8
++ ngblk=2
++ [[ -1 -lt '' ]]
++ ncases=-1
++ npk=4
++ neh=4
++ nt=9
++ diag_scalapack=1
+++ echo '4*4*9'
+++ bc
++ ntasks=144
++ [[ 0 -ne 0 ]]
+++ echo 144/4
+++ bc
++ nodes_ref=36
++ [[ 36 -ne 36 ]]
+++ seq 1 1
++ for ival in $(seq 1 $nval)
+++ seq 1 1
++ for icon in $(seq 1 $ncon)
++ j_label=bse_716v-1008c_36nodes
++ [[ ! -d bse_716v-1008c_36nodes.out ]]
++ sed -e s/VAL/716/g bse.in
++ sed -i -e s/CON/1008/g tmp
++ sed -i -e s/KNP/4/g tmp
++ sed -i -e s/EHNP/4/g tmp
++ sed -i -e s/TNP/9/g tmp
++ sed -i -e s/d_np_v/4/g tmp
++ sed -i -e s/d_np_c/9/g tmp
++ sed -i -e s/d_nkk/4/g tmp
++ sed -i -e 's/BSENGexx=  3572895/BSENGexx= 11809/g' tmp
++ sed -i -e 's/BSENGBlk=  8/BSENGBlk=  2/g' tmp
++ [[ 1 -eq 1 ]]
++ sed -i -e 's/BSSmod= "d"/BSSmod= "h"/g' tmp
++ mv tmp bse_716v-1008c_36nodes.in
++ [[ 1 -eq 1 ]]
+++ echo '4*4*9'
+++ bc
++ ncpu=144
++ sed -i -e s/DIAGO=-1/DIAGO=144/g bse_716v-1008c_36nodes.in
++ [[ 0 -eq 0 ]]
++ [[ 0 -ne 1 ]]
++ rm -rf bse_716v-1008c_36nodes.out
++ mkdir bse_716v-1008c_36nodes.out
++ cd bse_716v-1008c_36nodes.out/
++ for file in "ndb.em1s" "ndb.cutoff" "ndb.RIM"
++ rm -f ndb.em1s
++ ln -s /global/homes/s/slaricch/scratch/4x2sc_2oh/ti150_ti148_1fl/2x2x1-kmesh_90ry/pbe_on-top_pbe+u/yambo_no-nscf-smearing/production/static-screening/screening_8ry_88nodes.out/ndb.em1s .
++ for file in "ndb.em1s" "ndb.cutoff" "ndb.RIM"
++ rm -f ndb.cutoff
++ ln -s /global/homes/s/slaricch/scratch/4x2sc_2oh/ti150_ti148_1fl/2x2x1-kmesh_90ry/pbe_on-top_pbe+u/yambo_no-nscf-smearing/production/static-screening/screening_8ry_88nodes.out/ndb.cutoff .
++ for file in "ndb.em1s" "ndb.cutoff" "ndb.RIM"
++ rm -f ndb.RIM
++ ln -s /global/homes/s/slaricch/scratch/4x2sc_2oh/ti150_ti148_1fl/2x2x1-kmesh_90ry/pbe_on-top_pbe+u/yambo_no-nscf-smearing/production/static-screening/screening_8ry_88nodes.out/ndb.RIM .
+++ seq 1 4
++ for ik in $(seq 1 $nqibz)
++ rm -f ndb.em1s_fragment_1
++ ln -s /global/homes/s/slaricch/scratch/4x2sc_2oh/ti150_ti148_1fl/2x2x1-kmesh_90ry/pbe_on-top_pbe+u/yambo_no-nscf-smearing/production/static-screening/screening_8ry_88nodes.out/ndb.em1s_fragment_1 .
++ for ik in $(seq 1 $nqibz)
++ rm -f ndb.em1s_fragment_2
++ ln -s /global/homes/s/slaricch/scratch/4x2sc_2oh/ti150_ti148_1fl/2x2x1-kmesh_90ry/pbe_on-top_pbe+u/yambo_no-nscf-smearing/production/static-screening/screening_8ry_88nodes.out/ndb.em1s_fragment_2 .
++ for ik in $(seq 1 $nqibz)
++ rm -f ndb.em1s_fragment_3
++ ln -s /global/homes/s/slaricch/scratch/4x2sc_2oh/ti150_ti148_1fl/2x2x1-kmesh_90ry/pbe_on-top_pbe+u/yambo_no-nscf-smearing/production/static-screening/screening_8ry_88nodes.out/ndb.em1s_fragment_3 .
++ for ik in $(seq 1 $nqibz)
++ rm -f ndb.em1s_fragment_4
++ ln -s /global/homes/s/slaricch/scratch/4x2sc_2oh/ti150_ti148_1fl/2x2x1-kmesh_90ry/pbe_on-top_pbe+u/yambo_no-nscf-smearing/production/static-screening/screening_8ry_88nodes.out/ndb.em1s_fragment_4 .
++ rm -f ndb.QP
++ ln -s /global/homes/s/slaricch/scratch/4x2sc_2oh/ti150_ti148_1fl/2x2x1-kmesh_90ry/pbe_on-top_pbe+u/yambo_no-nscf-smearing/production/gowo/merged_ndb.QP/ndb.QP_merged_1_gw_ppa ndb.QP
++ cd ../
++ sed -i -e s/bse.out/bse_716v-1008c_36nodes.out/g bse_716v-1008c_36nodes.in
++ dip_done=0
++ [[ 0 -eq 1 ]]
++ [[ 0 -eq 1 ]]
++ [[ 0 -eq 1 ]]
++ srun yambo -F bse_716v-1008c_36nodes.in -J bse_716v-1008c_36nodes.out
++ mv LOG LOG_bse_716v-1008c_36nodes

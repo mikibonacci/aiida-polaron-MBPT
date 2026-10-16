@@ -1,0 +1,1089 @@
+                                                                          
+    :   :::   :::     ::::    ::::  :::::::::   ::::::::                  
+    :+:   :+: :+: :+:   +:+:+: :+:+:+ :+:    :+: :+:    :+                
+     +:+ +:+ +:+   +:+  +:+ +:+:+ +:+ +:+    +:+ +:+    +:+               
+      +#++: +#++:++#++: +#+  +:+  +#+ +#++:++#+  +#+    +:+               
+       +#+  +#+     +#+ +#+       +#+ +#+    +#+ +#+    +#+               
+       #+#  #+#     #+# #+#       #+# #+#    #+# #+#    #+#               
+       ###  ###     ### ###       ### #########   ########                
+                                                                          
+                                                                          
+    Version 5.1.0 Revision 21716 Hash (prev commit) 29911edc6             
+                       Branch is unknown                                  
+                    MPI+CUDA+HDF5_IO Build                                
+                   http://www.yambo-code.org                              
+ 
+ 03/26/2023 at 10:37 yambo @ nid001065
+ ==================================================
+
+ Cores-Threads       : 352(CPU)-1(threads)-1(threads@X)-1(threads@DIP)-1(threads@SE)-1(threads@RT)-1(threads@K)-1(threads@NL)
+ Cores-Threads       : DIP(environment)-1 44 8(CPUs)-k c v(ROLEs)
+ Cores-Threads       : X_and_IO(environment)-1 1 1 44 8(CPUs)-q g k c v(ROLEs)
+ Cores-Threads       : SE(environment)-1 1 1 352(CPUs)-q g qp b(ROLEs)
+ MPI Cores           :   352
+ Threads per core    :  1
+ Threads total       :   352
+ Nodes Computing     :   88
+ Nodes IO            :  1
+ CUDA support        : yes
+ CUDA devices        : yes
+ CUDA visible dev    : 0
+ MPI tasks / GPU     :   4
+
+ Fragmented WFs      : yes
+ CORE databases      : .
+ Additional I/O      : .
+ Communications      : .
+ Input file          : gw_8ry_88nodes.in
+ Report file         : ./r-gw_8ry_88nodes.out_HF_and_locXC_gw0_dyson_rim_cut_em1d_ppa_el_el_corr
+ Verbose log/report  : no
+ Log files           : ./LOG
+
+ Job   string        : gw_8ry_88nodes.out
+
+ Precision           : SINGLE
+  
+ [RD./SAVE//ns.db1]--------------------------------------------------------------
+  Bands                                            :   5000
+  K-points                                         :   4
+  G-vectors                                        :   3572895 [RL space]
+  Components                                       :   446644 [wavefunctions]
+  Symmetries                                       :  2 [spatial+T-reV]
+  Spinor components                                :  1
+  Spin polarizations                               :  2
+  Temperature                                      :  0.000000 [eV]
+  Electrons                                        :   1554.00   
+  WF G-vectors                                     :   473387
+  Max atoms/species                                :  128
+  No. of atom species                              :   7
+  Exact exchange fraction in XC                    :  0.000000
+  Exact exchange screening in XC                   :  0.000000
+  Magnetic symmetries                              : no
+ - S/N 000490 ---------------------------------------------- v.05.01.00 r.21716 -
+
+ [02] CORE Variables Setup
+ =========================
+
+
+  [02.01] Unit cells
+  ==================
+
+  Cell kind             :  Unknown
+  Atoms in the cell     :  O  Ti  Ti  Ti  **  **  **
+  number of O  atoms    :  128
+  number of Ti atoms    :   62
+  number of Ti atoms    :  1
+  number of Ti atoms    :  1
+  number of ** atoms    :   8
+  number of ** atoms    :   8
+  number of ** atoms    :  2
+
+  List of atomic masses
+  Mass of O     :  15.99900
+  Mass of Ti    :  47.86700
+  Mass of Ti    :  47.86700
+  Mass of Ti    :  47.86700
+  Mass of **    :  0.672000
+  Mass of **    :  1.344000
+  Mass of **    :  1.008000
+
+  List of atomic coordinates    : [cc]
+  O1       :  0.000000  0.000000  3.784899  order 1
+  O2       :   0.00000  12.40804   3.78490  order 2
+  O3       :  5.607845  0.000000  3.784899  order 3
+  O4       :   5.60785  12.40804   3.78490  order 4
+  O5       :  11.21569   0.00000   3.78490  order 5
+  O6       :  11.21569  12.40804   3.78490  order 6
+  O7       :  16.82354   0.00000   3.78490  order 7
+  O8       :  16.82354  12.40804   3.78490  order 8
+  O9       : -0.180163E-2   6.16358      10.0865     order 9
+  O10       : -0.217269E-3   18.6523      10.0629     order 10
+  O11       :   5.60308   6.17082  10.08300  order 11
+  O12       :   5.60455  18.64476  10.06631  order 12
+  O13       :  11.21738   6.17692  10.08710  order 13
+  O14       :  11.21556  18.63791  10.07111  order 14
+  O15       :  16.82876   6.17177  10.08973  order 15
+  O16       :  16.82677  18.64460  10.06636  order 16
+  O17       : -0.340235E-2  0.349601E-1   16.2973     order 17
+  O18       : -0.287837E-2   12.3839      16.2888     order 18
+  O19       :   5.60007   0.03029  16.29075  order 19
+  O20       :   5.45054  12.37088  16.15612  order 20
+  O21       :  11.22035   0.03226  16.29326  order 21
+  O22       :  11.21971  12.38417  16.12111  order 22
+  O23       :  16.82983   0.03108  16.30020  order 23
+  O24       :  16.98030  12.36842  16.15923  order 24
+  O25       :  0.612697E-2   6.18690      22.6822     order 25
+  O26       :  0.458438E-2   18.6185      22.5757     order 26
+  O27       :   5.61936   6.22759  22.67767  order 27
+  O28       :   5.60455  18.64660  22.58687  order 28
+  O29       :  11.19755   6.15839  22.68182  order 29
+  O30       :  11.21025  18.63913  22.59248  order 30
+  O31       :  16.82582   6.20873  22.68482  order 31
+  O32       :  16.82670  18.64913  22.58397  order 32
+  O33       :  0.000000  0.000000  8.623139  order 33
+  O34       :   0.00000  12.40804   8.62314  order 34
+  O35       :  5.607845  0.000000  8.623139  order 35
+  O36       :   5.60785  12.40804   8.62314  order 36
+  O37       :  11.21569   0.00000   8.62314  order 37
+  O38       :  11.21569  12.40804   8.62314  order 38
+  O39       :  16.82354   0.00000   8.62314  order 39
+  O40       :  16.82354  12.40804   8.62314  order 40
+  O41       :  0.414280E-2   6.19309      14.9835     order 41
+  O42       : -0.724276E-3   18.6199      14.9422     order 42
+  O43       :   5.60455   6.19214  14.97764  order 43
+  O44       :   5.59904  18.62980  14.93980  order 44
+  O45       :  11.21243   6.19294  14.97797  order 45
+  O46       :  11.21615  18.62021  14.93909  order 46
+  O47       :  16.82640   6.19356  14.98243  order 47
+  O48       :  16.83191  18.63072  14.94090  order 48
+  O49       :  0.587306E-2  0.321009E-1   21.2110     order 49
+  O50       :  0.126073E-3   12.3909      21.2199     order 50
+  O51       :   5.60530     0.117655E-1   21.1933     order 51
+  O52       :   5.47334  12.38943  21.29583  order 52
+  O53       :   11.2091     0.190490E-1   21.2051     order 53
+  O54       :  11.21699  12.40408  21.35040  order 54
+  O55       :   16.8263     0.195615E-1   21.2092     order 55
+  O56       :  16.95708  12.36944  21.30689  order 56
+  O57       :   0.03292   6.16138  27.52308  order 57
+  O58       :  0.765122E-3   18.6570      27.4382     order 58
+  O59       :   5.64747   6.23771  27.65054  order 59
+  O60       :   5.60396  18.65118  27.44588  order 60
+  O61       :  11.17551   6.12743  27.64595  order 61
+  O62       :  11.21470  18.63122  27.44677  order 62
+  O63       :  16.79686   6.18551  27.52324  order 63
+  O64       :  16.82716  18.65478  27.44029  order 64
+  O65       :  2.803923  3.784899  6.204020  order 65
+  O66       :   2.80392  16.19294   6.20402  order 66
+  O67       :  8.411768  3.784899  6.204020  order 67
+  O68       :   8.41177  16.19294   6.20402  order 68
+  O69       :  14.01961   3.78490   6.20402  order 69
+  O70       :  14.01961  16.19294   6.20402  order 70
+  O71       :  19.62746   3.78490   6.20402  order 71
+  O72       :  19.62746  16.19294   6.20402  order 72
+  O73       :   2.77948   9.96810  12.40045  order 73
+  O74       :   2.80194  22.44472  12.47695  order 74
+  O75       :   8.38353   9.96360  12.41500  order 75
+  O76       :   8.41190  22.44417  12.47884  order 76
+  O77       :  14.04685   9.96629  12.41742  order 77
+  O78       :  14.02008  22.44350  12.47816  order 78
+  O79       :  19.65302   9.97033  12.40413  order 79
+  O80       :  19.62865  22.44424  12.47688  order 80
+  O81       :   2.80259   3.74083  18.81323  order 81
+  O82       :   2.80817  16.17994  18.78161  order 82
+  O83       :   8.40410   3.72398  18.79453  order 83
+  O84       :   8.40098  16.23479  18.79401  order 84
+  O85       :  14.02324   3.72636  18.80995  order 85
+  O86       :  14.03014  16.23447  18.79669  order 86
+  O87       :  19.63347   3.74043  18.82211  order 87
+  O88       :  19.62154  16.17826  18.78629  order 88
+  O89       :   2.79285  10.03522  25.37085  order 89
+  O90       :   2.80136  22.53745  25.32326  order 90
+  O91       :   8.40379  10.00786  25.36521  order 91
+  O92       :   8.41455  22.55310  25.35263  order 92
+  O93       :  14.01710  10.03730  25.42830  order 93
+  O94       :  14.01124  22.54614  25.33808  order 94
+  O95       :  19.64937  10.06194  25.41710  order 95
+  O96       :  19.63502  22.53123  25.31030  order 96
+  O97       :  2.803923  8.623139  6.204020  order 97
+  O98       :   2.80392  21.03118   6.20402  order 98
+  O99       :  8.411768  8.623139  6.204020  order 99
+  O100       :   8.41177  21.03118   6.20402  order 100
+  O101       :  14.01961   8.62314   6.20402  order 101
+  O102       :  14.01961  21.03118   6.20402  order 102
+  O103       :  19.62746   8.62314   6.20402  order 103
+  O104       :  19.62746  21.03118   6.20402  order 104
+  O105       :   2.80414   2.41040  12.46425  order 105
+  O106       :   2.78037  14.80626  12.41353  order 106
+  O107       :   8.41098   2.41364  12.46237  order 107
+  O108       :   8.37957  14.80792  12.43422  order 108
+  O109       :  14.02018   2.41141  12.46576  order 109
+  O110       :  14.05203  14.80856  12.43346  order 110
+  O111       :  19.62740   2.40838  12.46928  order 111
+  O112       :  19.65052  14.80679  12.41342  order 112
+  O113       :   2.80390   8.61345  18.80631  order 113
+  O114       :   2.79226  21.11126  18.77793  order 114
+  O115       :   8.40741   8.56792  18.80920  order 115
+  O116       :   8.40945  21.12197  18.77495  order 116
+  O117       :  14.02263   8.56515  18.82440  order 117
+  O118       :  14.02063  21.12339  18.78123  order 118
+  O119       :  19.62931   8.61005  18.81865  order 119
+  O120       :  19.63941  21.11208  18.78269  order 120
+  O121       :   2.83265   2.35789  25.37343  order 121
+  O122       :   2.79148  14.70632  25.37723  order 122
+  O123       :   8.39373   2.38685  25.32174  order 123
+  O124       :   8.38306  14.70363  25.38965  order 124
+  O125       :  14.01284   2.36682  25.32213  order 125
+  O126       :  14.04700  14.72018  25.37047  order 126
+  O127       :  19.62421   2.33742  25.36569  order 127
+  O128       :  19.64101  14.72187  25.36041  order 128
+  Ti1       :  2.803923  0.000000  6.204020  order 129
+  Ti2       :   2.80392  12.40804   6.20402  order 130
+  Ti3       :  8.411768  0.000000  6.204020  order 131
+  Ti4       :   8.41177  12.40804   6.20402  order 132
+  Ti5       :  14.01961   0.00000   6.20402  order 133
+  Ti6       :  14.01961  12.40804   6.20402  order 134
+  Ti7       :  19.62746   0.00000   6.20402  order 135
+  Ti8       :  19.62746  12.40804   6.20402  order 136
+  Ti9       :   2.76543   6.22316  12.48320  order 137
+  Ti10       :   2.80269  18.59945  12.53019  order 138
+  Ti11       :   8.41011   6.23360  12.43328  order 139
+  Ti12       :   8.41025  18.58847  12.53211  order 140
+  Ti13       :  14.05850   6.23327  12.48420  order 141
+  Ti14       :  14.02095  18.58814  12.53200  order 142
+  Ti15       :  19.62853   6.22267  12.54277  order 143
+  Ti16       :  19.62837  18.59945  12.53008  order 144
+  Ti17       :   2.79940  -0.03104  18.56395  order 145
+  Ti18       :   2.86510  12.43446  18.54010  order 146
+  Ti19       :   8.41298  -0.02608  18.55793  order 147
+  Ti20       :  14.02155  -0.03118  18.57200  order 149
+  Ti21       :  19.62847  -0.03013  18.57518  order 151
+  Ti22       :  19.56155  12.43164  18.54695  order 152
+  Ti23       :   2.61972   6.23538  25.25337  order 153
+  Ti24       :   2.80368  18.59947  25.38299  order 154
+  Ti25       :   8.40932   6.23372  24.86284  order 155
+  Ti26       :   8.41099  18.59778  25.38947  order 156
+  Ti27       :  14.20803   6.22159  25.25413  order 157
+  Ti28       :  14.01989  18.60311  25.38380  order 158
+  Ti29       :  19.63097   6.22095  25.46122  order 159
+  Ti30       :  19.62779  18.60578  25.37847  order 160
+  Ti31       : -0.115411E-2  0.179932E-1   24.6749     order 161
+  Ti32       : -0.389432E-2   12.4144      24.6417     order 162
+  Ti33       :   5.60685    -0.100692E-1   24.6471     order 163
+  Ti34       :   5.58911  12.39472  24.70766  order 164
+  Ti35       :  11.21609   0.03037  24.66651  order 165
+  Ti36       :  11.21858  12.42472  24.70269  order 166
+  Ti37       :   16.8248     0.252286E-3   24.6742     order 167
+  Ti38       :  16.84338  12.40374  24.72258  order 168
+  Ti39       :  0.000000  6.204020  6.204020  order 169
+  Ti40       :   0.00000  18.61206   6.20402  order 170
+  Ti41       :  5.607845  6.204020  6.204020  order 171
+  Ti42       :   5.60785  18.61206   6.20402  order 172
+  Ti43       :  11.21569   6.20402   6.20402  order 173
+  Ti44       :  11.21569  18.61206   6.20402  order 174
+  Ti45       :  16.82354   6.20402   6.20402  order 175
+  Ti46       :  16.82354  18.61206   6.20402  order 176
+  Ti47       : -0.105172E-2  0.204652E-2   12.3737     order 177
+  Ti48       : -0.151092E-2   12.4112      12.3957     order 178
+  Ti49       :   5.60929     0.117898E-2   12.3744     order 179
+  Ti50       :   5.60893  12.41205  12.40702  order 180
+  Ti51       :   11.2168     0.205851E-2   12.3752     order 181
+  Ti52       :  11.21673  12.41127  12.56725  order 182
+  Ti53       :   16.8219     0.744127E-3   12.3770     order 183
+  Ti54       :  16.82210  12.41120  12.40813  order 184
+  Ti55       : -0.197685E-2   6.20797      18.8939     order 185
+  Ti56       :  0.266428E-3   18.6012      18.9934     order 186
+  Ti57       :   5.60497   6.19417  18.70364  order 187
+  Ti58       :   5.61932  18.61930  18.99547  order 188
+  Ti59       :  11.22172   6.19842  18.70287  order 189
+  Ti60       :  11.21353  18.59621  18.99533  order 190
+  Ti61       :  16.82251   6.18992  18.89695  order 191
+  Ti62       :  16.81257  18.61823  18.99572  order 192
+  Ti1       :  14.03354  12.41985  18.65232  order 150
+  Ti1       :   8.40116  12.41714  18.64702  order 148
+  **1       :  0.000000  0.000000  1.754388  order 193
+  **2       :   0.00000  12.40804   1.75439  order 194
+  **3       :  5.607845  0.000000  1.754388  order 195
+  **4       :   5.60785  12.40804   1.75439  order 196
+  **5       :  11.21569   0.00000   1.75439  order 197
+  **6       :  11.21569  12.40804   1.75439  order 198
+  **7       :  16.82354   0.00000   1.75439  order 199
+  **8       :  16.82354  12.40804   1.75439  order 200
+  **1       :   0.00000  18.61206   3.07463  order 201
+  **2       :   5.60785  18.61206   3.07463  order 202
+  **3       :  11.21569  18.61206   3.07463  order 203
+  **4       :  16.82354  18.61206   3.07463  order 204
+  **5       :  0.000000  6.204020  3.074634  order 205
+  **6       :  5.607845  6.204020  3.074634  order 206
+  **7       :  11.21569   6.20402   3.07463  order 207
+  **8       :  16.82354   6.20402   3.07463  order 208
+  **1       :  11.10631   7.38797  28.96603  order 209
+  **2       :   5.70904   4.92738  28.92132  order 210
+
+  Alat factors          :  22.43138  24.81608  55.64872 [a.u.]
+  Direct lattice volume :   30977.4    [a.u.]
+  Direct lattice vectors:  A[ 1 ]  A[ 2 ]  A[ 3 ]
+   A[ 1 ]:  1.000000  0.000000  0.000000  [iru]
+   A[ 2 ]:  0.000000  1.000000  0.000000  [iru]
+   A[ 3 ]:  0.000000  0.000000  1.000000  [iru]
+
+  Recip. lattice volume :  0.008007 [a.u.]
+  Recip. lattice vectors:  B[ 1 ]  B[ 2 ]  B[ 3 ]
+   B[ 1 ]:  1.000000  0.000000  0.000000  [iku]
+   B[ 2 ]:  0.000000  1.000000  0.000000  [iku]
+   B[ 3 ]:  0.000000  0.000000  1.000000  [iku]
+   
+
+  [02.02] Symmetries
+  ==================
+
+  Inversion symmetry    : yes
+  Spatial inversion     : no
+  Inversion index       :  2
+  K-space Time-reversal : yes
+  Magnetic symmetries   : no
+  Time-reversal derived K-space symmetries:  2  2
+  Group table correct   : yes
+  Symmetries units      :  [cc]
+
+   [S 1]:  1.000000  0.000000  0.000000  0.000000  1.000000  0.000000  0.000000  0.000000  1.000000
+   [S*2]: -1.000000 -0.000000 -0.000000 -0.000000 -1.000000 -0.000000 -0.000000 -0.000000 -1.000000
+
+  [02.03] Reciprocal space
+  ========================
+
+  nG shells         :  312325
+  nG charge         :   3572895
+  nG WFs            :   473387
+  nC WFs            :   446644
+  G-vecs. in first 80 shells:  [ Number ]
+    1   3   5   7  11  13  17  19  23
+    27   31   39   43   47   55   57   59   67
+    71   75   79   83   85   87   91   95  103
+   111  115  119  123  127  135  143  147  151
+   159  167  169  173  181  189  193  197  201
+   209  213  217  219  227  235  239  247  255
+   257  261  265  273  277  285  293  297  301
+    309   313   315   323   327   331   335   343   351
+    355   359   367   371   379   387   389   393
+  ...
+  Shell energy in first 80 shells:  [ mHa ]
+    0.00000   6.37411  25.49644  32.05262  38.42673  39.22994  45.60405  57.36698  57.54905
+    64.7264   71.2826   77.6567   89.4196   96.5969   96.7790  101.9857  128.2105  128.6495
+   134.0383  134.5846  141.2157  153.7069  156.9198  159.3527  163.2939  167.4404  173.2683
+   173.8145  182.4162  185.5775  188.9724  191.4053  192.9369  195.3465  198.5826  214.2867
+   214.4688  224.8074  229.4679  230.1962  230.6353  246.3393  258.9055  261.5205  268.6979
+   269.4261  285.1302  287.5632  288.4736  290.9581  291.5043  294.8477  300.7505  310.6267
+   312.3314  313.9700  316.2725  326.7931  327.7035  334.0777  342.4972  344.3839  345.8405
+   348.3251  351.5613  353.0695  353.1999  357.6784  359.4436  378.5659  383.6139  385.0705
+   385.1221  386.3877  387.1160  390.4593  391.4962  396.9084  407.9430  410.4364
+  ...
+
+  [02.04] K-grid lattice
+  ======================
+
+  Compatible Grid is   : 2D
+  Base K vectors       :  K_min[ 1 ]  K_min[ 2 ]  K_min[ 3 ]
+  K_min[ 1 ] : -0.500000  0.000000  0.000000 [rlu]
+  K_min[ 2 ] :  0.000000 -0.500000  0.000000 [rlu]
+  Grid dimensions      :  2  2
+  K lattice UC volume  :  0.002002 [a.u.]
+
+  [02.05] Energies & Occupations
+  ==============================
+
+  [X] === Spin Independent ===
+  [X] Electronic Temperature                        :  0.000000  0.000000 [eV K]
+  [X] Bosonic    Temperature                        :  0.000000  0.000000 [eV K]
+  [X] Finite Temperature mode                       : no
+  [X] El. density                                   :  0.33853E+24 [cm-3]
+  [X] Fermi Level                                   : -4.289916 [eV]
+
+  [X] === Spin up channel ===
+  [X] Conduction Band Min                  [spin UP]:  0.006704 [eV]
+  [X] Valence Band Max                     [spin UP]: -0.005882 [eV]
+  [X] Filled Bands                         [spin UP]:   777
+  [X] Empty Bands                          [spin UP]:    778   5000
+  [X] Direct Gap                           [spin UP]:  0.053671 [eV]
+  [X] Direct Gap localized at k            [spin UP]:  1
+  [X] Indirect Gap                         [spin UP]:  0.004175 [eV]
+  [X] Indirect Gap between kpts            [spin UP]:   4   1
+  [X] Last valence band width              [spin UP]:  0.035604 [eV]
+  [X] 1st conduction band width            [spin UP]:  0.141752 [eV]
+   
+  [X] === Spin dn channel ===
+  [X] Conduction Band Min                  [spin DN]:  0.004175 [eV]
+  [X] Valence Band Max                     [spin DN]:  0.000000 [eV]
+  [X] Filled Bands                         [spin DN]:   777
+  [X] Empty Bands                          [spin DN]:    778   5000
+  [X] Direct Gap                           [spin DN]:  0.045662 [eV]
+  [X] Direct Gap localized at k            [spin DN]:  1
+  [X] Indirect Gap                         [spin DN]:  0.012587 [eV]
+  [X] Indirect Gap between kpts            [spin DN]:   4   1
+  [X] Last valence band width              [spin DN]:  0.041085 [eV]
+  [X] 1st conduction band width            [spin DN]:  0.144369 [eV]
+   
+  [X] === Overall gap ===
+  [X] Direct Gap                                    :  0.045662 [eV]
+  [X] Direct Gap localized at k-point               :  1
+  [X] Indirect Gap                                  :  0.004175 [eV]
+  [X] Indirect Gap between k-points                 :   4   1
+   
+
+ Timing [Min/Max/Average]: 02s/02s/02s
+
+ [03] Transferred momenta grid and indexing
+ ==========================================
+
+ [RD./SAVE//ndb.kindx]-----------------------------------------------------------
+  Fragmentation                                    : no
+  Polarization last K                              :   4
+  QP states                                        :   1   4
+  X grid is uniform                                : yes
+  Grids                                            : X S
+  BS scattering                                    : no
+  COLL scattering                                  : no
+  Sigma scattering                                 : yes
+  X scattering                                     : yes
+ - S/N 000490 ---------------------------------------------- v.05.01.00 r.21716 -
+
+ IBZ Q-points :   4
+ BZ  Q-points :   4
+
+ K/Q-points units:
+ rlu = crystal or reduced units; cc = cartesian coordinates; iku = interal k-units
+
+ Q [1]:  0.000000  0.000000  0.000000 [rlu]
+ Q [2]:  0.000000 -0.500000  0.000000 [rlu]
+ Q [3]: -0.500000  0.000000  0.000000 [rlu]
+ Q [4]: -0.500000 -0.500000  0.000000 [rlu]
+
+ [04] Coloumb potential Random Integration (RIM)
+ ===============================================
+
+ [RD./gw_8ry_88nodes.out//ndb.RIM]-----------------------------------------------
+  Brillouin Zone Q/K grids (IBZ/BZ)                :   4   4   4   4
+  *WRN* Coulomb cutoff potential                   : none
+  Coulombian RL components                         :  103
+  Coulombian diagonal components                   : yes
+  RIM random points                                :  3000000
+  RIM  RL volume             [a.u.]                :  0.008007
+  Real RL volume             [a.u.]                :  0.008007
+  Eps^-1 reference component                       : 0
+  Eps^-1 components                                :  0.000000  0.000000  0.000000
+  RIM anysotropy factor                            :  0.000000
+ - S/N 000490 ---------------------------------------------- v.05.01.00 r.21716 -
+
+ Summary of Coulomb integrals for non-metallic bands |Q|[au] RIM/Bare
+
+ Q [1] 0.100000E-4 0.973277 * Q [2] 0.126595 1.077698
+ Q [3] 0.140053 1.138182 * Q [4] 0.188789 1.092229
+ Non-periodic chartesian directions : none
+ Optical renormalization            :  55.64872 [au]
+ Polarizability dimension           : length
+
+
+ [05] Coloumb potential CutOff slab z
+ ====================================
+
+ [RD./gw_8ry_88nodes.out//ndb.cutoff]--------------------------------------------
+  Brillouin Zone Q/K grids (IBZ/BZ)                :   4   4   4   4
+  CutOff Geometry                                  : slab z
+  Coulomb cutoff potential                         : slab z
+  Box sides length            [au]                 :  0.000000  0.000000  0.000000
+  Sphere/Cylinder radius      [au]                 :  0.000000
+  Cylinder length             [au]                 :  0.000000
+  RL components                                    :   473387
+  RL components used in the sum                    :   3572895
+  RIM corrections included                         : no
+  RIM RL components                                : 0
+  RIM random points                                : 0
+ - S/N 000490 ---------------------------------------------- v.05.01.00 r.21716 -
+
+ [06] Dipoles
+ ============
+
+ [RD./gw_8ry_88nodes.out//ndb.dipoles]-------------------------------------------
+  Brillouin Zone Q/K grids (IBZ/BZ)                :   4   4   4   4
+  RL vectors                                       :   473387 [WF]
+  Fragmentation                                    : yes
+  Electronic Temperature                           :  0.000000 [K]
+  Bosonic    Temperature                           :  0.000000 [K]
+  DIP band range                                   :      1   5000
+  DIP band range limits                            :   777   778
+  DIP e/h energy range                             : -1.000000 -1.000000 [eV]
+  RL vectors in the sum                            :   473387
+  [r,Vnl] included                                 : yes
+  Bands ordered                                    : yes
+  Direct v evaluation                              : no
+  Approach used                                    : G-space v
+  Dipoles computed                                 : R V P
+  Wavefunctions                                    : Perdew, Burke & Ernzerhof(X)+Perdew, Burke & Ernzerhof(C)
+ - S/N 000490 ---------------------------------------------- v.05.01.00 r.21716 -
+
+ [07] Dynamic Dielectric Matrix (PPA)
+ ====================================
+
+ [RD./gw_8ry_88nodes.out//ndb.pp]------------------------------------------------
+  Brillouin Zone Q/K grids (IBZ/BZ)                :   4   4   4   4
+  RL vectors                                       :   473387 [WF]
+  Coulomb cutoff potential                         : slab z
+  Fragmentation                                    : yes
+  Electronic Temperature                           :  0.000000 [K]
+  Bosonic    Temperature                           :  0.000000 [K]
+  PPA    diel. fun.  energies                      : Perdew, Burke & Ernzerhof(X)+Perdew, Burke & Ernzerhof(C)
+  wavefunctions                                    : Perdew, Burke & Ernzerhof(X)+Perdew, Burke & Ernzerhof(C)
+  Global Gauge                                     : length
+  X matrix size                                    :  11809
+  X band range                                     :      1   5000
+  X e/h energy range                               : -1.000000 -1.000000 [eV]
+  X Time ordering                                  : R
+  X Hxc Kernel                                     : HARTREE
+  X Drude frequency                                :  0.000000  0.000000
+  X poles                                          :  100.0000 [o/o]
+  RL vectors in the sum                            :   473387
+  [r,Vnl] included                                 : yes
+  Field direction                                  :  0.707107E-5  0.707107E-5   0.00000   
+  BZ energy Double Grid                            : no
+  BZ energy DbGd points                            : 0
+  BZ Q point size factor                           : -1.000000
+  X Optical Averaged directions                    : none
+ - S/N 000490 ---------------------------------------------- v.05.01.00 r.21716 -
+ [RD./gw_8ry_88nodes.out//ndb.pp_fragment_1]-------------------------------------
+  PPA Im  energy                                   :  27.21138 eV
+ - S/N 000490 ---------------------------------------------- v.05.01.00 r.21716 -
+ [RD./gw_8ry_88nodes.out//ndb.pp_fragment_2]-------------------------------------
+  PPA Im  energy                                   :  27.21138 eV
+ - S/N 000490 ---------------------------------------------- v.05.01.00 r.21716 -
+
+ [08] Local Exchange-Correlation + Non-Local Fock
+ ================================================
+
+ [VXC] Plane waves :   3572895
+ [EXS] Plane waves :   3572895
+  
+ QP @ state[ 1 ] K range:   1   4
+ QP @ state[ 1 ] b range:   778   787
+  
+ [WF] Copying WF data from GPU device
+
+ [WF-HF/Rho loader] Normalization (few states)  min/max  :  0.14869E-10  0.99994    
+
+ [xc] Functional : Perdew, Burke & Ernzerhof(X)+Perdew, Burke & Ernzerhof(C)
+ [xc] LIBXC used to calculate xc functional
+ [WR./gw_8ry_88nodes.out//ndb.HF_and_locXC]--------------------------------------
+  Brillouin Zone Q/K grids (IBZ/BZ)                :   4   4   4   4
+  RL vectors                                       :   473387 [WF]
+  Coulomb cutoff potential                         : slab z
+  Fragmentation                                    : no
+  Electronic Temperature                           :  0.000000 [K]
+  Bosonic    Temperature                           :  0.000000 [K]
+  Green`s function   wavefunctions                 : Perdew, Burke & Ernzerhof(X)+Perdew, Burke & Ernzerhof(C)
+  Total number of QP states                        :   80
+  Exchange RL vectors                              :   3572895
+  Exchange summation bands                         :   777   777
+  RIM RL components                                :  103
+  RIM random points                                :  3000000
+ - S/N 000490 ---------------------------------------------- v.05.01.00 r.21716 -
+
+ [xc] E_xc :  -912.9645 [Ha]
+      E_xc :   -1825.93 [Ry]
+
+  Local XC kind (lXC) : Perdew, Burke & Ernzerhof(X)+Perdew, Burke & Ernzerhof(C)
+  Non-Local XC kind (nlXC) : Hartree-Fock
+
+  Corrections @ K [1] :  [eV]
+ <778(up)|nlXC|778(up)> = -11.86592 -0.25137E-09 <778(up)|lXC|778(up)> = -19.27477  0.000000
+ <778(dn)|nlXC|778(dn)> = -11.94562 -0.12060E-09 <778(dn)|lXC|778(dn)> = -19.28083  0.000000
+ <779(up)|nlXC|779(up)> = -11.27991  0.16844E-09 <779(up)|lXC|779(up)> = -18.76490  0.000000
+ <779(dn)|nlXC|779(dn)> = -11.28341 -0.11133E-09 <779(dn)|lXC|779(dn)> = -18.76808  0.000000
+ <780(up)|nlXC|780(up)> = -11.70833 -0.39517E-10 <780(up)|lXC|780(up)> = -19.25611  0.000000
+ <780(dn)|nlXC|780(dn)> = -11.71288 -0.15915E-09 <780(dn)|lXC|780(dn)> = -19.25564  0.000000
+ <781(up)|nlXC|781(up)> = -11.76230 -0.51401E-10 <781(up)|lXC|781(up)> = -19.32561  0.000000
+ <781(dn)|nlXC|781(dn)> = -11.76454 -0.11064E-09 <781(dn)|lXC|781(dn)> = -19.32711  0.000000
+ <782(up)|nlXC|782(up)> = -11.72462 -0.31932E-10 <782(up)|lXC|782(up)> = -19.13723  0.000000
+ <782(dn)|nlXC|782(dn)> = -11.73420  0.79511E-10 <782(dn)|lXC|782(dn)> = -19.14127  0.000000
+ <783(up)|nlXC|783(up)> = -11.42121  0.14445E-09 <783(up)|lXC|783(up)> = -18.98789  0.000000
+ <783(dn)|nlXC|783(dn)> = -11.41465  0.36332E-12 <783(dn)|lXC|783(dn)> = -18.97979  0.000000
+ <784(up)|nlXC|784(up)> = -11.62232 -0.11924E-09 <784(up)|lXC|784(up)> = -19.24050  0.000000
+ <784(dn)|nlXC|784(dn)> = -11.61419 -0.16866E-09 <784(dn)|lXC|784(dn)> = -19.23910  0.810962E-6
+ <785(up)|nlXC|785(up)> = -11.87669 -0.15032E-09 <785(up)|lXC|785(up)> = -19.31619  0.000000
+ <785(dn)|nlXC|785(dn)> = -11.89221  0.97129E-10 <785(dn)|lXC|785(dn)> = -19.32866  0.000000
+ <786(up)|nlXC|786(up)> = -11.57685 -0.16916E-09 <786(up)|lXC|786(up)> = -19.08855 -0.810962E-6
+ <786(dn)|nlXC|786(dn)> = -11.57992  0.73807E-10 <786(dn)|lXC|786(dn)> = -19.09777  0.000000
+ <787(up)|nlXC|787(up)> = -11.64013  0.16113E-10 <787(up)|lXC|787(up)> = -19.40310  0.000000
+ <787(dn)|nlXC|787(dn)> = -11.64138  0.19320E-11 <787(dn)|lXC|787(dn)> = -19.41850  0.000000
+
+  Corrections @ K [2] :  [eV]
+ <778(up)|nlXC|778(up)> = -11.60948 -0.51694E-10 <778(up)|lXC|778(up)> = -19.20494  0.000000
+ <778(dn)|nlXC|778(dn)> = -11.62226  0.60409E-10 <778(dn)|lXC|778(dn)> = -19.20763  0.000000
+ <779(up)|nlXC|779(up)> = -11.29455 -0.96918E-11 <779(up)|lXC|779(up)> = -18.91302  0.000000
+ <779(dn)|nlXC|779(dn)> = -11.29940  0.28901E-10 <779(dn)|lXC|779(dn)> = -18.91578  0.000000
+ <780(up)|nlXC|780(up)> = -11.51331 -0.95035E-10 <780(up)|lXC|780(up)> = -19.05428 -0.101370E-6
+ <780(dn)|nlXC|780(dn)> = -11.52473 -0.37654E-10 <780(dn)|lXC|780(dn)> = -19.07187 -0.101370E-6
+ <781(up)|nlXC|781(up)> = -11.58763  0.20336E-10 <781(up)|lXC|781(up)> = -19.37164  0.000000
+ <781(dn)|nlXC|781(dn)> = -11.61259 -0.19708E-10 <781(dn)|lXC|781(dn)> = -19.41250  0.000000
+ <782(up)|nlXC|782(up)> = -11.62415  0.96083E-10 <782(up)|lXC|782(up)> = -19.42237  0.000000
+ <782(dn)|nlXC|782(dn)> = -11.58644  0.47086E-10 <782(dn)|lXC|782(dn)> = -19.38288  0.000000
+ <783(up)|nlXC|783(up)> = -11.97891 -0.13224E-09 <783(up)|lXC|783(up)> = -19.46661  0.000000
+ <783(dn)|nlXC|783(dn)> = -11.96932 -0.15076E-09 <783(dn)|lXC|783(dn)> = -19.46085  0.000000
+ <784(up)|nlXC|784(up)> = -11.80727 -0.62458E-10 <784(up)|lXC|784(up)> = -19.38541  0.101370E-6
+ <784(dn)|nlXC|784(dn)> = -11.80774  0.46902E-10 <784(dn)|lXC|784(dn)> = -19.37317  0.000000
+ <785(up)|nlXC|785(up)> = -11.78000  0.12198E-09 <785(up)|lXC|785(up)> = -19.28523  0.000000
+ <785(dn)|nlXC|785(dn)> = -11.81931 -0.23267E-09 <785(dn)|lXC|785(dn)> = -19.30021  0.000000
+ <786(up)|nlXC|786(up)> = -11.66833 -0.22387E-10 <786(up)|lXC|786(up)> = -19.31252  0.000000
+ <786(dn)|nlXC|786(dn)> = -11.68932  0.85103E-10 <786(dn)|lXC|786(dn)> = -19.33683 -0.506852E-7
+ <787(up)|nlXC|787(up)> = -11.91411 -0.21974E-09 <787(up)|lXC|787(up)> = -19.48080 -0.202741E-6
+ <787(dn)|nlXC|787(dn)> = -11.85366 -0.43342E-10 <787(dn)|lXC|787(dn)> = -19.40007  0.000000
+
+  Corrections @ K [3] :  [eV]
+ <778(up)|nlXC|778(up)> = -11.65370 -0.11828E-09 <778(up)|lXC|778(up)> = -19.43973  0.000000
+ <778(dn)|nlXC|778(dn)> = -11.62070  0.29957E-10 <778(dn)|lXC|778(dn)> = -19.43768  0.000000
+ <779(up)|nlXC|779(up)> = -11.62321  0.12069E-09 <779(up)|lXC|779(up)> = -19.43657 -0.158391E-7
+ <779(dn)|nlXC|779(dn)> = -11.67071 -0.23530E-10 <779(dn)|lXC|779(dn)> = -19.44506  0.405481E-6
+ <780(up)|nlXC|780(up)> = -11.41307  0.43590E-11 <780(up)|lXC|780(up)> = -18.97026  0.000000
+ <780(dn)|nlXC|780(dn)> = -11.41336  0.55743E-10 <780(dn)|lXC|780(dn)> = -18.97301  0.000000
+ <781(up)|nlXC|781(up)> = -11.39551 -0.43337E-10 <781(up)|lXC|781(up)> = -18.95674 -0.253426E-7
+ <781(dn)|nlXC|781(dn)> = -11.39880  0.57228E-10 <781(dn)|lXC|781(dn)> = -18.96001  0.000000
+ <782(up)|nlXC|782(up)> = -11.61476  0.30084E-10 <782(up)|lXC|782(up)> = -19.14637  0.000000
+ <782(dn)|nlXC|782(dn)> = -11.62554 -0.44033E-10 <782(dn)|lXC|782(dn)> = -19.15917 -0.506852E-7
+ <783(up)|nlXC|783(up)> = -11.61313  0.52054E-10 <783(up)|lXC|783(up)> = -19.14543  0.000000
+ <783(dn)|nlXC|783(dn)> = -11.60538 -0.10778E-09 <783(dn)|lXC|783(dn)> = -19.13488  0.000000
+ <784(up)|nlXC|784(up)> = -11.83658  0.16360E-09 <784(up)|lXC|784(up)> = -19.40689  0.000000
+ <784(dn)|nlXC|784(dn)> = -11.70036  0.86625E-10 <784(dn)|lXC|784(dn)> = -19.38401  0.000000
+ <785(up)|nlXC|785(up)> = -11.73251  0.73977E-11 <785(up)|lXC|785(up)> = -19.35136 -0.190069E-7
+ <785(dn)|nlXC|785(dn)> = -11.82395  0.24238E-10 <785(dn)|lXC|785(dn)> = -19.39922  0.000000
+ <786(up)|nlXC|786(up)> = -11.68546 -0.16910E-10 <786(up)|lXC|786(up)> = -19.31403 -0.101370E-6
+ <786(dn)|nlXC|786(dn)> = -11.68984 -0.48923E-12 <786(dn)|lXC|786(dn)> = -19.30787 -0.506852E-7
+ <787(up)|nlXC|787(up)> = -11.95035 -0.76248E-12 <787(up)|lXC|787(up)> = -19.50761  0.000000
+ <787(dn)|nlXC|787(dn)> = -11.94648  0.13689E-09 <787(dn)|lXC|787(dn)> = -19.45754  0.000000
+
+  Corrections @ K [4] :  [eV]
+ <778(up)|nlXC|778(up)> = -11.66436 -0.11053E-09 <778(up)|lXC|778(up)> = -19.46670  0.000000
+ <778(dn)|nlXC|778(dn)> = -11.67088  0.18035E-09 <778(dn)|lXC|778(dn)> = -19.46853  0.000000
+ <779(up)|nlXC|779(up)> = -11.66459 -0.11426E-09 <779(up)|lXC|779(up)> = -19.46849  0.000000
+ <779(dn)|nlXC|779(dn)> = -11.67126  0.14882E-11 <779(dn)|lXC|779(dn)> = -19.47003  0.000000
+ <780(up)|nlXC|780(up)> = -11.37561 -0.22437E-10 <780(up)|lXC|780(up)> = -19.02594  0.000000
+ <780(dn)|nlXC|780(dn)> = -11.38398  0.13553E-09 <780(dn)|lXC|780(dn)> = -19.03236  0.000000
+ <781(up)|nlXC|781(up)> = -11.40978 -0.15444E-09 <781(up)|lXC|781(up)> = -19.05481  0.000000
+ <781(dn)|nlXC|781(dn)> = -11.40811 -0.60008E-12 <781(dn)|lXC|781(dn)> = -19.05279  0.253426E-7
+ <782(up)|nlXC|782(up)> = -11.62224 -0.79793E-10 <782(up)|lXC|782(up)> = -19.19368  0.000000
+ <782(dn)|nlXC|782(dn)> = -11.62838  0.16358E-11 <782(dn)|lXC|782(dn)> = -19.20230  0.000000
+ <783(up)|nlXC|783(up)> = -11.64798 -0.28912E-10 <783(up)|lXC|783(up)> = -19.21581  0.000000
+ <783(dn)|nlXC|783(dn)> = -11.63330 -0.94242E-11 <783(dn)|lXC|783(dn)> = -19.20801  0.000000
+ <784(up)|nlXC|784(up)> = -11.58810 -0.70436E-10 <784(up)|lXC|784(up)> = -19.17060  0.000000
+ <784(dn)|nlXC|784(dn)> = -11.61010  0.12414E-09 <784(dn)|lXC|784(dn)> = -19.18697  0.000000
+ <785(up)|nlXC|785(up)> = -11.62070  0.44847E-11 <785(up)|lXC|785(up)> = -19.23946  0.000000
+ <785(dn)|nlXC|785(dn)> = -11.55989  0.10432E-09 <785(dn)|lXC|785(dn)> = -19.16977  0.000000
+ <786(up)|nlXC|786(up)> = -11.74364  0.29232E-10 <786(up)|lXC|786(up)> = -19.33748  0.000000
+ <786(dn)|nlXC|786(dn)> = -11.81466  0.85370E-10 <786(dn)|lXC|786(dn)> = -19.40763  0.000000
+ <787(up)|nlXC|787(up)> = -11.95999 -0.14287E-09 <787(up)|lXC|787(up)> = -19.45683 -0.506852E-7
+ <787(dn)|nlXC|787(dn)> = -11.91411  0.22828E-10 <787(dn)|lXC|787(dn)> = -19.44181 -0.506852E-7
+
+
+  [08.01] Hartree-Fock occupations report
+  =======================================
+
+  [Hartree-Fock] === Spin Independent ===
+  [Hartree-Fock] Electronic Temperature             :  0.000000  0.000000 [eV K]
+  [Hartree-Fock] Bosonic    Temperature             :  0.000000  0.000000 [eV K]
+  [Hartree-Fock] Finite Temperature mode            : no
+  [Hartree-Fock] El. density                        :  0.33853E+24 [cm-3]
+  [Hartree-Fock] Fermi Level                        : -4.289916 [eV]
+
+  [Hartree-Fock] === Spin up channel ===
+  [Hartree-Fock] Conduction Band Min       [spin UP]:  7.415553 [eV]
+  [Hartree-Fock] Valence Band Max          [spin UP]: -0.005882 [eV]
+  [Hartree-Fock] Filled Bands              [spin UP]:   777
+  [Hartree-Fock] Empty Bands               [spin UP]:    778   5000
+  [Hartree-Fock] Direct Gap                [spin UP]:  7.462520 [eV]
+  [Hartree-Fock] Direct Gap localized at k [spin UP]:  1
+  [Hartree-Fock] Indirect Gap              [spin UP]:  7.339390 [eV]
+  [Hartree-Fock] Indirect Gap between kpts [spin UP]:   4   1
+  [Hartree-Fock] Last valence band width   [spin UP]:  0.035604 [eV]
+  [Hartree-Fock] 1st conduction band width [spin UP]:  0.534754 [eV]
+   
+  [Hartree-Fock] === Spin dn channel ===
+  [Hartree-Fock] Conduction Band Min       [spin DN]:  7.339390 [eV]
+  [Hartree-Fock] Valence Band Max          [spin DN]:  0.000000 [eV]
+  [Hartree-Fock] Filled Bands              [spin DN]:   777
+  [Hartree-Fock] Empty Bands               [spin DN]:    778   5000
+  [Hartree-Fock] Direct Gap                [spin DN]:  7.380877 [eV]
+  [Hartree-Fock] Direct Gap localized at k [spin DN]:  1
+  [Hartree-Fock] Indirect Gap              [spin DN]:  7.421435 [eV]
+  [Hartree-Fock] Indirect Gap between kpts [spin DN]:   4   1
+  [Hartree-Fock] Last valence band width   [spin DN]:  0.041085 [eV]
+  [Hartree-Fock] 1st conduction band width [spin DN]:  0.537854 [eV]
+   
+  [Hartree-Fock] === Overall gap ===
+  [Hartree-Fock] Direct Gap                         :  7.380877 [eV]
+  [Hartree-Fock] Direct Gap localized at k-point    :  1
+  [Hartree-Fock] Indirect Gap                       :  7.339390 [eV]
+  [Hartree-Fock] Indirect Gap between k-points      :   4   1
+   
+
+ Timing [Min/Max/Average]: 42s/42s/42s
+
+ [09] Dyson equation: Newton solver
+ ==================================
+
+ [Newton] SC iterations : 0
+
+
+  [09.01] RIM-W interpolation
+  ===========================
+
+
+  [WARNING] RIM-W works only for 2D semiconductors with slab cutoff
+  Found compatible q grid: 2D
+  q_min[ 1 ]:  0.500000  0.000000  0.000000 [rlu]
+   0.500000  0.000000  0.000000 [iku]
+  q_min[ 2 ]:  0.000000  0.500000  0.000000 [rlu]
+   0.000000  0.500000  0.000000 [iku]
+  G-vectors :   55
+  G-vectors loaded:  159
+   
+  [RD./gw_8ry_88nodes.out//ndb.pp]------------------------------------------------
+   Brillouin Zone Q/K grids (IBZ/BZ)                :   4   4   4   4
+   RL vectors                                       :   473387 [WF]
+   Coulomb cutoff potential                         : slab z
+   Fragmentation                                    : yes
+   Electronic Temperature                           :  0.000000 [K]
+   Bosonic    Temperature                           :  0.000000 [K]
+   PPA    diel. fun.  energies                      : Perdew, Burke & Ernzerhof(X)+Perdew, Burke & Ernzerhof(C)
+   wavefunctions                                    : Perdew, Burke & Ernzerhof(X)+Perdew, Burke & Ernzerhof(C)
+   Global Gauge                                     : length
+   X matrix size                                    :  11809
+   X band range                                     :      1   5000
+   X e/h energy range                               : -1.000000 -1.000000 [eV]
+   X Time ordering                                  : R
+   X Hxc Kernel                                     : HARTREE
+   X Drude frequency                                :  0.000000  0.000000
+   X poles                                          :  100.0000 [o/o]
+   RL vectors in the sum                            :   473387
+   [r,Vnl] included                                 : yes
+   Field direction                                  :  0.707107E-5  0.707107E-5   0.00000   
+   BZ energy Double Grid                            : no
+   BZ energy DbGd points                            : 0
+   BZ Q point size factor                           : -1.000000
+   X Optical Averaged directions                    : none
+  [RD./gw_8ry_88nodes.out//ndb.pp_fragment_1]-------------------------------------
+   PPA Im  energy                                   :  27.21138 eV
+  - S/N 000490 ---------------------------------------------- v.05.01.00 r.21716 -
+
+  [09.02] RIM-W integrals
+  =======================
+
+
+  8 x (sBL volume)        :  0.016015 [a.u.]
+  sBZ random points       :  3000000
+  Points outside the sBZ  :  24001885
+  RL volume               :  0.008007 [a.u.]
+  Integrated volume       :  0.008007 [a.u.]
+
+
+  [09.03] RIM integrals
+  =====================
+
+
+  Comparison between head Wc = W - v averages: < Wc > [au] RIM-W/RIM
+
+   < -Wc [Q = 1] > 0.262318E-1 0.471469E-4 * < -Wc [Q = 2] > 0.003960 0.003838
+   < -Wc [Q = 3] > 0.003497 0.003374 * < -Wc [Q = 4] > 0.001656 0.001585
+   
+  [WR./gw_8ry_88nodes.out//ndb.RIM_W]---------------------------------------------
+   Brillouin Zone Q/K grids (IBZ/BZ)                :   4   4   4   4
+   Coulomb cutoff potential                         : slab z
+   Screening RL components          :  55
+   Screening diagonal only          :no
+   RIM random points                : 3000000
+   RIM  RL volume             [a.u.]: 0.008007
+   Eps^-1 reference component                       : 0
+   Eps^-1 components                                :  0.000000  0.000000  0.000000
+   RIM anysotropy factor                            :  0.000000
+   Interpolation of PPA poles at q=0:yes
+  - S/N 000490 ---------------------------------------------- v.05.01.00 r.21716 -
+
+ [10] G0W0 (W PPA)
+ =================
+
+ [  GW  ] Bands range     :      1   5000
+ [GW/PPA] G damping       :  0.100000 [eV]
+  
+  
+ QP @ state[ 1 ] K range:   1   4
+ QP @ state[ 1 ] b range:   778   787
+  
+ [WF] Copying WF data from GPU device
+
+ [RD./gw_8ry_88nodes.out//ndb.pp]------------------------------------------------
+  Brillouin Zone Q/K grids (IBZ/BZ)                :   4   4   4   4
+  RL vectors                                       :   473387 [WF]
+  Coulomb cutoff potential                         : slab z
+  Fragmentation                                    : yes
+  Electronic Temperature                           :  0.000000 [K]
+  Bosonic    Temperature                           :  0.000000 [K]
+  PPA    diel. fun.  energies                      : Perdew, Burke & Ernzerhof(X)+Perdew, Burke & Ernzerhof(C)
+  wavefunctions                                    : Perdew, Burke & Ernzerhof(X)+Perdew, Burke & Ernzerhof(C)
+  Global Gauge                                     : length
+  X matrix size                                    :  11809
+  X band range                                     :      1   5000
+  X e/h energy range                               : -1.000000 -1.000000 [eV]
+  X Time ordering                                  : R
+  X Hxc Kernel                                     : HARTREE
+  X Drude frequency                                :  0.000000  0.000000
+  X poles                                          :  100.0000 [o/o]
+  RL vectors in the sum                            :   473387
+  [r,Vnl] included                                 : yes
+  Field direction                                  :  0.707107E-5  0.707107E-5   0.00000   
+  BZ energy Double Grid                            : no
+  BZ energy DbGd points                            : 0
+  BZ Q point size factor                           : -1.000000
+  X Optical Averaged directions                    : none
+ [RD./gw_8ry_88nodes.out//ndb.pp_fragment_1]-------------------------------------
+  PPA Im  energy                                   :  27.21138 eV
+ - S/N 000490 ---------------------------------------------- v.05.01.00 r.21716 -
+
+ [11] QP properties and I/O
+ ==========================
+
+ Legend (energies in eV)
+ - B  : Band       - Eo  : bare energy
+ - E  : QP energy  - Z   : Renormalization factor
+ - So : Sc(Eo)     - S   : Sc(E)
+ - dSp: Sc derivative precision
+
+ - lXC: Local XC (Perdew, Burke & Ernzerhof(X)+Perdew, Burke & Ernzerhof(C))
+ -nlXC: non-Local XC (Hartree-Fock)
+
+ QP [eV] @ K [1] (iku):  0.000000  0.000000  0.000000
+  B=778 Eo=  0.01 E=  1.87 E-Eo=  1.86 Re(Z)=0.76 Im(Z)=-0.193847E-2 nlXC= -11.8659 lXC= -19.2748 So= -4.96762
+  B=778 Eo=  0.00 E=  1.86 E-Eo=  1.85 Re(Z)=0.76 Im(Z)=-0.201263E-2 nlXC= -11.9456 lXC= -19.2808 So= -4.89901
+  B=779 Eo=  0.05 E=  1.85 E-Eo=  1.80 Re(Z)=0.76 Im(Z)=-0.205717E-2 nlXC= -11.2799 lXC= -18.7649 So= -5.11293
+  B=779 Eo=  0.05 E=  1.85 E-Eo=  1.80 Re(Z)=0.76 Im(Z)=-0.206769E-2 nlXC= -11.2834 lXC= -18.7681 So= -5.11254
+  B=780 Eo=  0.06 E=  1.91 E-Eo=  1.85 Re(Z)=0.76 Im(Z)=-0.204139E-2 nlXC= -11.7083 lXC= -19.2561 So= -5.11287
+  B=780 Eo=  0.06 E=  1.91 E-Eo=  1.85 Re(Z)=0.76 Im(Z)=-0.204988E-2 nlXC= -11.7129 lXC= -19.2556 So= -5.11114
+  B=781 Eo=  0.15 E=  2.09 E-Eo=  1.93 Re(Z)=0.76 Im(Z)=-0.207952E-2 nlXC= -11.7623 lXC= -19.3256 So= -5.02565
+  B=781 Eo=  0.15 E=  2.09 E-Eo=  1.93 Re(Z)=0.76 Im(Z)=-0.207822E-2 nlXC= -11.7645 lXC= -19.3271 So= -5.02426
+  B=782 Eo=  0.17 E=  1.86 E-Eo=  1.68 Re(Z)=0.75 Im(Z)=-0.207404E-2 nlXC= -11.7246 lXC= -19.1372 So= -5.17770
+  B=782 Eo=  0.18 E=  1.85 E-Eo=  1.68 Re(Z)=0.75 Im(Z)=-0.221618E-2 nlXC= -11.7342 lXC= -19.1413 So= -5.17844
+  B=783 Eo=  0.18 E=  2.02 E-Eo=  1.83 Re(Z)=0.76 Im(Z)=-0.207895E-2 nlXC= -11.4212 lXC= -18.9879 So= -5.14909
+  B=783 Eo=  0.18 E=  2.02 E-Eo=  1.83 Re(Z)=0.76 Im(Z)=-0.207667E-2 nlXC= -11.4146 lXC= -18.9798 So= -5.14699
+  B=784 Eo=  0.19 E=  2.01 E-Eo=  1.81 Re(Z)=0.75 Im(Z)=-0.221339E-2 nlXC= -11.6223 lXC= -19.2405 So= -5.21017
+  B=784 Eo=  0.19 E=  2.01 E-Eo=  1.81 Re(Z)=0.75 Im(Z)=-0.231318E-2 nlXC= -11.6142 lXC= -19.2391 So= -5.21651
+  B=785 Eo=  0.20 E=  2.06 E-Eo=  1.86 Re(Z)=0.76 Im(Z)=-0.208071E-2 nlXC= -11.8767 lXC= -19.3162 So= -4.99808
+  B=785 Eo=  0.20 E=  2.06 E-Eo=  1.86 Re(Z)=0.76 Im(Z)=-0.212238E-2 nlXC= -11.8922 lXC= -19.3287 So= -4.99099
+  B=786 Eo=  0.21 E=  1.90 E-Eo=  1.69 Re(Z)=0.75 Im(Z)=-0.247829E-2 nlXC= -11.5768 lXC= -19.0886 So= -5.26499
+  B=786 Eo=  0.21 E=  1.89 E-Eo=  1.68 Re(Z)=0.75 Im(Z)=-0.273716E-2 nlXC= -11.5799 lXC= -19.0978 So= -5.28059
+  B=787 Eo=  0.26 E=  2.18 E-Eo=  1.91 Re(Z)=0.76 Im(Z)=-0.176857E-2 nlXC= -11.6401 lXC= -19.4031 So= -5.23609
+  B=787 Eo=  0.26 E=  2.19 E-Eo=  1.92 Re(Z)=0.76 Im(Z)=-0.174946E-2 nlXC= -11.6414 lXC= -19.4185 So= -5.23921
+
+ QP [eV] @ K [2] (iku):  0.000000 -0.500000  0.000000
+  B=778 Eo=  0.02 E=  1.92 E-Eo=  1.90 Re(Z)=0.76 Im(Z)=-0.185514E-2 nlXC= -11.6095 lXC= -19.2049 So= -5.11164
+  B=778 Eo=  0.02 E=  1.92 E-Eo=  1.90 Re(Z)=0.76 Im(Z)=-0.185583E-2 nlXC= -11.6223 lXC= -19.2076 So= -5.10228
+  B=779 Eo=  0.17 E=  1.99 E-Eo=  1.83 Re(Z)=0.76 Im(Z)=-0.208496E-2 nlXC= -11.2945 lXC= -18.9130 So= -5.20934
+  B=779 Eo=  0.17 E=  1.99 E-Eo=  1.82 Re(Z)=0.76 Im(Z)=-0.213492E-2 nlXC= -11.2994 lXC= -18.9158 So= -5.21059
+  B=780 Eo=  0.22 E=  1.92 E-Eo=  1.70 Re(Z)=0.75 Im(Z)=-0.239536E-2 nlXC= -11.5133 lXC= -19.0543 So= -5.28180
+  B=780 Eo=  0.22 E=  1.92 E-Eo=  1.70 Re(Z)=0.75 Im(Z)=-0.265700E-2 nlXC= -11.5247 lXC= -19.0719 So= -5.29009
+  B=781 Eo=  0.26 E=  2.14 E-Eo=  1.88 Re(Z)=0.76 Im(Z)=-0.187023E-2 nlXC= -11.5876 lXC= -19.3716 So= -5.29672
+  B=781 Eo=  0.26 E=  2.16 E-Eo=  1.90 Re(Z)=0.76 Im(Z)=-0.212799E-2 nlXC= -11.6126 lXC= -19.4125 So= -5.28759
+  B=782 Eo=  0.26 E=  2.18 E-Eo=  1.92 Re(Z)=0.76 Im(Z)=-0.208051E-2 nlXC= -11.6241 lXC= -19.4224 So= -5.26834
+  B=782 Eo=  0.26 E=  2.16 E-Eo=  1.90 Re(Z)=0.76 Im(Z)=-0.189073E-2 nlXC= -11.5864 lXC= -19.3829 So= -5.28536
+  B=783 Eo=  0.28 E=  2.11 E-Eo=  1.83 Re(Z)=0.76 Im(Z)=-0.214047E-2 nlXC= -11.9789 lXC= -19.4666 So= -5.07031
+  B=783 Eo=  0.28 E=  2.11 E-Eo=  1.82 Re(Z)=0.76 Im(Z)=-0.212599E-2 nlXC= -11.9693 lXC= -19.4608 So= -5.07866
+  B=784 Eo=  0.29 E=  2.10 E-Eo=  1.81 Re(Z)=0.75 Im(Z)=-0.204470E-2 nlXC= -11.8073 lXC= -19.3854 So= -5.17917
+  B=784 Eo=  0.29 E=  2.10 E-Eo=  1.80 Re(Z)=0.75 Im(Z)=-0.234668E-2 nlXC= -11.8077 lXC= -19.3732 So= -5.16917
+  B=785 Eo=  0.30 E=  2.06 E-Eo=  1.76 Re(Z)=0.75 Im(Z)=-0.248060E-2 nlXC= -11.7800 lXC= -19.2852 So= -5.16768
+  B=785 Eo=  0.30 E=  2.05 E-Eo=  1.75 Re(Z)=0.75 Im(Z)=-0.219342E-2 nlXC= -11.8193 lXC= -19.3002 So= -5.15453
+  B=786 Eo=  0.32 E=  2.12 E-Eo=  1.81 Re(Z)=0.75 Im(Z)=-0.187650E-2 nlXC= -11.6683 lXC= -19.3125 So= -5.24719
+  B=786 Eo=  0.32 E=  2.13 E-Eo=  1.82 Re(Z)=0.75 Im(Z)=-0.211919E-2 nlXC= -11.6893 lXC= -19.3368 So= -5.23936
+  B=787 Eo=  0.33 E=  2.21 E-Eo=  1.88 Re(Z)=0.76 Im(Z)=-0.177107E-2 nlXC= -11.9141 lXC= -19.4808 So= -5.08795
+  B=787 Eo=  0.33 E=  2.21 E-Eo=  1.88 Re(Z)=0.76 Im(Z)=-0.193092E-2 nlXC= -11.8537 lXC= -19.4001 So= -5.06665
+
+ QP [eV] @ K [3] (iku): -0.500000  0.000000  0.000000
+  B=778 Eo=  0.14 E=  2.05 E-Eo=  1.92 Re(Z)=0.76 Im(Z)=-0.172284E-2 nlXC= -11.6537 lXC= -19.4397 So= -5.26311
+  B=778 Eo=  0.13 E=  2.05 E-Eo=  1.92 Re(Z)=0.76 Im(Z)=-0.166132E-2 nlXC= -11.6207 lXC= -19.4377 So= -5.28967
+  B=779 Eo=  0.14 E=  2.06 E-Eo=  1.92 Re(Z)=0.76 Im(Z)=-0.208145E-2 nlXC= -11.6232 lXC= -19.4366 So= -5.28468
+  B=779 Eo=  0.14 E=  2.06 E-Eo=  1.92 Re(Z)=0.76 Im(Z)=-0.214675E-2 nlXC= -11.6707 lXC= -19.4451 So= -5.24969
+  B=780 Eo=  0.17 E=  1.96 E-Eo=  1.79 Re(Z)=0.76 Im(Z)=-0.214241E-2 nlXC= -11.4131 lXC= -18.9703 So= -5.18759
+  B=780 Eo=  0.17 E=  1.96 E-Eo=  1.79 Re(Z)=0.76 Im(Z)=-0.217310E-2 nlXC= -11.4134 lXC= -18.9730 So= -5.19125
+  B=781 Eo=  0.18 E=  2.02 E-Eo=  1.83 Re(Z)=0.76 Im(Z)=-0.203805E-2 nlXC= -11.3955 lXC= -18.9567 So= -5.13992
+  B=781 Eo=  0.18 E=  2.01 E-Eo=  1.83 Re(Z)=0.76 Im(Z)=-0.210899E-2 nlXC= -11.3988 lXC= -18.9600 So= -5.14238
+  B=782 Eo=  0.19 E=  1.88 E-Eo=  1.70 Re(Z)=0.75 Im(Z)=-0.220452E-2 nlXC= -11.6148 lXC= -19.1464 So= -5.28143
+  B=782 Eo=  0.19 E=  1.87 E-Eo=  1.69 Re(Z)=0.75 Im(Z)=-0.223907E-2 nlXC= -11.6255 lXC= -19.1592 So= -5.29409
+  B=783 Eo=  0.21 E=  1.94 E-Eo=  1.72 Re(Z)=0.75 Im(Z)=-0.196390E-2 nlXC= -11.6131 lXC= -19.1454 So= -5.25205
+  B=783 Eo=  0.21 E=  1.94 E-Eo=  1.73 Re(Z)=0.75 Im(Z)=-0.226553E-2 nlXC= -11.6054 lXC= -19.1349 So= -5.24122
+  B=784 Eo=  0.27 E=  2.04 E-Eo=  1.77 Re(Z)=0.75 Im(Z)=-0.229022E-2 nlXC= -11.8366 lXC= -19.4069 So= -5.21232
+  B=784 Eo=  0.26 E=  2.05 E-Eo=  1.79 Re(Z)=0.75 Im(Z)=-0.211061E-2 nlXC= -11.7004 lXC= -19.3840 So= -5.30441
+  B=785 Eo=  0.27 E=  2.08 E-Eo=  1.81 Re(Z)=0.75 Im(Z)=-0.185938E-2 nlXC= -11.7325 lXC= -19.3514 So= -5.21630
+  B=785 Eo=  0.28 E=  2.09 E-Eo=  1.82 Re(Z)=0.76 Im(Z)=-0.211377E-2 nlXC= -11.8239 lXC= -19.3992 So= -5.16997
+  B=786 Eo=  0.28 E=  2.11 E-Eo=  1.83 Re(Z)=0.76 Im(Z)=-0.211356E-2 nlXC= -11.6855 lXC= -19.3140 So= -5.20408
+  B=786 Eo=  0.28 E=  2.11 E-Eo=  1.83 Re(Z)=0.76 Im(Z)=-0.223611E-2 nlXC= -11.6898 lXC= -19.3079 So= -5.20066
+  B=787 Eo=  0.29 E=  2.11 E-Eo=  1.82 Re(Z)=0.75 Im(Z)=-0.190588E-2 nlXC= -11.9503 lXC= -19.5076 So= -5.13871
+  B=787 Eo=  0.29 E=  2.10 E-Eo=  1.81 Re(Z)=0.75 Im(Z)=-0.219785E-2 nlXC= -11.9465 lXC= -19.4575 So= -5.10872
+
+ QP [eV] @ K [4] (iku): -0.500000 -0.500000  0.000000
+  B=778 Eo=  0.15 E=  2.08 E-Eo=  1.93 Re(Z)=0.76 Im(Z)=-0.165277E-2 nlXC= -11.6644 lXC= -19.4667 So= -5.26511
+  B=778 Eo=  0.15 E=  2.08 E-Eo=  1.93 Re(Z)=0.76 Im(Z)=-0.162356E-2 nlXC= -11.6709 lXC= -19.4685 So= -5.26111
+  B=779 Eo=  0.16 E=  2.09 E-Eo=  1.93 Re(Z)=0.76 Im(Z)=-0.199057E-2 nlXC= -11.6646 lXC= -19.4685 So= -5.26381
+  B=779 Eo=  0.15 E=  2.09 E-Eo=  1.93 Re(Z)=0.76 Im(Z)=-0.202026E-2 nlXC= -11.6713 lXC= -19.4700 So= -5.25958
+  B=780 Eo=  0.21 E=  2.02 E-Eo=  1.81 Re(Z)=0.76 Im(Z)=-0.166384E-2 nlXC= -11.3756 lXC= -19.0259 So= -5.25464
+  B=780 Eo=  0.21 E=  2.02 E-Eo=  1.81 Re(Z)=0.76 Im(Z)=-0.182367E-2 nlXC= -11.3840 lXC= -19.0324 So= -5.25959
+  B=781 Eo=  0.23 E=  2.09 E-Eo=  1.85 Re(Z)=0.76 Im(Z)=-0.243803E-2 nlXC= -11.4098 lXC= -19.0548 So= -5.19799
+  B=781 Eo=  0.23 E=  2.09 E-Eo=  1.86 Re(Z)=0.76 Im(Z)=-0.249806E-2 nlXC= -11.4081 lXC= -19.0528 So= -5.19392
+  B=782 Eo=  0.26 E=  1.98 E-Eo=  1.71 Re(Z)=0.75 Im(Z)=-0.248440E-2 nlXC= -11.6222 lXC= -19.1937 So= -5.28875
+  B=782 Eo=  0.26 E=  1.96 E-Eo=  1.70 Re(Z)=0.75 Im(Z)=-0.275550E-2 nlXC= -11.6284 lXC= -19.2023 So= -5.30442
+  B=783 Eo=  0.28 E=  2.06 E-Eo=  1.78 Re(Z)=0.75 Im(Z)=-0.229243E-2 nlXC= -11.6480 lXC= -19.2158 So= -5.21227
+  B=783 Eo=  0.28 E=  2.06 E-Eo=  1.78 Re(Z)=0.75 Im(Z)=-0.256192E-2 nlXC= -11.6333 lXC= -19.2080 So= -5.21715
+  B=784 Eo=  0.29 E=  2.11 E-Eo=  1.82 Re(Z)=0.76 Im(Z)=-0.232731E-2 nlXC= -11.5881 lXC= -19.1706 So= -5.17928
+  B=784 Eo=  0.29 E=  2.11 E-Eo=  1.82 Re(Z)=0.76 Im(Z)=-0.219294E-2 nlXC= -11.6101 lXC= -19.1870 So= -5.17608
+  B=785 Eo=  0.32 E=  2.06 E-Eo=  1.74 Re(Z)=0.75 Im(Z)=-0.214653E-2 nlXC= -11.6207 lXC= -19.2395 So= -5.29960
+  B=785 Eo=  0.32 E=  2.09 E-Eo=  1.77 Re(Z)=0.75 Im(Z)=-0.170307E-2 nlXC= -11.5599 lXC= -19.1698 So= -5.26210
+  B=786 Eo=  0.32 E=  2.02 E-Eo=  1.70 Re(Z)=0.75 Im(Z)=-0.208112E-2 nlXC= -11.7436 lXC= -19.3375 So= -5.31554
+  B=786 Eo=  0.32 E=  2.01 E-Eo=  1.69 Re(Z)=0.75 Im(Z)=-0.206814E-2 nlXC= -11.8147 lXC= -19.4076 So= -5.33001
+  B=787 Eo=  0.35 E=  2.11 E-Eo=  1.76 Re(Z)=0.75 Im(Z)=-0.230036E-2 nlXC= -11.9600 lXC= -19.4568 So= -5.14485
+  B=787 Eo=  0.35 E=  2.12 E-Eo=  1.77 Re(Z)=0.75 Im(Z)=-0.249578E-2 nlXC= -11.9141 lXC= -19.4418 So= -5.16385
+
+ [WR./gw_8ry_88nodes.out//ndb.QP]------------------------------------------------
+  Lattice constants                                :  22.43138  24.81608  55.64872
+  Coulomb cutoff potential                         : slab z
+  Electronic Temperature                           :  0.000000 [K]
+  Bosonic    Temperature                           :  0.000000 [K]
+  Green`s function   energies                      : Perdew, Burke & Ernzerhof(X)+Perdew, Burke & Ernzerhof(C)
+  wavefunctions                                    : Perdew, Burke & Ernzerhof(X)+Perdew, Burke & Ernzerhof(C)
+  PPA    diel. fun.  energies                      : Perdew, Burke & Ernzerhof(X)+Perdew, Burke & Ernzerhof(C)
+  wavefunctions                                    : Perdew, Burke & Ernzerhof(X)+Perdew, Burke & Ernzerhof(C)
+  QP tot states                                    :   80
+  GWo SC iterations                                : 0
+  GW  SC iterations                                : 0
+  GW solver                                        : Newton
+  GW approximation                                 : PPA
+  PPA imaginary Energy                             :  27.21138 ev
+  RIM G`s                                          :  103
+  RIM random pts                                   :  3000000
+  GW SC iterations                                 : 0
+  dS/dw steps                                      :  2
+  dS/dw step                                       :  0.100000 ev
+  X G`s                                            :  11809 used
+  X G`s                                            :  11809 disk
+  X bands                                          :      1   5000
+  X poles                                          :  100.0000 o/o
+  X e/h E range                                    : -1.000000 -1.000000 ev
+  X Hxc Kernel                                     : HARTREE
+  X BZ energy Double Grid                          : no
+  Sc/G bands                                       :      1   5000
+  Sc/G damping                                     :  0.100000 ev
+  Sc bands terminator                              : no
+  Sx RL components                                 :   3572895
+                                                   
+  QP @ state[ 1 ] K range                          :   1   4
+  QP @ state[ 1 ] b range                          :   778   787
+  GF energies kind                                 : Perdew, Burke & Ernzerhof(X)+Perdew, Burke & Ernzerhof(C)
+  GF WF`s kind                                     : Perdew, Burke & Ernzerhof(X)+Perdew, Burke & Ernzerhof(C)
+  Xs energies kind                                 : Perdew, Burke & Ernzerhof(X)+Perdew, Burke & Ernzerhof(C)
+  Xs WF`s kind                                     : Perdew, Burke & Ernzerhof(X)+Perdew, Burke & Ernzerhof(C)
+ - S/N 000490 ---------------------------------------------- v.05.01.00 r.21716 -
+
+ Timing [Min/Max/Average]: 02m-04s/02m-04s/02m-04s
+
+ [12] Timing Overview
+ ====================
+
+ Clock: global (MAX - min (if any spread is present) clocks)
+             io_ATMPROJ_pwscf :      0.0000s P45 [MAX]      0.0000s P53 [min]
+                 io_KB_abinit :      0.0001s P14 [MAX]      0.0000s P54 [min]
+      IO_and_Messaging_switch :      0.0002s P62 (  8 calls,   0.020 msec avg) [MAX]      0.0001s P345 (  8 calls,   0.018 msec avg) [min]
+                 PP_uspp_init :      0.0003s P60 (  2 calls,   0.150 msec avg) [MAX]      0.0002s P145 (  2 calls,   0.101 msec avg) [min]
+                    HF(REDUX) :      4.2146s P348 [MAX]      0.0002s P330 [min]
+                    GW(REDUX) :      5.1163s P286 [MAX]      0.0004s P22 [min]
+                        io_BS :      0.0383s P117 (  4 calls,   9.575 msec avg) [MAX]      0.0011s P4 (  4 calls,   0.273 msec avg) [min]
+               io_Double_Grid :      0.0076s P130 [MAX]      0.0014s P230 [min]
+                  io_KB_pwscf :      0.0298s P214 [MAX]      0.0017s P103 [min]
+                        io_HF :      0.0518s P288 (  3 calls,  17.251 msec avg) [MAX]      0.0034s P55 (  3 calls,   1.149 msec avg) [min]
+             scatter_Gamp_gpu :      0.0044s P78 (324 calls,   0.014 msec avg) [MAX]      0.0035s P352 (324 calls,   0.011 msec avg) [min]
+                   io_DIPOLES :      0.0309s P215 (  2 calls,  15.463 msec avg) [MAX]      0.0037s P324 (  2 calls,   1.859 msec avg) [min]
+                     io_QINDX :      0.0426s P166 (  2 calls,  21.322 msec avg) [MAX]      0.0042s P32 (  2 calls,   2.123 msec avg) [min]
+                   io_COL_CUT :      0.0518s P138 (  3 calls,  17.266 msec avg) [MAX]      0.0061s P70 (  3 calls,   2.044 msec avg) [min]
+                 io_QP_and_GF :      0.0125s P1
+                  io_fragment :      0.0401s P320 ( 38 calls,   1.054 msec avg) [MAX]      0.0193s P116 ( 30 calls,   0.645 msec avg) [min]
+                      Dipoles :      0.0246s P217 [MAX]      0.0226s P324 [min]
+                  RIM-W-coeff :      0.0632s P340 [MAX]      0.0368s P85 [min]
+                      io_GROT :      0.0489s P157 (  2 calls,  24.460 msec avg) [MAX]      0.0436s P86 (  2 calls,  21.790 msec avg) [min]
+                        io_WF :      0.5806s P203 ( 29 calls,  20.021 msec avg) [MAX]      0.2500s P7 ( 21 calls,  11.904 msec avg) [min]
+                         io_X :      1.1888s P51 ( 19 calls,   0.063 msec avg) [MAX]      0.7934s P248 ( 19 calls,  41.760 msec avg) [min]
+                    FFT_setup :      1.2936s P144 (  2 calls,   0.647 msec avg) [MAX]      0.9258s P305 (  2 calls, 462.909 msec avg) [min]
+                  WF_load_FFT :      1.3119s P203 (  2 calls,   0.656 msec avg) [MAX]      0.9582s P348 (  2 calls, 479.092 msec avg) [min]
+                           HF :      4.1853s P76 [MAX]      1.1914s P348 [min]
+                        RIM-W :     29.2024s P202 [MAX]     29.1793s P340 [min]
+          XC_potential_driver :     32.5646s P233 (  2 calls,  16.282 sec avg) [MAX]     31.9627s P168 (  2 calls,  15.981 sec avg) [min]
+                    XCo_local :     32.9990s P73 [MAX]     32.9989s P350 [min]
+                      GW(ppa) :     88.4952s P22 [MAX]     83.4116s P286 [min]
+
+ Timing [Min/Max/Average]: 03s/03s/03s
+
+ [13] Memory Overview
+ ====================
+
+ Memory Usage: global (Only MASTER cpu here). [O] stands for group 'O'
+ Memory treshold are: 1.371571 [Gb] (basic treshold)  13.71571 [Gb] (SAVEs treshold)
+
+
+         Max memory used (HOST)  :  7.917009 [Gb]
+         Max memory used (DEV)   :  7.056793 [Gb]
+
+ [14] Game Over & Game summary
+ =============================
+
+ 03/26/2023 at 10:37 yambo @ nid001065 [start]
+ 03/26/2023 at 10:40                   [end]
+
+ Timing   [Min/Max/Average]: 02m-54s/02m-54s/02m-54s
+             [Time-Profile]: 02m-54s
+
+ .-ACKNOWLEDGMENT
+ |
+ | The users of YAMBO have little formal obligations with respect to
+ | the YAMBO group (those specified in the GNU General Public
+ | License, http://www.gnu.org/copyleft/gpl.txt). However, it is
+ | common practice in the scientific literature, to acknowledge the
+ | efforts of people that have made the research possible. In this
+ | spirit, please find below the reference we kindly ask you to use
+ | in order to acknowledge YAMBO
+ |
+ | Many-body perturbation theory calculations using the yambo code
+ | D. Sangalli, A. Ferretti, H. Miranda, C. Attaccalite, I. Marri, E. Cannuccia, P. Melo,
+ | M Marsili, F Paleari, A Marrazzo, G Prandini, P Bonfà, M O Atambo, F Affinito,
+ | M Palummo, A Molina-Sánchez, C Hogan, M Grüning, D Varsano and A Marini.
+ | J. Phys.: Condens. Matter 31, 325902 (2019).
+ |
+ | Yambo: An ab initio tool for excited state calculations
+ | A. Marini, C. Hogan, M. Grüning, D. Varsano
+ | Computer Physics Communications 180, 1392 (2009).
+ |
+  
+ .-Input file  gw_8ry_88nodes.in
+ | HF_and_locXC                     # [R] Hartree-Fock
+ | gw0                              # [R] GW approximation
+ | dyson                            # [R] Dyson Equation solver
+ | rim_cut                          # [R] Coulomb potential
+ | em1d                             # [R][X] Dynamically Screened Interaction
+ | ppa                              # [R][Xp] Plasmon Pole Approximation for the Screened Interaction
+ | el_el_corr                       # [R] Electron-Electron Correlation
+ | X_and_IO_CPU= "1 1 1 44 8"       # [PARALLEL] CPUs for each role
+ | X_and_IO_ROLEs= "q g k c v"      # [PARALLEL] CPUs roles (q,g,k,c,v)
+ | X_and_IO_nCPU_LinAlg_INV=0       # [PARALLEL] CPUs for Linear Algebra (if -1 it is automatically set)
+ | DIP_CPU= "1 44 8"                # [PARALLEL] CPUs for each role
+ | DIP_ROLEs= "k c v"               # [PARALLEL] CPUs roles (k,c,v)
+ | SE_CPU= "1 1 1 352"              # [PARALLEL] CPUs for each role
+ | SE_ROLEs= "q g qp b"             # [PARALLEL] CPUs roles (q,qp,b)
+ | RandQpts= 3000000                # [RIM] Number of random q-points in the BZ
+ | RandGvec= 103              RL    # [RIM] Coulomb interaction RS components
+ | CUTGeo= "slab z"                 # [CUT] Coulomb Cutoff geometry: box/cylinder/sphere/ws/slab X/Y/Z/XY..
+ | % CUTBox
+ |  0.000000 | 0.000000 | 0.000000 |        # [CUT] [au] Box sides
+ | %
+ | CUTRadius= 0.000000              # [CUT] [au] Sphere/Cylinder radius
+ | CUTCylLen= 0.000000              # [CUT] [au] Cylinder length
+ | CUTwsGvec= 0.700000              # [CUT] WS cutoff: number of G to be modified
+ | EXXRLvcs=  3572895         RL    # [XX] Exchange    RL components
+ | VXCRLvcs=  3572895         RL    # [XC] XCpotential RL components
+ | Chimod= "HARTREE"                # [X] IP/Hartree/ALDA/LRC/PF/BSfxc
+ | % BndsRnXp
+ |      1 |  5000 |                     # [Xp] Polarization function bands
+ | %
+ | NGsBlkXp=  8               Ry    # [Xp] Response block size
+ | % LongDrXp
+ |  0.707107E-5 | 0.707107E-5 |  0.00000    # [Xp] [cc] Electric Field
+ | %
+ | PPAPntXp= 27.21138         eV    # [Xp] PPA imaginary energy
+ | XTermKind= "none"                # [X] X terminator ("none","BG" Bruneval-Gonze)
+ | % GbndRnge
+ |      1 |  5000 |                     # [GW] G[W] bands range
+ | %
+ | GTermKind= "none"                # [GW] GW terminator ("none","BG" Bruneval-Gonze,"BRS" Berger-Reining-Sottile)
+ | DysSolver= "n"                   # [GW] Dyson Equation solver ("n","s","g","q")
+ | %QPkrange                        # [GW] QP generalized Kpoint/Band indices
+ | 1|4|778|787|
+ | %
+ | %QPerange                        # [GW] QP generalized Kpoint/Energy indices
+ | 1|4| 0.000000|-1.000000|
+ | %

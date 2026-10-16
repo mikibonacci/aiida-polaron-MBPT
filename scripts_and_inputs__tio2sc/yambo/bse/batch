@@ -1,0 +1,250 @@
+#!/bin/bash -x
+#SBATCH --job-name="b148_100"
+#SBATCH --time=01:59:59
+#SBATCH --nodes=36
+#SBATCH --ntasks-per-node=4
+#SBATCH --gpus-per-task=1
+#SBATCH --ntasks-per-socket=2
+#SBATCH --cpus-per-task=32
+#SBATCH --account=m3986_g
+#SBATCH --constraint=gpu
+#SBATCH --qos=regular
+#SBATCH --exclusive
+#SBATCH --gres=gpu:4
+#SBATCH --gpu-bind=map_gpu:0,1,2,3
+
+nodes=$SLURM_JOB_NUM_NODES
+ntasks=$SLURM_NTASKS
+nthreads=$SLURM_CPUS_PER_TASK
+ntasks_per_node=$SLURM_NTASKS_PER_NODE
+npe=$((32/${ntasks_per_node}))
+
+all_the_same=0
+with_haydock=1
+
+# go ahead if the output directory is present (e.g. I am reading
+# dipole databases from a previous calculation)
+out_dir_required=0
+
+yambo_504=0
+yambo_slk=0
+yambo_51=1
+
+ntasks_manual=0
+check_original_dip_database=1
+take_rim_database=0
+path_rim_database=""
+take_dip_database=0
+path_dip_database=""
+path_db="/global/homes/s/slaricch/scratch/4x2sc_2oh/ti150_ti148_1fl/2x2x1-kmesh_90ry/pbe_on-top_pbe+u/yambo_no-nscf-smearing/production"
+
+module load PrgEnv-nvidia/8.3.3
+module load cudatoolkit/11.7
+module load craype-accel-nvidia80
+  
+if [[ $yambo_504 -eq 1 ]] ; then
+  p="/global/homes/s/slaricch/software/yambo_5.0.4/master/bin"
+  echo "Warning: to be compiled again!"
+elif [[ $yambo_slk -eq 1 ]] ; then
+  p="/global/homes/s/slaricch/software/yambo-devel/devel-SLK_par_io/bin"
+elif [[ $yambo_51 -eq 1 ]] ; then
+  p="/global/homes/s/slaricch/software/yambo-devel/yambo-5.1/bin"
+else
+  echo "Error: bad definition of the Yambo path"
+  exit
+fi
+
+export PATH="${p}:$PATH"
+
+if [[ ! -d SAVE ]] ; then
+  psave="/global/homes/s/slaricch/scratch/4x2sc_2oh/ti150_ti148_1fl/2x2x1-kmesh_90ry/pbe_on-top_pbe+u/dft_no-nscf-smearing"
+  
+  ln -s ${psave}/SAVE/ .
+  ln -s ${psave}/r_setup .
+fi
+
+nqibz=$(grep "IBZ K-points" r_setup | awk '{print $4}')
+
+if [[ $check_original_dip_database -eq 1 && -e SAVE/ns.kb_pp_pwscf_renamed ]] ; then
+  mv SAVE/ns.kb_pp_pwscf_renamed SAVE/ns.kb_pp_pwscf
+fi
+
+export OMP_NUM_THREADS=1
+
+if [[ $ntasks_manual -ne 0 ]] ; then
+  ntasks="${ntasks_manual}"
+fi
+
+if [[ $all_the_same -eq 1 && ${out_dir_required} -ne 1 ]] ; then
+ rm -rf bse.out
+ mkdir bse.out
+ cd bse.out/
+ 
+ for file in "ndb.em1s" "ndb.cutoff" "ndb.RIM" ; do
+   rm -f ${file}
+   ln -s ${path_db}/static-screening/screening_8ry_88nodes.out/${file} .
+ done
+ 
+ for ik in $(seq 1 $nqibz) ; do
+  rm -f ndb.em1s_fragment_${ik}
+  ln -s ${path_db}/static-screening/screening_8ry_88nodes.out/ndb.em1s_fragment_${ik} .
+ done
+ 
+ rm -f ndb.QP
+ ln -s ${path_db}/gowo/merged_ndb.QP/ndb.QP_merged_1_gw_ppa ndb.QP
+ 
+ cd ../
+fi
+
+mp="srun"
+
+nval=1
+ncon=1
+
+# ntasks for k-points in dipole calculation
+d_nkk=4
+
+# ntasks for valence states in dipole calculation
+d_npv=4
+
+# ntasks for conduction states in dipole calculation
+d_npc=9
+
+# set of n. of valence states used to build the Kernel
+val[1]=716
+
+# set of n. of conduction states used to build the Kernel
+con[1]=1008
+
+bsengexx_new=11809
+bsengexx_old=$(grep "BSENGexx=" bse.in | awk '{print $2}')
+bsengblk=$(grep "BSENGBlk=" bse.in | awk '{print $2}')
+ngblk=2
+
+if [[ $((${ii}-1)) -lt $ncases ]] ; then
+  ncases=$((${ncases}-1))
+fi
+
+# set of mpi tasks for k vectors
+npk=4
+
+# set of mpi tasks for e-h couples
+neh=4
+
+# set of mpi tasks for transitions
+nt=9
+
+# use scalapack only for specific set of jobs
+diag_scalapack=1
+
+ntasks=$(echo "${npk}*${neh}*${nt}" | bc)
+
+if [[ $ntasks_manual -ne 0 ]] ; then
+  nodes_ref=$(echo "${ntasks}/${ntasks_per_node} + 1" | bc)
+else
+  nodes_ref=$(echo "${ntasks}/${ntasks_per_node}" | bc)
+fi
+
+if [[ ${nodes_ref} -ne ${nodes} ]] ; then
+  echo "Error: bad definition of MPI tasks components"
+  exit
+fi
+
+for ival in $(seq 1 $nval) ; do
+ for icon in $(seq 1 $ncon) ; do
+  
+  j_label="bse_${val[${ival}]}v-${con[${icon}]}c_${nodes}nodes"
+  
+  if [[ ! -d ${j_label}.out || ${out_dir_required} -eq 1 ]] ; then
+   
+   sed -e "s/VAL/${val[${ival}]}/g" bse.in > tmp
+   sed -i -e "s/CON/${con[${icon}]}/g" tmp
+   sed -i -e "s/KNP/${npk}/g" tmp
+   sed -i -e "s/EHNP/${neh}/g" tmp
+   sed -i -e "s/TNP/${nt}/g" tmp
+   sed -i -e "s/d_np_v/${d_npv}/g" tmp
+   sed -i -e "s/d_np_c/${d_npc}/g" tmp
+   sed -i -e "s/d_nkk/${d_nkk}/g" tmp
+   sed -i -e "s/BSENGexx=  ${bsengexx_old}/BSENGexx= ${bsengexx_new}/g" tmp
+   sed -i -e "s/BSENGBlk=  ${bsengblk}/BSENGBlk=  ${ngblk}/g" tmp
+   
+   if [[ ${with_haydock} -eq 1 ]] ; then
+     sed -i -e "s/BSSmod= \"d\"/BSSmod= \"h\"/g" tmp
+   fi
+
+   mv tmp ${j_label}.in
+   
+   if [[ ${diag_scalapack} -eq 1 ]] ; then
+    ncpu=$(echo "${npk}*${neh}*${nt}" | bc)
+    sed -i -e "s/DIAGO=-1/DIAGO=${ncpu}/g" ${j_label}.in
+   fi
+   
+   if [[ $all_the_same -eq 0 && ${out_dir_required} -ne 1 ]] ; then
+    rm -rf ${j_label}.out
+    mkdir ${j_label}.out
+    cd ${j_label}.out/
+    
+    for file in "ndb.em1s" "ndb.cutoff" "ndb.RIM" ; do
+      rm -f ${file}
+      ln -s ${path_db}/static-screening/screening_8ry_88nodes.out/${file} .
+    done
+    
+    for ik in $(seq 1 $nqibz) ; do
+     rm -f ndb.em1s_fragment_${ik}
+     ln -s ${path_db}/static-screening/screening_8ry_88nodes.out/ndb.em1s_fragment_${ik} .
+    done
+    
+    rm -f ndb.QP
+    ln -s ${path_db}/gowo/merged_ndb.QP/ndb.QP_merged_1_gw_ppa ndb.QP
+    
+    cd ../
+    
+   fi
+   
+   sed -i -e "s/bse.out/${j_label}.out/g" ${j_label}.in
+   
+   dip_done=0
+   if [[ $take_dip_database -eq 1 && ! -d ${j_label}.out ]] ; then
+    mkdir ${j_label}.out
+    cd ${j_label}.out/
+    
+    ln -s $path_dip_database/ndb.dipoles .
+    for iq in $(seq 1 ${nqibz}) ; do
+      jq=$(echo "${nqibz} + ${iq}" | bc)
+      ln -s $path_dip_database/ndb.dipoles_fragment_${iq}
+      ln -s $path_dip_database/ndb._fragment_${jq}
+    done
+    
+    cd ../
+    dip_done=1
+   fi
+   
+   if [[ $take_rim_database -eq 1 ]] ; then
+    if [[ $dip_done -eq 0 && ! -d ${j_label}.out ]] ; then
+      mkdir ${j_label}.out
+      cd ${j_label}.out
+    else
+      cd ${j_label}.out
+      rm -f ndb.cutoff ndb.RIM
+    fi
+    
+    ln -s $path_rim_database/ndb.cutoff .
+    ln -s $path_rim_database/ndb.RIM .
+    
+    cd ../
+   fi
+   
+   if [[ $all_the_same -eq 1 ]] ; then
+     $mp yambo -F ${j_label}.in -J bse.out
+     
+     rm -f bse.out/ndb.BS*
+   else
+     $mp yambo -F ${j_label}.in -J ${j_label}.out
+   fi
+   
+   mv LOG LOG_${j_label}
+   
+  fi
+  
+ done
+done

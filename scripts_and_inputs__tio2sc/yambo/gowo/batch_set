@@ -1,0 +1,306 @@
+#!/bin/bash -x
+#SBATCH --job-name="r1_148"
+#SBATCH --time=03:59:59
+#SBATCH --nodes=88
+#SBATCH --ntasks-per-node=4
+#SBATCH --gpus-per-task=1
+#SBATCH --ntasks-per-socket=2
+#SBATCH --cpus-per-task=32
+#SBATCH --account=m3986_g
+#SBATCH --constraint=gpu
+#SBATCH --qos=regular
+#SBATCH --exclusive
+#SBATCH --gres=gpu:4
+#SBATCH --gpu-bind=map_gpu:0,1,2,3
+
+nodes=$SLURM_JOB_NUM_NODES
+ntasks=$SLURM_NTASKS
+nthreads=$SLURM_CPUS_PER_TASK
+ntasks_per_node=$SLURM_NTASKS_PER_NODE
+
+yambo_504=0
+yambo_slk=0
+yambo_51=1
+
+ntasks_manual=0
+check_original_dip_database=1
+take_rim_database=0
+path_rim_database=""
+take_dip_database=0
+path_dip_database=""
+
+module load PrgEnv-nvidia/8.3.3
+module load cudatoolkit/11.7
+module load craype-accel-nvidia80
+  
+if [[ $yambo_504 -eq 1 ]] ; then
+  p="/global/homes/s/slaricch/software/yambo_5.0.4/master/bin"
+  echo "Warning: to be compiled again!"
+elif [[ $yambo_slk -eq 1 ]] ; then
+  p="/global/homes/s/slaricch/software/yambo-devel/devel-SLK_par_io/bin"
+elif [[ $yambo_51 -eq 1 ]] ; then
+  p="/global/homes/s/slaricch/software/yambo-devel/yambo-5.1/bin"
+else
+  echo "Error: bad definition of the Yambo path"
+  exit
+fi
+
+export PATH="${p}:$PATH"
+
+
+if [[ ! -d SAVE ]] ; then
+  psave="/global/homes/s/slaricch/scratch/4x2sc_2oh/ti150_ti148_1fl/2x2x1-kmesh_90ry/pbe_on-top_pbe+u/dft_no-nscf-smearing"
+  
+  ln -s ${psave}/SAVE/ .
+  ln -s ${psave}/r_setup .
+fi
+
+
+nqibz=$(grep "IBZ K-points" r_setup | awk '{print $4}')
+
+if [[ $check_original_dip_database -eq 1 && -e SAVE/ns.kb_pp_pwscf_renamed ]] ; then
+  mv SAVE/ns.kb_pp_pwscf_renamed SAVE/ns.kb_pp_pwscf
+fi
+
+export OMP_NUM_THREADS=1
+
+if [[ $ntasks_manual -ne 0 ]] ; then
+  ntasks="${ntasks_manual}"
+fi
+
+mp="srun"
+
+ncases=35
+
+# n. of intermediate states for x0
+nbands=5000
+
+# ntasks for valence states in dipole calculation
+d_npv=8
+
+# ntasks for conduction states in dipole calculation
+d_npc=44
+
+# lower extreme set of states to correct
+lstate[1]=698
+lstate[2]=708
+lstate[3]=718
+lstate[4]=728
+lstate[5]=738
+lstate[6]=748
+lstate[7]=758
+lstate[8]=768
+lstate[9]=778
+lstate[10]=788
+lstate[11]=798
+lstate[12]=808
+lstate[13]=818
+lstate[14]=828
+lstate[15]=838
+lstate[16]=848
+lstate[17]=858
+lstate[18]=868
+lstate[19]=878
+lstate[20]=888
+lstate[21]=898
+lstate[22]=908
+lstate[23]=918
+lstate[24]=928
+lstate[25]=938
+lstate[26]=948
+lstate[27]=958
+lstate[28]=968
+lstate[29]=978
+lstate[30]=988
+lstate[31]=998
+lstate[32]=1008
+lstate[33]=1018
+lstate[34]=1028
+lstate[35]=1038
+
+# upper extreme set of states to correct
+ustate[1]=707
+ustate[2]=717
+ustate[3]=727
+ustate[4]=737
+ustate[5]=747
+ustate[6]=757
+ustate[7]=767
+ustate[8]=777
+ustate[9]=787
+ustate[10]=797
+ustate[11]=807
+ustate[12]=817
+ustate[13]=827
+ustate[14]=837
+ustate[15]=847
+ustate[16]=857
+ustate[17]=867
+ustate[18]=877
+ustate[19]=887
+ustate[20]=897
+ustate[21]=907
+ustate[22]=917
+ustate[23]=927
+ustate[24]=937
+ustate[25]=947
+ustate[26]=957
+ustate[27]=967
+ustate[28]=977
+ustate[29]=987
+ustate[30]=997
+ustate[31]=1007
+ustate[32]=1017
+ustate[33]=1027
+ustate[34]=1037
+ustate[35]=1047
+
+# set of cut off (in Ry)
+ecut=8
+
+# set of mpi tasks for k vectors
+npk=1
+
+# set of mpi tasks for G vectors
+npg=1
+
+# set of mpi tasks for conduction states
+npc=44
+
+# set of mpi tasks for valence states
+npv=8
+
+# moltiplicative factor to update the n. of MPI tasks required
+# for the self-energy
+factor=1
+
+# use scalapack only for specific set of jobs
+inversion_scalapack=0
+
+for icase in $(seq 1 $ncases) ; do
+ 
+ j_label="gw_${ecut}ry_${nodes}nodes"
+ 
+ if [[ ! -d set-${icase}_${lstate[${icase}]}-${ustate[${icase}]} ]] ; then
+  
+  ntasks=$(echo "${npv}*${npc}*${npg}*${npk}" | bc)
+  
+  if [[ $ntasks_manual -ne 0 ]] ; then
+    nodes_ref=$(echo "${ntasks}/${ntasks_per_node} + 1" | bc)
+  else
+    nodes_ref=$(echo "${ntasks}/${ntasks_per_node}" | bc)
+  fi
+  
+  if [[ ${nodes_ref} -ne ${nodes} ]] ; then
+    echo "Error: bad definition of MPI tasks components"
+    exit
+  fi
+  
+  npb_se=$(echo "${npv}*${npc}/${factor}" | bc)
+  npg_s=$(echo "${npg}*${factor}" | bc)
+  
+  sed -e "s/ECUT/${ecut}/g" gw.in > tmp
+  sed -i -e "s/NBANDS/${nbands}/g" tmp
+  sed -i -e "s/NPv/${npv}/g" tmp
+  sed -i -e "s/NPc/${npc}/g" tmp
+  sed -i -e "s/NPg/${npg}/g" tmp
+  sed -i -e "s/NPk/${npk}/g" tmp
+  sed -i -e "s/NPSg/${npg_s}/g" tmp
+  sed -i -e "s/NPb/${npb_se}/g" tmp
+  sed -i -e "s/d_np_v/${d_npv}/g" tmp
+  sed -i -e "s/d_np_c/${d_npc}/g" tmp
+  sed -i -e "s/LSTATE/${lstate[${icase}]}/g" tmp
+  sed -i -e "s/USTATE/${ustate[${icase}]}/g" tmp
+  mv tmp ${j_label}.in
+  
+  if [[ ${inversion_scalapack} -eq 1 ]] ; then
+     
+    ncpu=$(echo "${npc}*${npv}*${npk}*${npg}/2" | bc)
+    
+    inv_found=0
+    for ii in $(seq 1 1000) ; do
+      sed -n ${ii}p ${j_label}.in > tmp
+      inv_found=$(grep "INV=-1" tmp | wc -l)
+      
+      if [[ $inv_found -eq 1 ]] ; then
+        nlines=$(wc -l ${j_label}.in | awk '{print $1}')
+        rest=$((${nlines}-${ii}))
+        head -n $ii ${j_label}.in > tmp
+        tail -n $rest ${j_label}.in > tmp2
+        echo "ChiLinAlgMod=\"LIN_SYS,CPU\"" >> tmp
+        sed -i -e "s/INV=-1/INV= ${ncpu}/g" tmp
+        cat tmp tmp2 > tmp3
+        mv tmp3 ${j_label}.in
+        break
+      fi
+    done
+    rm -f tmp*
+  fi
+  
+  dip_done=0
+  if [[ $take_dip_database -eq 1 && ! -d ${j_label}.out ]] ; then
+    mkdir ${j_label}.out
+    cd ${j_label}.out/
+    
+    ln -s $path_dip_database/ndb.dipoles .
+    for iq in $(seq 1 ${nqibz}) ; do
+      jq=$(echo "${nqibz} + ${iq}" | bc)
+      ln -s $path_dip_database/ndb.dipoles_fragment_${iq}
+      ln -s $path_dip_database/ndb._fragment_${jq}
+    done
+    
+    cd ../
+    dip_done=1
+  fi
+  
+  if [[ $take_rim_database -eq 1 ]] ; then
+    if [[ $dip_done -eq 0 && ! -d ${j_label}.out ]] ; then
+      mkdir ${j_label}.out
+      cd ${j_label}.out
+    else
+      cd ${j_label}.out
+      rm -f ndb.cutoff ndb.RIM
+    fi
+    
+    ln -s $path_rim_database/ndb.cutoff .
+    ln -s $path_rim_database/ndb.RIM .
+    
+    cd ../
+  fi
+  
+  $mp yambo -F ${j_label}.in -J ${j_label}.out
+  
+  if [[ -d LOG ]] ; then
+    cd LOG/
+    for ii in $(seq 3 $ntasks) ; do
+      rm -f l-${j_label}.out_HF_and_locXC_gw0_dyson_rim_cut_em1d_ppa_el_el_corr_CPU_$ii
+    done
+    cd ../
+
+    mv LOG LOG_${j_label}
+  fi
+  
+  namefile[1]="${j_label}.in"
+  namefile[2]="r-${j_label}.out_HF_and_locXC_gw0_dyson_rim_cut_em1d_ppa_el_el_corr"
+  namefile[3]="o-${j_label}.out.qp"
+  namefile[4]="${j_label}.out/ndb.QP"
+  namefile[5]="${j_label}.out/ndb.HF_and_locXC"
+  namefile[6]="${j_label}.out/ndb.RIM_W"
+  namefile[7]="LOG_${j_label}"
+  
+  if [[ ! -d set-${icase}_${lstate[${icase}]}-${ustate[${icase}]} ]] ; then
+    mkdir set-${icase}_${lstate[${icase}]}-${ustate[${icase}]}
+  else
+    rm -f set-${icase}_${lstate[${icase}]}-${ustate[${icase}]}/*
+  fi
+  
+  for ii in $(seq 1 7) ; do
+    if [[ -e ${namefile[${ii}]} ]] ; then
+      mv ${namefile[${ii}]} set-${icase}_${lstate[${icase}]}-${ustate[${icase}]}/
+    else
+      echo "file ${namefile[${ii}]} not generated" >> set-${icase}_${lstate[${icase}]}-${ustate[${icase}]}/ERROR
+    fi
+  done
+  
+ fi
+done

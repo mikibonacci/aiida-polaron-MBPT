@@ -1,0 +1,53 @@
+#!/bin/bash -x
+#SBATCH --job-name="p148"
+#SBATCH --time=00:19:59
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --ntasks-per-socket=1
+#SBATCH --gpus-per-task=1
+##SBATCH --cpus-per-task=32
+##SBATCH --account=m3995_g
+#SBATCH --account=m3986_g
+#SBATCH --constraint=gpu
+#SBATCH --qos=debug
+#SBATCH --exclusive
+
+nodes=$SLURM_JOB_NUM_NODES
+ntasks=$SLURM_NTASKS
+nthreads=$SLURM_CPUS_PER_TASK
+
+module load cudatoolkit/21.9_11.4
+module load craype-accel-nvidia80
+
+p="/global/homes/s/slaricch/software/yambo-devel/yambo-5.1/bin"
+export PATH="${p}:$PATH"
+
+export OMP_NUM_THREADS=$nthreads
+
+mp="srun"
+
+rm -f *_r*
+
+cd tio2.save
+
+$mp p2y
+$mp yambo
+
+if [[ -d SAVE ]] ; then
+#  if [[ -e SAVE/ns.kb_pp_pwscf ]] ; then
+#    mv SAVE/ns.kb_pp_pwscf SAVE/ns.kb_pp_pwscf_renamed
+#  fi
+  
+  mv SAVE ../
+  mv r_setup ../
+  
+fi
+
+cd ../
+
+rm -f tio2.*
+rm -f *_r*
+
+if [[ -e r_setup ]] ; then
+  rm -rf tio2.save
+fi

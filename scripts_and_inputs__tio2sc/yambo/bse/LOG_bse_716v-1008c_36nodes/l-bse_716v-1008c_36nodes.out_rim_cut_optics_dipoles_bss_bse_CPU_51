@@ -1,0 +1,388 @@
+
+
+
+_|      _|   _|_|   _|      _|  _|_|_|     _|_|
+  _|  _|   _|    _| _|_|  _|_| _|    _| _|    _|
+    _|     _|_|_|_| _|  _|  _| _|_|_|   _|    _|
+    _|     _|    _| _|      _| _|    _| _|    _|
+    _|     _|    _| _|      _| _|_|_|     _|_|
+
+
+
+ <---> P51: [01] MPI/OPENMP structure, Files & I/O Directories
+ <---> P51-nid001909: MPI Cores-Threads   : 144(CPU)-1(threads)-1(threads@X)-1(threads@DIP)-1(threads@SE)-1(threads@RT)-1(threads@K)-1(threads@NL)
+ <---> P51-nid001909: MPI Cores-Threads   : DIP(environment)-4 9 4(CPUs)-k c v(ROLEs)
+ <---> P51-nid001909: MPI Cores-Threads   : BS(environment)-4 4 9(CPUs)-k eh t(ROLEs)
+ <---> P51-nid001909: MPI assigned to GPU : 0
+ <---> P51-nid001909: [02] CORE Variables Setup
+ <---> P51-nid001909: [02.01] Unit cells
+ <02s> P51-nid001909: [02.02] Symmetries
+ <02s> P51-nid001909: [02.03] Reciprocal space
+ <02s> P51-nid001909: [02.04] K-grid lattice
+ <02s> P51-nid001909: Grid dimensions      :  2  2
+ <02s> P51-nid001909: [02.05] Energies & Occupations
+ <02s> P51-nid001909: [03] Transferred momenta grid and indexing
+ <03s> P51-nid001909: [04] Coloumb potential Random Integration (RIM)
+ <03s> P51-nid001909: [05] Coloumb potential CutOff slab z
+ <03s> P51-nid001909: [06] External/Internal QP corrections
+ <03s> P51-nid001909: E<bse_716v-1008c_36nodes.out/ndb.QP[ PPA@E  27.21138 * XG 11809 * Xb 1-5000 * Scb 1-5000]
+ <03s> P51-nid001909: [WARNING] Empty workload for CPU 51
+ <03s> P51-nid001909: [dE_from_DB-Nearest K] Exact matches       :  100.0000 [o/o]
+ <03s> P51-nid001909: [QP_apply] Action to be applied: E<bse_716v-1008c_36nodes.out/ndb.QP[ PPA@E  27.21138 * XG 11809 * Xb 1-5000 * Scb 1-5000]
+ <03s> P51-nid001909: [06.01]  QP corrections report
+ <03s> P51-nid001909: [07] Dipoles
+ <03s> P51-nid001909: [PARALLEL DIPOLES for K(ibz) on 4 CPU] Loaded/Total (Percentual):1/4(25%)
+ <03s> P51-nid001909: [PARALLEL DIPOLES for CON bands on 9 CPU] Loaded/Total (Percentual):26/231(11%)
+ <03s> P51-nid001909: [PARALLEL DIPOLES for VAL bands on 4 CPU] Loaded/Total (Percentual):15/62(24%)
+ <04s> P51-nid001909: [DIP] Database not correct or missing. To be computed
+ <04s> P51-nid001909: [x,Vnl] computed using 2212 projectors
+ <04s> P51-nid001909: [WARNING] [x,Vnl] slows the Dipoles computation. To neglect it rename the ns.kb_pp file
+ <17s> P51-nid001909: Dipoles: P, V and iR (T) |                                        | [000%] --(E) --(X)
+ <04m-08s> P51-nid001909: Dipoles: P, V and iR (T) |#                                       | [002%] 03m-50s(E) 02h-29m(X)
+ <07m-56s> P51-nid001909: Dipoles: P, V and iR (T) |####################                    | [050%] 07m-38s(E) 15m-15s(X)
+ <07m-56s> P51-nid001909: Dipoles: P, V and iR (T) |########################################| [100%] 07m-38s(E) 07m-38s(X)
+ <08m-11s> P51-nid001909: [WARNING] [r,Vnl^pseudo] included in position and velocity dipoles.
+ <08m-11s> P51-nid001909: [WARNING] In case H contains other non local terms, these are neglected
+ <08m-11s> P51-nid001909: [08] Bethe Salpeter Equation driver
+ <08m-11s> P51-nid001909: [PARALLEL Response_T_space for K(ibz) on 4 CPU] Loaded/Total (Percentual):1/4(25%)
+ <08m-11s> P51-nid001909: [08.01] Bethe Salpeter Equation @q1
+ <08m-26s> P51-nid001909: [08.01.01] Transition pre-analysis @q1
+ <08m-26s> P51-nid001909: [PARALLEL Response_T_space for (e/h) Groups on 4 CPU] Loaded/Total (Percentual):1/16(6%)
+ <08m-26s> P51-nid001909: [PARALLEL Response_T_space for (e/h)->(e/h)' Transitions (ordered) on 9 CPU] Loaded/Total (Percentual):1/136(1%)
+ <08m-26s> P51-nid001909: [PARALLEL Response_T_space for CON bands on 4 CPU] Loaded/Total (Percentual):58/231(25%)
+ <08m-26s> P51-nid001909: [PARALLEL Response_T_space for VAL bands on 9 CPU] Loaded/Total (Percentual):7/62(11%)
+ <08m-26s> P51-nid001909: [08.01.02] Transition Groups build-up @q1
+ <08m-27s> P51-nid001909: [BSK] Size (resonant):  114576
+ <08m-27s> P51-nid001909: [BSK]         (total):  114576
+ <08m-27s> P51-nid001909: [BSK] N. of matrices :  1
+ <08m-27s> P51-nid001909: [PARALLEL Response_T_space for Kernel matrix elements] Loaded/Total(Percentual): 0.512799E+8/ 0.65639E+10 (1%)
+ <08m-28s> P51-nid001909: [08.01.03] Loading Dipoles @q1
+ <08m-28s> P51-nid001909: BSE dipoles |                                        | [000%] --(E) --(X)
+ <08m-28s> P51-nid001909: BSE dipoles |########################################| [100%] --(E) --(X)
+ <08m-28s> P51-nid001909: [08.01.04] Independent Particles properties @q1
+ <08m-28s> P51-nid001909: IP properties |                                        | [000%] --(E) --(X)
+ <08m-28s> P51-nid001909: IP properties |########################################| [100%] --(E) --(X)
+ <08m-28s> P51-nid001909: [08.01.05] BSE Kernel @q1 (Resonant CORRRELATION EXCHANGE)
+ <08m-28s> P51-nid001909: [08.01.05.01] RIM-W interpolation
+ <08m-28s> P51-nid001909: [WARNING] RIM-W works only for 2D semiconductors with slab cutoff
+ <08m-29s> P51-nid001909: [08.01.05.02] RIM-W integrals
+ <08m-29s> P51-nid001909: Random points |                                        | [000%] --(E) --(X)
+ <08m-31s> P51-nid001909: Random points |########################################| [100%] 02s(E) 02s(X)
+ <08m-31s> P51-nid001909: [08.01.05.03] RIM integrals
+ <08m-31s> P51-nid001909: [WARNING] Empty workload for CPU 51
+ <08m-31s> P51-nid001909: Momenta loop |                                        | [***%] --(E) --(X)
+ <09m-03s> P51-nid001909: [08.01.05.04] Screened interaction header I/O
+ <09m-07s> P51-nid001909: [MEMORY] Alloc WF%c( 7.012661 [Gb]) (HOST) TOTAL:  7.634001 [Gb] (traced)  344.4360 [Mb] (memstat)
+ <09m-07s> P51-nid001909: [MEMORY] Alloc WF%c_d( 7.012661 [Gb]) (DEV) TOTAL:  7.411122 [Gb] (traced)
+ <09m-07s> P51-nid001909: [PARALLEL distribution for Wave-Function states] Loaded/Total(Percentual):988/2344(42%)
+ <09m-09s> P51-nid001909: [FFT-BSK] Mesh size:   69   77  171
+ <09m-11s> P51-nid001909: [WF] Copying WF data from GPU device
+ <09m-12s> P51-nid001909: [08.01.05.05] Wave-Function Phases
+ <09m-13s> P51-nid001909: [08.01.05.06] Main kernel loop
+ <09m-13s> P51-nid001909: Kernel |                                        | [000%] --(E) --(X)
+ <42m-19s> P51-nid001909: [MEMORY] Alloc BS_blk(iB)%O_c( 2.398522 [Gb]) (HOST) TOTAL:  11.35791 [Gb] (traced)
+ <01h-32m> P51-nid001909: [MEMORY]  Free BS_blk(iB)%O_c( 2.398522 [Gb]) (HOST) TOTAL:  8.959386 [Gb] (traced)
+ <01h-32m> P51-nid001909: Kernel |########################################| [100%] 01h-23m(E) 01h-23m(X)
+ <01h-32m> P51-nid001909: [MEMORY]  Free WF%c( 7.012661 [Gb]) (HOST) TOTAL:  622.6910 [Mb] (traced)  410.7520 [Mb] (memstat)
+ <01h-32m> P51-nid001909: [MEMORY]  Free WF%c_d( 7.012661 [Gb]) (DEV) TOTAL:  256.8970 [Mb] (traced)
+ <01h-34m> P51-nid001909: [08.01.06] BSE solver(s) @q1
+ <01h-34m> P51-nid001909: [08.01.07] Haydock Solver in the optics basis @q1 using the hermitian scheme
+ <01h-34m> P51-nid001909: [Haydock] Iteration 1
+ <01h-34m> P51-nid001909: [Haydock] Iteration 2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 3 Accuracy  975.7385| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 4 Accuracy   1288.92| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 5 Accuracy  372.4710| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 6 Accuracy  206.5173| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 7 Accuracy  329.6670| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 8 Accuracy  116.1397| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 9 Accuracy  145.5910| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 10 Accuracy  236.6100| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 11 Accuracy  66.49551| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 12 Accuracy  82.61450| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 13 Accuracy  215.1401| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 14 Accuracy  992.7974| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 15 Accuracy  26.68574| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 16 Accuracy  160.5061| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 17 Accuracy  16.64223| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 18 Accuracy  28.14282| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 19 Accuracy  65.46262| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 20 Accuracy  60.87822| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 21 Accuracy  122.3160| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 22 Accuracy  432.8959| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 23 Accuracy  481.1041| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 24 Accuracy  35.00827| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 25 Accuracy  23.88789| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 26 Accuracy  13.52551| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 27 Accuracy  9.278767| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 28 Accuracy  48.42467| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 29 Accuracy  5.844283| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 30 Accuracy  18.04103| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 31 Accuracy  100.1617| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 32 Accuracy  17.80034| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 33 Accuracy  40.96601| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 34 Accuracy  25.75971| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 35 Accuracy  68.24094| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 36 Accuracy  225.2346| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 37 Accuracy   2320.04| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 38 Accuracy  103.9913| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 39 Accuracy  72.46974| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 40 Accuracy  81.39574| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 41 Accuracy  34.83068| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 42 Accuracy  226.4488| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 43 Accuracy  6.471904| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 44 Accuracy  7.463142| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 45 Accuracy  11.26875| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 46 Accuracy  7.687159| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 47 Accuracy  257.8034| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 48 Accuracy  62.84240| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 49 Accuracy  59.21901| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 50 Accuracy  101.1965| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 51 Accuracy  29.63692| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 52 Accuracy  15.86012| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 53 Accuracy  26.68221| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 54 Accuracy   2625.27| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 55 Accuracy  235.4004| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 56 Accuracy  5.290806| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 57 Accuracy  6.227501| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 58 Accuracy  7.246071| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 59 Accuracy  3.505439| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 60 Accuracy  8.719571| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 61 Accuracy  64.84391| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 62 Accuracy  9.967857| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 63 Accuracy  15.67408| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 64 Accuracy  11.64422| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 65 Accuracy  15.12387| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 66 Accuracy  22.56490| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 67 Accuracy  14.92676| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 68 Accuracy  301.1206| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 69 Accuracy  21.26228| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 70 Accuracy  756.2171| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 71 Accuracy  19.82790| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 72 Accuracy  37.83171| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 73 Accuracy  15.62678| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 74 Accuracy  17.28750| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 75 Accuracy  6.692924| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 76 Accuracy  19.60145| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 77 Accuracy  1.594425| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 78 Accuracy  20.09748| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 79 Accuracy  2.771725| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 80 Accuracy  21.82662| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 81 Accuracy  8.016190| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 82 Accuracy  10.91872| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 83 Accuracy  21.21078| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 84 Accuracy  9.001833| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 85 Accuracy  18.08623| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 86 Accuracy  8.778763| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 87 Accuracy  19.37978| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 88 Accuracy  12.03867| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 89 Accuracy  14.57850| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 90 Accuracy  11.63265| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 91 Accuracy  20.01018| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 92 Accuracy  8.051910| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 93 Accuracy   2573.63| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 94 Accuracy  1.874551| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 95 Accuracy  1.733860| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 96 Accuracy  1.992715| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 97 Accuracy  8.423895| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 98 Accuracy  5.384580| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 99 Accuracy  7.446379| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 100 Accuracy  7.144940| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 101 Accuracy  7.125848| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 102 Accuracy  7.862798| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 103 Accuracy  5.947182| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 104 Accuracy  9.104529| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 105 Accuracy  2.663590| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 106 Accuracy  3.925191| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 107 Accuracy  0.549149| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 108 Accuracy  1.430701| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 109 Accuracy  1.636034| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 110 Accuracy  4.527698| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 111 Accuracy  3.554471| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 112 Accuracy  4.710108| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 113 Accuracy  4.916826| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 114 Accuracy  3.462334| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 115 Accuracy  4.262613| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 116 Accuracy  2.237070| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 117 Accuracy  2.283153| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 118 Accuracy  1.742434| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 119 Accuracy  1.712297| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 120 Accuracy  0.723557| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 121 Accuracy  0.303990| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 122 Accuracy  0.520797| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 123 Accuracy  1.364193| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 124 Accuracy  1.462495| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 125 Accuracy  2.010326| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 126 Accuracy  2.009656| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 127 Accuracy  2.210855| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 128 Accuracy  2.212101| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 129 Accuracy  1.917870| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 130 Accuracy  1.898801| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 131 Accuracy  1.150836| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 132 Accuracy  0.941705| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 133 Accuracy  0.498540| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 134 Accuracy  0.428816| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 135 Accuracy  0.265864| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 136 Accuracy  0.249021| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 137 Accuracy  0.155968| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 138 Accuracy  0.160545| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 139 Accuracy  0.192425| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 140 Accuracy  0.569562| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 141 Accuracy  0.764201| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 142 Accuracy  1.089760| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 143 Accuracy  1.072852| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 144 Accuracy  0.880793| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 145 Accuracy  0.838684| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 146 Accuracy  0.775229| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 147 Accuracy  0.760644| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 148 Accuracy  0.732881| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 149 Accuracy  0.703272| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 150 Accuracy  0.611435| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 151 Accuracy  0.545495| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 152 Accuracy  0.389467| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 153 Accuracy  0.174207| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 154 Accuracy  0.096594| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 155 Accuracy  0.347226| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 156 Accuracy  0.445218| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 157 Accuracy  0.484080| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 158 Accuracy  0.495604| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 159 Accuracy  0.489832| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 160 Accuracy  0.480147| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 161 Accuracy  0.456921| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 162 Accuracy  0.440647| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 163 Accuracy  0.417305| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 164 Accuracy  0.401846| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 165 Accuracy  0.380507| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 166 Accuracy  0.366502| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 167 Accuracy  0.346589| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 168 Accuracy  0.331829| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 169 Accuracy  0.288365| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 170 Accuracy  0.206015| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 171 Accuracy  0.075441| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 172 Accuracy  0.038907| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 173 Accuracy  0.090014| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 174 Accuracy  0.141866| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 175 Accuracy  0.178650| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 176 Accuracy  0.212060| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 177 Accuracy  0.220359| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 178 Accuracy  0.205518| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 179 Accuracy  0.183863| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 180 Accuracy  0.152080| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 181 Accuracy  0.114546| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 182 Accuracy  0.083626| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 183 Accuracy  0.054056| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 184 Accuracy  0.022845| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 185 Accuracy  0.021329| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 186 Accuracy  0.026435| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 187 Accuracy  0.047295| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 188 Accuracy  0.069659| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 189 Accuracy  0.087629| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 190 Accuracy  0.096462| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 191 Accuracy  0.102552| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 192 Accuracy  0.104441| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 193 Accuracy  0.103953| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 194 Accuracy  0.099743| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 195 Accuracy  0.086212| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 196 Accuracy  0.063975| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 197 Accuracy  0.034264| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 198 Accuracy  0.011621| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 199 Accuracy  0.014696| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 200 Accuracy  0.038858| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 201 Accuracy  0.052886| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 202 Accuracy  0.060591| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 203 Accuracy  0.063046| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 204 Accuracy  0.062482| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 205 Accuracy  0.061043| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 206 Accuracy  0.054100| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 207 Accuracy  0.039650| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 208 Accuracy  0.027143| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 209 Accuracy  0.018261| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 210 Accuracy  0.007037| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 211 Accuracy  0.007134| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 212 Accuracy  0.015266| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 213 Accuracy  0.021339| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 214 Accuracy  0.021768| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 215 Accuracy  0.021954| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 216 Accuracy  0.023073| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 217 Accuracy  0.025264| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 218 Accuracy  0.027806| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 219 Accuracy  0.028710| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 220 Accuracy  0.029443| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 221 Accuracy  0.029445| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 222 Accuracy  0.028292| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 223 Accuracy  0.026776| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 224 Accuracy  0.024650| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 225 Accuracy  0.022566| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 226 Accuracy  0.019952| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 227 Accuracy  0.017747| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 228 Accuracy  0.016319| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 229 Accuracy  0.014610| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 230 Accuracy  0.013560| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 231 Accuracy  0.010103| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 232 Accuracy  0.003864| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 233 Accuracy  0.004061| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 234 Accuracy  0.010735| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 235 Accuracy  0.012988| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 236 Accuracy  0.013674| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 237 Accuracy  0.013846| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 238 Accuracy  0.013152| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 239 Accuracy  0.012200| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 240 Accuracy  0.010511| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 241 Accuracy  0.007372| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 242 Accuracy  0.003599| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 243 Accuracy  0.001582| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 244 Accuracy  0.003075| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 245 Accuracy  0.004492| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 246 Accuracy  0.005521| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 247 Accuracy  0.006219| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 248 Accuracy  0.006752| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 249 Accuracy  0.006914| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 250 Accuracy  0.006935| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 251 Accuracy  0.006685| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 252 Accuracy  0.006271| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 253 Accuracy  0.005943| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 254 Accuracy  0.005783| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 255 Accuracy  0.005822| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 256 Accuracy  0.005825| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 257 Accuracy  0.005042| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 258 Accuracy  0.003989| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 259 Accuracy  0.002993| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 260 Accuracy  0.001958| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 261 Accuracy  0.001210| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 262 Accuracy  0.649110E-3| 0.100000E-2
+ <01h-34m> P51-nid001909: [Haydock] Iteration 263 Accuracy  0.932355E-3| 0.100000E-2
+ <01h-34m> P51-nid001909: [09] Timing Overview
+ <01h-34m> P51-nid001909: [TIMING]            io_ATMPROJ_pwscf :      0.0000s CPU
+ <01h-34m> P51-nid001909: [TIMING]                io_KB_abinit :      0.0001s CPU
+ <01h-34m> P51-nid001909: [TIMING]     IO_and_Messaging_switch :      0.0003s CPU (14 calls,   0.023 msec avg)
+ <01h-34m> P51-nid001909: [TIMING]            scatter_Gamp_gpu :      0.0004s CPU ( 4 calls,   0.103 msec avg)
+ <01h-34m> P51-nid001909: [TIMING]                       io_HF :      0.0004s CPU
+ <01h-34m> P51-nid001909: [TIMING]                PP_uspp_init :      0.0004s CPU ( 3 calls,   0.142 msec avg)
+ <01h-34m> P51-nid001909: [TIMING]              io_Double_Grid :      0.0010s CPU
+ <01h-34m> P51-nid001909: [TIMING]              io_BSS_Haydock :      0.0028s CPU ( 4 calls,   0.689 msec avg)
+ <01h-34m> P51-nid001909: [TIMING]                io_QP_and_GF :      0.0060s CPU ( 2 calls,   2.979 msec avg)
+ <01h-34m> P51-nid001909: [TIMING]                    io_QINDX :      0.0082s CPU ( 3 calls,   2.745 msec avg)
+ <01h-34m> P51-nid001909: [TIMING]                  io_COL_CUT :      0.0142s CPU ( 3 calls,   4.721 msec avg)
+ <01h-34m> P51-nid001909: [TIMING]                 BSE dipoles :      0.0200s CPU
+ <01h-34m> P51-nid001909: [TIMING]                  io_DIPOLES :      0.0205s CPU ( 6 calls,   3.421 msec avg)
+ <01h-34m> P51-nid001909: [TIMING]                     io_GROT :      0.0580s CPU ( 2 calls,  28.985 msec avg)
+ <01h-34m> P51-nid001909: [TIMING]                 io_fragment :      0.0925s CPU (21 calls,   4.403 msec avg)
+ <01h-34m> P51-nid001909: [TIMING]                 RIM-W-coeff :      0.1963s CPU
+ <01h-34m> P51-nid001909: [TIMING]                       io_BS :      0.2397s CPU ( 8 calls,  29.957 msec avg)
+ <01h-34m> P51-nid001909: [TIMING]                  T_space IP :      0.2788s CPU
+ <01h-34m> P51-nid001909: [TIMING]                   FFT_setup :      0.3808s CPU ( 3 calls, 126.936 msec avg)
+ <01h-34m> P51-nid001909: [TIMING]                 io_KB_pwscf :      0.6992s CPU ( 5 calls, 139.848 msec avg)
+ <01h-34m> P51-nid001909: [TIMING]                 K_WF_phases :      1.2872s CPU
+ <01h-34m> P51-nid001909: [TIMING]                       io_WF :      1.7170s CPU (13 calls,   0.132 sec avg)
+ <01h-34m> P51-nid001909: [TIMING]                 WF_load_FFT :      2.7761s CPU ( 3 calls,   0.925 sec avg)
+ <01h-34m> P51-nid001909: [TIMING]                        io_X :      2.9193s CPU (14 calls,   0.209 sec avg)
+ <01h-34m> P51-nid001909: [TIMING]              eval_G_minus_G :     14.7734s CPU
+ <01h-34m> P51-nid001909: [TIMING]              Haydock Solver :     16.9697s CPU
+ <01h-34m> P51-nid001909: [TIMING]           T_space CORR Osc. :     26.9491s CPU
+ <01h-34m> P51-nid001909: [TIMING]                       RIM-W :     34.2543s CPU
+ <01h-34m> P51-nid001909: [TIMING]           DIPOLE_transverse :    471.6141s CPU
+ <01h-34m> P51-nid001909: [TIMING]                     Dipoles :    488.3532s CPU
+ <01h-34m> P51-nid001909: [TIMING]            T_space EXX Osc. :      32m-59s CPU ( 2 calls, 989.866 sec avg)
+ <01h-34m> P51-nid001909: [TIMING]            X T_space Kernel :      01h-23m CPU
+ <01h-34m> P51-nid001909: [10] Memory Overview
+ <01h-34m> P51-nid001909: [11] Game Over & Game summary
+ <01h-34m> P51-nid001909: [TIMING]            [Time-Profile]: 01h-34m
