@@ -7,6 +7,10 @@
 3. A third DFT+U ionic relaxation with the second U values and a refined k-point mesh.
 4. A DFT-only `YamboWorkflow` containing SCF, NSCF, GW, QP, and BSE, with BSE run on top of GW/QP results.
 
+After stage 3, the workflow reports warnings if the largest final atomic force exceeds `0.2 eV/angstrom` or if any atom
+moves more than `0.5 angstrom` from the initial structure. These thresholds can be set through
+`max_force_threshold` and `max_structure_displacement`; the checks are warning-only for now.
+
 The workflow uses `PwBaseWorkChain` configured with `CONTROL.calculation = "relax"`. This is intentional: the public
 `PwRelaxWorkChain` interface excludes external `parent_folder` inputs, while `PwBaseWorkChain` supports the required
 wavefunction restart directly.

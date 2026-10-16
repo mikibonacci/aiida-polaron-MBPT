@@ -6,6 +6,7 @@ from copy import deepcopy
 from numbers import Real
 from typing import Any, Iterable
 
+import numpy as np
 from aiida import orm
 from aiida.common import AttributeDict
 from aiida.engine import ToContext, WorkChain
@@ -167,6 +168,18 @@ class PolaronMBPTWorkChain(WorkChain):
             required=False,
             help="Mesh for Yambo SCF/NSCF; defaults to `kpoints_relax3`.",
         )
+        spec.input(
+            "max_force_threshold",
+            valid_type=orm.Float,
+            default=lambda: orm.Float(0.2),
+            help="Warning threshold for the largest final atomic force in eV/angstrom.",
+        )
+        spec.input(
+            "max_structure_displacement",
+            valid_type=orm.Float,
+            default=lambda: orm.Float(0.5),
+            help="Warning threshold for the largest initial-to-final atomic displacement in angstrom.",
+        )
 
         relax_exclude = ("pw.structure", "pw.parent_folder", "pw.code", "pw.pseudos", "kpoints")
         for namespace in ("relax_1", "relax_2", "relax_3"):
@@ -237,10 +250,33 @@ class PolaronMBPTWorkChain(WorkChain):
             "ERROR_MISSING_OUTPUT_STRUCTURE",
             message="A QE relaxation did not return an output structure.",
         )
+        spec.exit_code(
+            406,
+            "ERROR_MISSING_REMOTE_FOLDER",
+            message="The first QE relaxation did not return a remote folder for the wavefunction restart.",
+        )
+        # These are intentionally warning-only for now. Uncomment the return
+        # statements in `_report_relax_3_quality` when they should be fatal.
+        spec.exit_code(
+            407,
+            "ERROR_RELAX_3_FORCE_TOO_LARGE",
+            message="The final stage-3 force exceeds the configured threshold.",
+        )
+        spec.exit_code(
+            408,
+            "ERROR_RELAX_3_STRUCTURE_CHANGED",
+            message="The stage-3 structure moved beyond the configured threshold.",
+        )
 
     @staticmethod
     def _set_relax_parameters(parameters: dict[str, Any], restart: bool) -> orm.Dict:
-        """Normalize parameters for an ionic-only relaxation."""
+        """Normalize parameters for an ionic-only relaxation.
+
+        For ``restart=True``, use the QE combination corresponding to
+        ``RestartType.FROM_WAVE_FUNCTIONS``: the calculation starts from
+        scratch as far as the ionic/electronic run is concerned, while the
+        wavefunctions are read from the supplied ``parent_folder``.
+        """
 
         parameters = deepcopy(parameters)
         parameters.setdefault("CONTROL", {})
@@ -282,11 +318,12 @@ class PolaronMBPTWorkChain(WorkChain):
         inputs.pw.pseudos = self._pseudos(structure)
         inputs.kpoints = kpoints
         inputs.pw.parameters = self._set_relax_parameters(inputs.pw.parameters.get_dict(), restart=restart)
-        # The first stage must keep its remote folder available for stage two's wavefunction restart.
+        # Preserve remote folders so stage two can read stage one's wavefunctions.
         inputs.clean_workdir = orm.Bool(False)
         inputs.metadata.call_link_label = namespace
 
         if parent_folder is not None:
+            # PwBaseWorkChain exposes the PwCalculation parent folder under `pw`.
             inputs.pw.parent_folder = parent_folder
         return inputs
 
@@ -321,6 +358,8 @@ class PolaronMBPTWorkChain(WorkChain):
             return self.exit_codes.ERROR_RELAX_1_FAILED
         if self._output_structure(node) is None:
             return self.exit_codes.ERROR_MISSING_OUTPUT_STRUCTURE
+        if "remote_folder" not in node.outputs:
+            return self.exit_codes.ERROR_MISSING_REMOTE_FOLDER
 
     def run_relax_2(self):
         """Restart from the first relaxation's stored wavefunctions with new U values."""
@@ -366,7 +405,13 @@ class PolaronMBPTWorkChain(WorkChain):
         )
         running = self.submit(
             PwBaseWorkChain,
-            **self._relax_inputs("relax_3", structure, self.inputs.kpoints_relax3),
+            **self._relax_inputs(
+                "relax_3",
+                structure,
+                self.inputs.kpoints_relax3,
+                restart=False,
+                parent_folder=None,
+            ),
         )
         self.report(f"submitted k-point-refined DFT+U relaxation PwBaseWorkChain<{running.pk}>")
         return ToContext(relax_3=running)
@@ -380,6 +425,87 @@ class PolaronMBPTWorkChain(WorkChain):
             return self.exit_codes.ERROR_RELAX_3_FAILED
         if self._output_structure(node) is None:
             return self.exit_codes.ERROR_MISSING_OUTPUT_STRUCTURE
+
+        force_too_large, structure_changed = self._report_relax_3_quality(node)
+        # if force_too_large:
+        #     return self.exit_codes.ERROR_RELAX_3_FORCE_TOO_LARGE
+        # if structure_changed:
+        #     return self.exit_codes.ERROR_RELAX_3_STRUCTURE_CHANGED
+
+    @staticmethod
+    def _maximum_final_force(trajectory: orm.TrajectoryData) -> float | None:
+        """Return the largest norm of the final atomic force in eV/angstrom."""
+
+        try:
+            forces = np.asarray(trajectory.get_array("forces"), dtype=float)
+        except (KeyError, ValueError):
+            return None
+
+        if forces.ndim != 3 or forces.shape[-1] != 3 or not len(forces):
+            return None
+        return float(np.linalg.norm(forces[-1], axis=1).max())
+
+    @staticmethod
+    def _maximum_structure_displacement(
+        initial_structure: orm.StructureData, final_structure: orm.StructureData
+    ) -> float | None:
+        """Return the largest atom displacement using minimum-image wrapping."""
+
+        initial_ase = initial_structure.get_ase()
+        final_ase = final_structure.get_ase()
+        if len(initial_ase) != len(final_ase):
+            return None
+
+        initial_positions = np.asarray(initial_ase.get_positions(), dtype=float)
+        final_positions = np.asarray(final_ase.get_positions(), dtype=float)
+        cell = np.asarray(initial_ase.cell.array, dtype=float)
+        displacement = final_positions - initial_positions
+
+        # The workflow uses ionic relaxations, so the cell should be unchanged.
+        # Apply the minimum-image convention to avoid false warnings when an atom
+        # crosses a periodic boundary during relaxation.
+        try:
+            fractional = np.linalg.solve(cell.T, displacement.T).T
+        except np.linalg.LinAlgError:
+            return None
+        pbc = np.asarray(initial_ase.pbc, dtype=bool)
+        fractional[:, pbc] -= np.rint(fractional[:, pbc])
+        displacement = fractional @ cell
+        return float(np.linalg.norm(displacement, axis=1).max())
+
+    def _report_relax_3_quality(self, node: orm.ProcessNode) -> tuple[bool, bool]:
+        """Report potentially problematic forces or defect motion after stage three."""
+
+        force_too_large = False
+        structure_changed = False
+        trajectory = node.outputs.output_trajectory if "output_trajectory" in node.outputs else None
+        if trajectory is None:
+            self.report("stage 3 did not provide an output trajectory; final forces were not checked")
+        else:
+            maximum_force = self._maximum_final_force(trajectory)
+            if maximum_force is None:
+                self.report("stage 3 trajectory has no usable final forces; force warning was not checked")
+            elif maximum_force > self.inputs.max_force_threshold.value:
+                force_too_large = True
+                self.report(
+                    f"WARNING: stage 3 maximum final force is {maximum_force:.6f} eV/angstrom, "
+                    f"above the configured threshold of {self.inputs.max_force_threshold.value:.6f} eV/angstrom"
+                )
+
+        maximum_displacement = self._maximum_structure_displacement(
+            self.inputs.structure,
+            self._output_structure(node),
+        )
+        if maximum_displacement is None:
+            self.report("could not compare the initial and stage 3 structures; displacement warning was not checked")
+        elif maximum_displacement > self.inputs.max_structure_displacement.value:
+            structure_changed = True
+            self.report(
+                f"WARNING: stage 3 maximum atomic displacement is {maximum_displacement:.6f} angstrom, "
+                f"above the configured threshold of {self.inputs.max_structure_displacement.value:.6f} angstrom"
+            )
+
+        return force_too_large, structure_changed
 
     def run_yambo(self):
         """Submit the DFT-only SCF/NSCF/GW/QP/BSE workflow."""

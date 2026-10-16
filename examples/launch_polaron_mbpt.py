@@ -83,6 +83,9 @@ def main():
     builder.kpoints_gamma = gamma
     builder.kpoints_relax3 = final_mesh
     builder.kpoints_yambo = final_mesh
+    builder.max_force_threshold = orm.Float(0.2)
+    builder.max_structure_displacement = orm.Float(0.5)
+    builder.yambo.stop_if_metal = True
 
     # Example values only: choose the Hubbard manifold and U values for the
     # pseudopotential and physical system used in the actual calculation.
@@ -152,12 +155,15 @@ def main():
                 "Lkind": "full",
                 "NGsBlkXs": [2, "Ry"],
                 "BSENGBlk": [2, "Ry"],
+                "BndsRnXs": [[1, 16], ""],
                 "Chimod": "hartree",
                 "DysSolver": "n",
                 "BSEQptR": [[1, 1], ""],
-                "BSEBands": [[1, 16], ""],
+                "BSEBands": [[3, 6], ""],
                 "BEnSteps": [100, ""],
                 "BEnRange": [[0.0, 10.0], "eV"],
+                "BS_CPU":'2 2 1',
+                "BS_ROLEs":'k eh t'
             },
         }
     )
