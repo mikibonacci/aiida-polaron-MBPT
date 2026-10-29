@@ -41,3 +41,7 @@ Values are in eV. The compact `{"Fe-3d": 4.0}` form is also accepted.
 
 See [`examples/launch_polaron_mbpt.py`](examples/launch_polaron_mbpt.py). It shows how to configure QE, Yambo, the
 QP subset settings, and the BSE parameters before calling `submit`.
+
+## Authors
+
+- Miki Bonacci ([@mikibonacci](https://github.com/mikibonacci))

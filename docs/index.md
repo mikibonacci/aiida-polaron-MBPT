@@ -31,3 +31,7 @@
 
 !!! warning "Norm-conserving pseudopotentials"
     The Yambo interface requires norm-conserving pseudopotentials. The examples use `PseudoDojo/0.4/PBE/SR/standard/upf`.
+
+## Authors
+
+- Miki Bonacci ([@mikibonacci](https://github.com/mikibonacci))
