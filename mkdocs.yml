@@ -49,5 +49,6 @@ nav:
   - Home: index.md
   - Installation: installation.md
   - Usage: usage.md
+  - Examples: examples.md
   - Concepts: concepts.md
   - Reference: reference.md

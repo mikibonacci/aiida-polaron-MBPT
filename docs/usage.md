@@ -1,6 +1,6 @@
 # Usage
 
-The workflow is launched like any other AiiDA workchain: fill a builder and `submit` it. Two complete scripts are in the [`examples/`](https://github.com/mikibonacci/aiida-polaron-MBPT/tree/main/examples) folder. `launch_polaron_mbpt_high_level.py` uses the `aiida-yambo` high-level API for the Yambo part.
+The workflow is launched like any other AiiDA workchain: fill a builder and `submit` it. Two complete scripts are in the [`examples/`](https://github.com/mikibonacci/aiida-polaron-MBPT/tree/main/examples) folder, explained on the [Examples](examples.md) page.
 
 ## Minimal skeleton
 
