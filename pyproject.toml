@@ -9,7 +9,7 @@ description = "AiiDA workflow for DFT+U relaxations followed by GW/QP/BSE calcul
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
-authors = [{name = "AiiDA plugin authors"}]
+authors = [{name = "Miki Bonacci and Savio Laricchia (CNR)"}]
 keywords = ["aiida", "quantum-espresso", "yambo", "gw", "bse", "dft+u"]
 classifiers = [
     "Framework :: AiiDA",
