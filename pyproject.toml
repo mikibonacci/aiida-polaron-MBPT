@@ -23,6 +23,12 @@ dependencies = [
     "aiida-pseudo>=1.7.2,<2",
 ]
 
+[project.optional-dependencies]
+docs = [
+    "mkdocs>=1.6",
+    "mkdocs-material>=9.5",
+]
+
 [project.entry-points."aiida.workflows"]
 "polaron_mbpt" = "aiida_polaron_mbpt.workflows.polaron_mbpt:PolaronMBPTWorkChain"
 

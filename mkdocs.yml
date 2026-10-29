@@ -1,0 +1,53 @@
+site_name: aiida-polaron-MBPT
+site_description: AiiDA workflow for DFT+U relaxations followed by GW/QP/BSE calculations
+site_url: https://mikibonacci.github.io/aiida-polaron-MBPT/
+repo_url: https://github.com/mikibonacci/aiida-polaron-MBPT
+repo_name: mikibonacci/aiida-polaron-MBPT
+docs_dir: docs
+theme:
+  name: material
+  language: en
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - navigation.top
+    - navigation.tabs
+    - navigation.sections
+    - navigation.footer
+    - toc.follow
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+plugins:
+  - search
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Usage: usage.md
+  - Concepts: concepts.md
+  - Reference: reference.md
