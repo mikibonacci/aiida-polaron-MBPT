@@ -44,4 +44,5 @@ QP subset settings, and the BSE parameters before calling `submit`.
 
 ## Authors
 
-- Miki Bonacci ([@mikibonacci](https://github.com/mikibonacci))
+- Miki Bonacci, CNR ([@mikibonacci](https://github.com/mikibonacci))
+- Savio Laricchia, CNR
