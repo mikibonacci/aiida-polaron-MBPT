@@ -7,12 +7,24 @@ structure ──► relax_1 ──► relax_2 ──► relax_3 ──► YamboW
                  └─wavefunctions─┘
 ```
 
+## How the polaron is formed
+
+The first relaxation is what makes the polaron form, so `hubbard_u_initial` should not simply repeat the physical U.
+
+- **Stage 1 (`hubbard_u_initial`).** You choose which atoms host the extra electrons and give each of them a U that is much larger than on the other sites. Use one atom per additional electron, for example one Ti per H atom adsorbed on the slab. This much larger U localizes the electron on that atom, which is what makes the polaron form, and the ions relax around it, which creates the lattice distortion of the polaron. To make this work, those atoms must be separate kinds in the `StructureData`, so that they can get their own U in the `HubbardStructureData` (and, if needed, their own starting magnetization). See [the structure](usage.md#the-structure-the-candidate-atom-needs-its-own-kind).
+- **Stage 2 (`hubbard_u_final`).** U is set back to the value you want for the final calculation, on all atoms. The calculation restarts from the wavefunctions of stage 1, so the electron starts localized and the structure relaxes with the physical U. Without this restart, the electron could delocalize again.
+- **Stage 3 (`hubbard_u_final`).** The same U, with a refined k-point mesh. Its structure is the one used for GW/BSE.
+
+If `hubbard_u_initial` is the same as `hubbard_u_final`, stage 1 has no special role, and nothing drives the electron to localize.
+
+In the full TiO2 launch script, for example, the atom that hosts the electron has U = 10.0 eV in the initial dictionary, and every titanium kind has U = 3.5 eV in the final one.
+
 ## Stages
 
 | Stage | U values | k-points | Notes |
 |---|---|---|---|
-| `relax_1` | `hubbard_u_initial` | `kpoints_gamma` | Starting relaxation. |
-| `relax_2` | `hubbard_u_final` | `kpoints_gamma` | Restarts from the stored wavefunctions of `relax_1`. |
+| `relax_1` | `hubbard_u_initial` | `kpoints_gamma` | Much larger U on the atoms that should host the electrons. This is where the polaron forms. |
+| `relax_2` | `hubbard_u_final` | `kpoints_gamma` | Restarts from the stored wavefunctions of `relax_1`, keeping the electron localized. |
 | `relax_3` | `hubbard_u_final` | `kpoints_relax3` | Refined mesh. Its structure feeds Yambo. |
 | `yambo` | none (DFT only) | `kpoints_yambo` | `YamboWorkflow`: SCF, NSCF, GW, QP, then BSE on top of GW/QP. |
 

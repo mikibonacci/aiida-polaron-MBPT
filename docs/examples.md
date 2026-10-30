@@ -16,7 +16,7 @@ Both scripts follow the same steps. Edit the code labels and the pseudo family b
 1. **Structure.** `make_structure()` builds diamond silicon with the kinds `Si1` and `Si2`. The two atoms are different kinds so that they can get different U values.
 2. **QE parameters.** `make_relax_parameters()` returns the `relax` parameters (cutoffs, `bfgs`, convergence thresholds). The same `Dict` is used for `relax_1`, `relax_2` and `relax_3`.
 3. **K-points.** A 1×1×1 mesh for `kpoints_gamma`, and a 2×2×2 mesh for `kpoints_relax3` and `kpoints_yambo`.
-4. **Hubbard U.** `Si1` gets 2.0 eV in both dictionaries. `Si2` goes from 10.0 eV in `hubbard_u_initial` to 2.0 eV in `hubbard_u_final`, so the second relaxation starts from a different U than the first. The values are only an illustration.
+4. **Hubbard U.** `Si1` gets 2.0 eV in both dictionaries. `Si2` plays the role of the atom that hosts the extra electron: it has a larger U (10.0 eV) in `hubbard_u_initial`, which localizes the electron there in the first relaxation, and goes back to 2.0 eV in `hubbard_u_final`. The values are only an illustration; see [how the polaron is formed](concepts.md#how-the-polaron-is-formed).
 5. **Resources.** The same `metadata.options` are set on each relaxation.
 6. **Submit.** `submit(builder)` and print the PK.
 
