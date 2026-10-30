@@ -19,6 +19,21 @@ If `hubbard_u_initial` is the same as `hubbard_u_final`, stage 1 has no special 
 
 In the full TiO2 launch script, for example, the atom that hosts the electron has U = 10.0 eV in the initial dictionary, and every titanium kind has U = 3.5 eV in the final one.
 
+## Spin polarization
+
+The calculations must always be spin-polarized. A polaron is an electron localized on one site, so the system has a net spin by definition, and a non-spin-polarized calculation cannot describe it.
+
+In the QE parameters of the relaxations, set `nspin = 2` and a nonzero `starting_magnetization` on the high-U kinds. A zero starting magnetization is not enough: QE can then converge to the non-magnetic solution and the electron delocalizes.
+
+With two or more polarons, spin polarization also lets you choose their relative alignment through the signs of the starting magnetizations:
+
+- **Ferromagnetic (FM):** the same sign on the high-U kinds, for example `+1` on both.
+- **Antiferromagnetic (AFM):** opposite signs, for example `+1` on one and `-1` on the other, as in the full TiO2 script (`Ti2 = +1`, `Ti3 = -1`).
+
+Each configuration is a separate run of the workflow, and the localized state of each polaron can then be analysed on its own.
+
+If the relaxation parameters are not spin-polarized, the workflow does not stop, but it writes a `WARNING` line in the process report (`verdi process report <pk>`).
+
 ## Stages
 
 | Stage | U values | k-points | Notes |

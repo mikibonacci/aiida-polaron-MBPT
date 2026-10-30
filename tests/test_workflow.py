@@ -67,3 +67,13 @@ def test_workflow_spec_contains_all_stages():
 
     for output in ("relax_1_structure", "relax_2_structure", "relax_3_structure", "final_structure"):
         assert output in spec.outputs
+
+
+def test_spin_polarization_warnings():
+    check = PolaronMBPTWorkChain._spin_polarization_warnings
+
+    assert check("relax_1", {"SYSTEM": {"nspin": 2, "starting_magnetization": {"Ti2": 1.0, "Ti1": 0.0}}}) == []
+    assert check("relax_1", {"SYSTEM": {"noncolin": True}}) == []
+    assert "not spin-polarized" in check("relax_1", {"SYSTEM": {"ecutwfc": 80.0}})[0]
+    assert "nonzero starting_magnetization" in check("relax_1", {"SYSTEM": {"nspin": 2}})[0]
+    assert check("relax_1", {"SYSTEM": {"nspin": 2, "starting_magnetization": {"Ti1": 0.0}}})

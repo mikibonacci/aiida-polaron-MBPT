@@ -96,6 +96,25 @@ The `builder.yambo` namespace has the inputs of `YamboWorkflow`, minus what the 
 
 If `kpoints_yambo` is not given, the Yambo SCF/NSCF use `kpoints_relax3`.
 
+## Spin polarization
+
+Set `nspin = 2` and a starting magnetization in the QE parameters of `relax_1`, `relax_2` and `relax_3`. The magnetization is a dictionary by kind name, and the high-U kinds must have a nonzero value:
+
+```python
+parameters = orm.Dict(dict={
+    "SYSTEM": {
+        "nspin": 2,
+        "starting_magnetization": {"Ti1": 0.0, "Ti2": 1.0},
+        # ...
+    },
+    # ...
+})
+```
+
+For two polarons, use the same sign on both kinds for a ferromagnetic configuration, or opposite signs (for example `Ti2: 1.0`, `Ti3: -1.0`) for an antiferromagnetic one. See [Concepts](concepts.md#spin-polarization).
+
+The workflow checks this at the start. If a relaxation has no `nspin = 2` (and is not non-collinear), or has `nspin = 2` with no nonzero starting magnetization, it writes a `WARNING` in the process report. This is only a warning and does not stop the run.
+
 ## Quality checks
 
 After the third relaxation the workflow reports a warning if the largest final force exceeds `max_force_threshold` (default 0.2 eV/Å) or if any atom moved more than `max_structure_displacement` (default 0.5 Å) from the initial structure. Both checks only warn for now. Look for them with:

@@ -296,6 +296,31 @@ class PolaronMBPTWorkChain(WorkChain):
 
         return orm.Dict(dict=parameters)
 
+    @staticmethod
+    def _spin_polarization_warnings(namespace: str, parameters: dict[str, Any]) -> list[str]:
+        """Return warnings if the QE parameters do not describe a spin-polarized calculation.
+
+        A polaron is a localized, spin-carrying state, so the relaxations should be spin-polarized:
+        ``nspin = 2`` with a nonzero ``starting_magnetization`` (QE otherwise relaxes to the
+        non-magnetic solution), or non-collinear magnetism.
+        """
+
+        system = parameters.get("SYSTEM", {})
+        if system.get("noncolin"):
+            return []
+        if system.get("nspin", 1) != 2:
+            return [
+                f"{namespace} is not spin-polarized (SYSTEM.nspin is not 2): the polaron is a spin-carrying "
+                "state, so set `nspin = 2` and a starting magnetization"
+            ]
+        magnetization = system.get("starting_magnetization")
+        if not magnetization or not any(magnetization.values() if isinstance(magnetization, dict) else [magnetization]):
+            return [
+                f"{namespace} has nspin = 2 but no nonzero starting_magnetization: QE can converge to the "
+                "non-magnetic solution and the polaron will not form"
+            ]
+        return []
+
     def _pseudos(self, structure: orm.StructureData) -> dict[str, orm.Data]:
         """Load the configured pseudo family and return pseudos for ``structure``."""
 
@@ -335,6 +360,11 @@ class PolaronMBPTWorkChain(WorkChain):
 
     def run_relax_1(self):
         """Submit the first Gamma-only DFT+U relaxation."""
+
+        for namespace in ("relax_1", "relax_2", "relax_3"):
+            parameters = self.inputs[namespace]["pw"]["parameters"].get_dict()
+            for warning in self._spin_polarization_warnings(namespace, parameters):
+                self.report(f"WARNING: {warning}")
 
         structure = make_hubbard_structure(
             self.inputs.structure,
